@@ -1,9 +1,9 @@
-/* Typography & Reset */
 :root {
-    --border-color: #000;
-    --bg-color: #fff;
-    --text-color: #000;
-    --sidebar-width: 280px;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --sidebar-width: 220px;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
 }
 
 * {
@@ -13,178 +13,154 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Sidebar Styling */
+/* Sidebar - Slim and Minimal */
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    border-right: 1px solid var(--border-color);
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
     z-index: 100;
 }
 
 .logo {
-    font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 0.9;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2;
     text-decoration: none;
     color: var(--text-color);
-    letter-spacing: -1px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
 }
 
 .nav-links {
     list-style: none;
-    margin-top: 60px;
 }
 
 .nav-links li {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
+    font-size: 0.75rem;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 500;
     letter-spacing: 1px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    cursor: pointer;
 }
 
+.nav-links a:hover, 
 .nav-links a.active {
-    text-decoration: underline;
+    opacity: 1;
 }
 
 .sidebar-footer {
-    font-size: 0.7rem;
-    color: #888;
+    margin-top: auto;
+    font-size: 0.6rem;
+    opacity: 0.4;
 }
 
-/* Main Content Area */
+/* Main Content */
 .main-content {
     margin-left: var(--sidebar-width);
-    padding: 0;
+    padding: 40px;
 }
 
 .hero-text {
-    padding: 100px 60px;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 80px;
+    max-width: 800px;
 }
 
 .hero-text h1 {
-    font-size: clamp(2rem, 8vw, 5rem);
-    text-transform: uppercase;
-    line-height: 0.85;
-    letter-spacing: -3px;
-    font-weight: 900;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
 }
 
-/* Project Grid */
+/* Project Grid - No Borders, Just Space */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 Column Grid */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px; /* Space between images instead of borders */
 }
 
 .project-item {
     text-decoration: none;
     color: var(--text-color);
-    border-bottom: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Remove right border on every second item to keep layout clean */
-.project-item:nth-child(2n) {
-    border-right: none;
 }
 
 .image-container {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    margin-bottom: 15px;
     overflow: hidden;
-    background: #f0f0f0;
 }
 
 .image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%); /* Pellegrino vibe */
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+    display: block;
+    transition: opacity 0.5s ease;
 }
 
 .project-item:hover img {
-    transform: scale(1.05);
-    filter: grayscale(0%);
+    opacity: 0.8;
 }
 
 .project-info {
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border-color);
-    background: #fff;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .category {
-    font-size: 0.7rem;
-    font-weight: bold;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.5;
 }
 
 .title {
-    font-size: 0.85rem;
-    text-transform: uppercase;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
-/* Mobile Adjustments */
+/* About & Contact Page Content */
+.content-padding {
+    max-width: 600px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* Mobile */
 @media (max-width: 900px) {
     .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
         padding: 20px;
     }
     .main-content {
         margin-left: 0;
+        padding: 20px;
     }
     .project-grid {
         grid-template-columns: 1fr;
     }
-    .project-item {
-        border-right: none;
-    }
-}
-
-/* New content padding for About/Contact pages */
-.content-padding {
-    padding: 60px;
-    max-width: 800px;
-    line-height: 1.6;
-    font-size: 1.1rem;
-}
-
-/* Ensure links in text look good */
-.content-padding a {
-    color: var(--text-color);
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-/* Cursor pointer for the fake links */
-.nav-links a {
-    cursor: pointer;
 }
