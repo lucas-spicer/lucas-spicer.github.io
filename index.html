@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Lucas Spicer | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo"><strong>MY PORTFOLIO</strong></div>
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">LUCAS SPICER</a>
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <h1>Hi, I'm [Your Name]</h1>
-        <p>A passionate developer building digital experiences.</p>
+    <header class="hero">
+        <div class="container">
+            <h1>Creative Designer & Developer</h1>
+            <p>Crafting digital experiences with purpose and precision.</p>
+        </div>
     </header>
 
-    <div class="container" id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Project Title One</h3>
-                <p>A brief description of what this project does and the tech stack used.</p>
-                <a href="#" class="project-link">View on GitHub →</a>
+    <main class="container" id="work">
+        <section class="project-grid">
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('images/project1.jpg');">
+                    <div class="project-overlay">
+                        <h3>Project Name</h3>
+                        <p>Branding / Web Design</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Project Title Two</h3>
-                <p>A brief description of what this project does and the tech stack used.</p>
-                <a href="#" class="project-link">View on GitHub →</a>
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('images/project2.jpg');">
+                    <div class="project-overlay">
+                        <h3>Another Project</h3>
+                        <p>UI/UX Design</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Project Title Three</h3>
-                <p>A brief description of what this project does and the tech stack used.</p>
-                <a href="#" class="project-link">View on GitHub →</a>
-            </div>
-        </div>
-    </div>
+            </section>
+    </main>
 
     <footer id="contact">
-        <h2>Get In Touch</h2>
-        <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
-        <p class="copyright">&copy; 2026 Your Name</p>
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Let's collaborate on your next project.</p>
+            <a href="mailto:hello@lucasspicer.com" class="email-link">hello@lucasspicer.com</a>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
     </footer>
 
 </body>
