@@ -1,55 +1,56 @@
-:root {
-    --bg-color: #fcfcfc; /* ALD uses a very slightly off-white */
-    --text-color: #1a1a1a;
-    --font-serif: 'Crimson Text', serif;
-    --font-sans: 'Inter', sans-serif;
-}
-
+/* RESET & FONTS */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
+:root {
+    --bg: #fcfcfc;
+    --black: #1a1a1a;
+    --serif: 'Crimson Text', serif;
+    --sans: 'Inter', sans-serif;
 }
 
-/* ALD Header Style */
+body {
+    background-color: var(--bg);
+    color: var(--black);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-align: center; /* ALD loves centered layouts */
+}
+
+/* HEADER & NAV */
 .ald-header {
-    text-align: center;
-    padding: 60px 20px 30px;
-    background: var(--bg-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 80px 20px 40px;
+    background: var(--bg);
 }
 
 .ald-logo {
-    font-family: var(--font-sans);
+    font-size: 1.1rem;
     font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--black);
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    gap: 40px;
+    border-top: 1px solid #eaeaea;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 25px;
 }
 
 .nav-links a {
     text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
     cursor: pointer;
-    opacity: 0.6;
+    color: var(--black);
+    opacity: 0.4;
     transition: opacity 0.3s;
 }
 
@@ -57,27 +58,28 @@ body {
     opacity: 1;
 }
 
-/* Main Content Centered */
-.main-content-centered {
-    max-width: 1200px;
+/* CONTENT CONTROL */
+.main-content {
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 .page-section { display: none; }
 .active-section { display: block; }
 
-/* ALD Style Grid */
+/* THE LOOKBOOK GRID */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .image-container {
-    background-color: #f3f3f3;
-    aspect-ratio: 4 / 5; /* Fashion-style portrait ratio */
+    background-color: #f0f0f0;
+    aspect-ratio: 4 / 5; /* Essential for that lookbook feel */
     overflow: hidden;
+    margin-bottom: 15px;
 }
 
 .image-container img {
@@ -87,43 +89,47 @@ body {
 }
 
 .project-info {
-    margin-top: 15px;
-    margin-bottom: 40px;
     text-align: left;
+    margin-bottom: 60px;
 }
 
 .title {
     display: block;
-    font-family: var(--font-serif);
+    font-family: var(--serif);
     font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
 }
 
 .category {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     opacity: 0.5;
 }
 
+/* ABOUT & CONTACT */
 .text-block {
-    max-width: 600px;
+    max-width: 500px;
     margin: 100px auto;
-    text-align: center;
 }
 
 .text-block h2 {
-    font-family: var(--font-serif);
+    font-family: var(--serif);
     font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
 }
 
 .text-block p {
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    color: #444;
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
     .project-grid { grid-template-columns: 1fr; }
+    .ald-header { padding: 40px 20px; }
 }
