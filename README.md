@@ -1,3 +1,1 @@
-theme: jekyll-theme-minimal
-title: Lucas Spicer Portfolio
-description: Coming soon...
+<title>Lucas Spicer Portfolio</title>
