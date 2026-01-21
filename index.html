@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Spicer</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/2405b17593.js" crossorigin="anonymous"></script>
-</head>
 <body>
 
     <nav class="sidebar">
         <div class="sidebar-content">
-            
-            <a href="index.html" class="logo">Lucas<br>Spicer</a>
+            <a href="#" class="logo" onclick="showSection('work')">Lucas<br>Spicer</a>
             <ul class="nav-links">
-             <li><a href="#work" class="active">Work</a></li>
-             <li><a href="#about">About</a></li>
-             <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('work')" id="nav-work" class="active">Work</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('about')" id="nav-about">About</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('contact')" id="nav-contact">Contact</a></li>
             </ul>
         </div>
         <div class="sidebar-footer">
@@ -25,34 +15,65 @@
     </nav>
 
     <main class="main-content">
-        <header class="hero-text">
-            <h1>Art Direction & <br>Digital Design</h1>
-        </header>
+        <section id="work" class="page-section">
+            <header class="hero-text">
+                <h1>Art Direction & <br>Digital Design</h1>
+            </header>
+            <div class="project-grid">
+                <a href="#" class="project-item">
+                    <div class="image-container"><img src="images/project1.jpg" alt="Project One"></div>
+                    <div class="project-info">
+                        <span class="category">IDENTITY</span>
+                        <span class="title">Project One</span>
+                    </div>
+                </a>
+                <a href="#" class="project-item">
+                    <div class="image-container"><img src="images/project2.jpg" alt="Project Two"></div>
+                    <div class="project-info">
+                        <span class="category">EDITORIAL</span>
+                        <span class="title">Project Two</span>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-        <section id="work" class="project-grid">
-            <a href="#" class="project-item">
-                <div class="image-container">
-                    <img src="images/project1.jpg" alt="Project Name">
-                </div>
-                <div class="project-info">
-                    <span class="category">IDENTITY</span>
-                    <span class="title">Project One</span>
-                </div>
-            </a>
+        <section id="about" class="page-section" style="display:none;">
+            <header class="hero-text">
+                <h1>About <br>Me</h1>
+            </header>
+            <div class="content-padding">
+                <p>Insert your bio here. Keep it clean and professional to match your aesthetic.</p>
+            </div>
+        </section>
 
-            <a href="#" class="project-item">
-                <div class="image-container">
-                    <img src="images/project2.jpg" alt="Project Name">
-                </div>
-                <div class="project-info">
-                    <span class="category">EDITORIAL</span>
-                    <span class="title">Project Two</span>
-                </div>
-            </a>
-            
-            </section>
+        <section id="contact" class="page-section" style="display:none;">
+            <header class="hero-text">
+                <h1>Get In <br>Touch</h1>
+            </header>
+            <div class="content-padding">
+                <p>Email: <a href="mailto:lucas@example.com">lucas@example.com</a></p>
+                <p>Social: <a href="#">Instagram</a> / <a href="#">LinkedIn</a></p>
+            </div>
+        </section>
     </main>
 
-</body>
-</html>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
 
+            // Update Active Link styling
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('nav-' + sectionId).classList.add('active');
+            
+            // Scroll back to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
