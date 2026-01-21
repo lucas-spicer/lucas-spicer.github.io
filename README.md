@@ -1,2 +1,3 @@
-# lucas-spicer.github.io
-Portfolio website
+theme: jekyll-theme-minimal
+title: Lucas Spicer Portfolio
+description: Coming soon...
