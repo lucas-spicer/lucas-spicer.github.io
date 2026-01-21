@@ -168,3 +168,23 @@ body {
         border-right: none;
     }
 }
+
+/* New content padding for About/Contact pages */
+.content-padding {
+    padding: 60px;
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Ensure links in text look good */
+.content-padding a {
+    color: var(--text-color);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Cursor pointer for the fake links */
+.nav-links a {
+    cursor: pointer;
+}
