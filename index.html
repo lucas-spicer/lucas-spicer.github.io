@@ -3,100 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Spicer | Portfolio</title>
+    <title>Lucas Spicer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/2405b17593.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    <style>
-        /* Adding a few specific rules to handle the section switching */
-        .page-section { display: none; }
-        .page-section.active-section { display: block; }
-        .content-padding { padding: 60px; max-width: 900px; line-height: 1.5; }
-        .nav-links a { cursor: pointer; }
-    </style>
 </head>
 <body>
 
-    <nav class="sidebar">
-        <div class="sidebar-content">
-            <a href="javascript:void(0)" onclick="showSection('work')" class="logo">Lucas<br>Spicer</a>
+    <header class="ald-header">
+        <div class="header-top">
+            <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
+        </div>
+        <nav class="ald-nav">
             <ul class="nav-links">
                 <li><a onclick="showSection('work')" id="link-work" class="active">Work</a></li>
                 <li><a onclick="showSection('about')" id="link-about">About</a></li>
                 <li><a onclick="showSection('contact')" id="link-contact">Contact</a></li>
             </ul>
-        </div>
-        <div class="sidebar-footer">
-            <p>© 2026</p>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main class="main-content">
+    <main class="main-content-centered">
         <section id="work" class="page-section active-section">
-            <header class="hero-text">
-                <h1>Art Direction & <br>Digital Design</h1>
-            </header>
             <div class="project-grid">
                 <a href="#" class="project-item">
-                    <div class="image-container">
-                        <img src="images/project1.jpg" alt="Project One">
-                    </div>
+                    <div class="image-container"><img src="images/project1.jpg" alt="Project One"></div>
                     <div class="project-info">
-                        <span class="category">IDENTITY</span>
                         <span class="title">Project One</span>
+                        <span class="category">Identity — 2026</span>
                     </div>
                 </a>
                 <a href="#" class="project-item">
-                    <div class="image-container">
-                        <img src="images/project2.jpg" alt="Project Two">
-                    </div>
+                    <div class="image-container"><img src="images/project2.jpg" alt="Project Two"></div>
                     <div class="project-info">
-                        <span class="category">EDITORIAL</span>
                         <span class="title">Project Two</span>
+                        <span class="category">Editorial — 2026</span>
                     </div>
                 </a>
             </div>
         </section>
 
         <section id="about" class="page-section">
-            <header class="hero-text">
-                <h1>About <br>Lucas</h1>
-            </header>
-            <div class="content-padding">
-                <p>Art Director and Designer focusing on digital experiences and brand identity.</p>
+            <div class="text-block">
+                <h2>About</h2>
+                <p>Lucas Spicer is an Art Director and Designer focused on creating timeless digital experiences. Inspired by classic New York grit and modern minimalism.</p>
             </div>
         </section>
 
         <section id="contact" class="page-section">
-            <header class="hero-text">
-                <h1>Let's <br>Connect</h1>
-            </header>
-            <div class="content-padding">
-                <p>Email: <a href="mailto:hello@lucasspicer.com">hello@lucasspicer.com</a></p>
+            <div class="text-block">
+                <h2>Contact</h2>
+                <p>General Inquiries: <a href="mailto:hello@lucasspicer.com">hello@lucasspicer.com</a></p>
             </div>
         </section>
     </main>
 
     <script>
         function showSection(sectionId) {
-            // 1. Hide all sections
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(sec => sec.classList.remove('active-section'));
-
-            // 2. Show the clicked section
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
             document.getElementById(sectionId).classList.add('active-section');
-
-            // 3. Remove 'active' class from all nav links
-            const links = document.querySelectorAll('.nav-links a');
-            links.forEach(link => link.classList.remove('active'));
-
-            // 4. Add 'active' class to the clicked nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
             document.getElementById('link-' + sectionId).classList.add('active');
-
-            // 5. Scroll to top automatically
             window.scrollTo(0, 0);
         }
     </script>
-
 </body>
 </html>
