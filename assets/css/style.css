@@ -1,147 +1,170 @@
-/* Variables for consistency */
+/* Typography & Reset */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --secondary-text: #666666;
-    --accent: #000000;
-    --spacing: 2rem;
+    --border-color: #000;
+    --bg-color: #fff;
+    --text-color: #000;
+    --sidebar-width: 280px;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing);
-}
-
-/* Navbar */
-.navbar {
-    padding: 2rem 0;
-}
-
-.navbar .container {
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    padding: 40px;
+    z-index: 100;
 }
 
 .logo {
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 0.9;
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.2rem;
+    letter-spacing: -1px;
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    margin-top: 60px;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin-bottom: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--secondary-text);
-    transition: color 0.3s;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-.nav-links a:hover {
-    color: var(--accent);
+.nav-links a.active {
+    text-decoration: underline;
 }
 
-/* Hero */
-.hero {
-    padding: 100px 0;
-    text-align: center;
+.sidebar-footer {
+    font-size: 0.7rem;
+    color: #888;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
+/* Main Content Area */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 0;
+}
+
+.hero-text {
+    padding: 100px 60px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 8vw, 5rem);
+    text-transform: uppercase;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    font-weight: 900;
 }
 
 /* Project Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-    margin-bottom: 100px;
+    grid-template-columns: repeat(2, 1fr); /* 2 Column Grid */
 }
 
-.project-card {
+.project-item {
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
-    background: #f4f4f4; /* Fallback color */
 }
 
-.project-image {
+/* Remove right border on every second item to keep layout clean */
+.project-item:nth-child(2n) {
+    border-right: none;
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.image-container img {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease;
+    object-fit: cover;
+    filter: grayscale(100%); /* Pellegrino vibe */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
 }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-card:hover .project-image {
+.project-item:hover img {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
-/* Footer */
-footer {
-    padding: 100px 0;
-    background: #fafafa;
-    text-align: center;
+.project-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    background: #fff;
 }
 
-.email-link {
-    display: inline-block;
-    margin: 20px 0;
-    font-size: 1.5rem;
-    color: var(--accent);
-    text-decoration: underline;
+.category {
+    font-size: 0.7rem;
+    font-weight: bold;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .project-grid { grid-template-columns: 1fr; }
-    .navbar .container { flex-direction: column; gap: 1rem; }
-    .nav-links li { margin: 0 10px; }
+.title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-item {
+        border-right: none;
+    }
 }
