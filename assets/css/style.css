@@ -1,4 +1,3 @@
-/* --- RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -16,7 +15,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- YOUR SPECIFIC FIXED HEADER --- */
+/* HEADER STYLE */
 .header {
     position: fixed;
     top: 0;
@@ -35,7 +34,7 @@ body {
     width: 100%;
     padding: 0 40px;
     display: flex;
-    justify-content: space-between; /* Logo left, Nav right */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -68,9 +67,8 @@ body {
     opacity: 1;
 }
 
-/* --- LAYOUT UTILS --- */
 .header-spacer {
-    height: 61px; /* Matches header height */
+    height: 61px;
 }
 
 .main-content {
@@ -82,14 +80,15 @@ body {
 .page-section { display: none; }
 .active-section { display: block; }
 
-/* --- GRID & PROJECTS --- */
+/* PROJECT GRID */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
+    row-gap: 50px; /* Space between rows */
 }
 
-.project-item { cursor: pointer; margin-bottom: 40px; }
+.project-item { cursor: pointer; }
 
 .image-container {
     background-color: #f3f3f3;
@@ -102,6 +101,11 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.project-item:hover img {
+    opacity: 0.8;
 }
 
 .title {
@@ -118,13 +122,23 @@ body {
     opacity: 0.5;
 }
 
-/* --- PROJECT DETAIL --- */
-.project-detail { max-width: 900px; margin: 0 auto; text-align: left; }
+/* PROJECT DETAIL */
+.project-detail { max-width: 900px; margin: 0 auto; text-align: left; padding-bottom: 80px; }
 .detail-header h1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.2rem; margin-bottom: 10px; }
-.detail-content img { width: 100%; margin-bottom: 20px; }
-.back-btn { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+.detail-content img { width: 100%; margin-bottom: 20px; display: block; }
 
-/* --- ABOUT/CONTACT --- */
+.back-btn { 
+    display: inline-block;
+    font-size: 0.65rem; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: #111; 
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 4px; 
+    margin-top: 40px;
+}
+
+/* ABOUT/CONTACT */
 .text-block.centered { margin: 100px auto; text-align: center; max-width: 500px; }
 .text-block h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2rem; margin-bottom: 20px; }
 .text-block p { line-height: 1.8; font-size: 0.95rem; }
