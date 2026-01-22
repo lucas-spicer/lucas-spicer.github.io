@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Spicer</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=1.4">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.5">
 </head>
 <body>
 
@@ -28,51 +28,87 @@
         
         <section id="work" class="page-section active-section">
             <div class="project-grid">
-                <div class="project-item" onclick="showSection('project-one')">
+                <div class="project-item" onclick="showSection('project-1')">
                     <div class="image-container"><img src="images/project1.jpg" alt="P1"></div>
-                    <div class="project-info">
-                        <span class="title">Project One</span>
-                        <span class="category">Identity — 2026</span>
-                    </div>
+                    <div class="project-info"><span class="title">Project One</span><span class="category">Identity — 2026</span></div>
                 </div>
-                <div class="project-item" onclick="showSection('project-two')">
+                <div class="project-item" onclick="showSection('project-2')">
                     <div class="image-container"><img src="images/project2.jpg" alt="P2"></div>
-                    <div class="project-info">
-                        <span class="title">Project Two</span>
-                        <span class="category">Editorial — 2026</span>
-                    </div>
+                    <div class="project-info"><span class="title">Project Two</span><span class="category">Editorial — 2026</span></div>
+                </div>
+                <div class="project-item" onclick="showSection('project-3')">
+                    <div class="image-container"><img src="images/project3.jpg" alt="P3"></div>
+                    <div class="project-info"><span class="title">Project Three</span><span class="category">Digital — 2026</span></div>
+                </div>
+                <div class="project-item" onclick="showSection('project-4')">
+                    <div class="image-container"><img src="images/project4.jpg" alt="P4"></div>
+                    <div class="project-info"><span class="title">Project Four</span><span class="category">Branding — 2026</span></div>
+                </div>
+                <div class="project-item" onclick="showSection('project-5')">
+                    <div class="image-container"><img src="images/project5.jpg" alt="P5"></div>
+                    <div class="project-info"><span class="title">Project Five</span><span class="category">Campaign — 2026</span></div>
+                </div>
+                <div class="project-item" onclick="showSection('project-6')">
+                    <div class="image-container"><img src="images/project6.jpg" alt="P6"></div>
+                    <div class="project-info"><span class="title">Project Six</span><span class="category">Art Direction — 2026</span></div>
                 </div>
             </div>
         </section>
 
-        <section id="project-one" class="page-section">
+        <section id="project-1" class="page-section">
             <div class="project-detail">
-                <div class="detail-header">
-                    <h1>Project One</h1>
-                    <p class="category">Identity / 2026</p>
-                </div>
-                <div class="detail-content">
-                    <img src="images/project1.jpg" alt="Project Full">
-                    <div class="text-block">
-                        <p>Art direction and digital design for Project One.</p>
-                    </div>
-                </div>
+                <div class="detail-header"><h1>Project One</h1><p class="category">Identity / 2026</p></div>
+                <div class="detail-content"><img src="images/project1.jpg" alt="Full View"><div class="text-block"><p>Art direction and digital design focusing on high-end minimalist aesthetics.</p></div></div>
+                <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
+            </div>
+        </section>
+
+        <section id="project-2" class="page-section">
+            <div class="project-detail">
+                <div class="detail-header"><h1>Project Two</h1><p class="category">Editorial / 2026</p></div>
+                <div class="detail-content"><img src="images/project2.jpg" alt="Full View"><div class="text-block"><p>A collection of editorial works inspired by classic typography and modern grit.</p></div></div>
+                <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
+            </div>
+        </section>
+
+        <section id="project-3" class="page-section">
+            <div class="project-detail">
+                <div class="detail-header"><h1>Project Three</h1><p class="category">Digital / 2026</p></div>
+                <div class="detail-content"><img src="images/project3.jpg" alt="Full View"><div class="text-block"><p>Exploring the intersection of technology and art through digital interfaces.</p></div></div>
+                <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
+            </div>
+        </section>
+
+        <section id="project-4" class="page-section">
+            <div class="project-detail">
+                <div class="detail-header"><h1>Project Four</h1><p class="category">Branding / 2026</p></div>
+                <div class="detail-content"><img src="images/project4.jpg" alt="Full View"><div class="text-block"><p>Comprehensive brand identity systems built for the modern era.</p></div></div>
+                <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
+            </div>
+        </section>
+
+        <section id="project-5" class="page-section">
+            <div class="project-detail">
+                <div class="detail-header"><h1>Project Five</h1><p class="category">Campaign / 2026</p></div>
+                <div class="detail-content"><img src="images/project5.jpg" alt="Full View"><div class="text-block"><p>Multi-channel creative campaigns designed for global impact.</p></div></div>
+                <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
+            </div>
+        </section>
+
+        <section id="project-6" class="page-section">
+            <div class="project-detail">
+                <div class="detail-header"><h1>Project Six</h1><p class="category">Art Direction / 2026</p></div>
+                <div class="detail-content"><img src="images/project6.jpg" alt="Full View"><div class="text-block"><p>Visual storytelling through deliberate composition and tone.</p></div></div>
                 <a href="javascript:void(0)" onclick="showSection('work')" class="back-btn">← Back to Projects</a>
             </div>
         </section>
 
         <section id="about" class="page-section">
-            <div class="text-block centered">
-                <h2>About</h2>
-                <p>Lucas Spicer is an Art Director and Designer focused on creating timeless digital experiences.</p>
-            </div>
+            <div class="text-block centered"><h2>About</h2><p>Lucas Spicer is an Art Director and Designer focused on creating timeless digital experiences.</p></div>
         </section>
 
         <section id="contact" class="page-section">
-            <div class="text-block centered">
-                <h2>Contact</h2>
-                <p>Inquiries: <a href="mailto:hello@lucasspicer.com">hello@lucasspicer.com</a></p>
-            </div>
+            <div class="text-block centered"><h2>Contact</h2><p>Inquiries: <a href="mailto:hello@lucasspicer.com">hello@lucasspicer.com</a></p></div>
         </section>
 
     </main>
@@ -91,7 +127,6 @@
             if(['work', 'about', 'contact'].includes(sectionId)) {
                 document.getElementById('link-' + sectionId).classList.add('active');
             }
-            
             window.scrollTo(0, 0);
         }
     </script>
