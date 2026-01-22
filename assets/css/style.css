@@ -133,6 +133,11 @@ body {
     color: #000; 
 }
 
+.bio-intro-small { 
+    margin-bottom: 25px;
+}
+
+
 .about-container h2 { 
     font-family: var(--serif); 
     font-style: italic; 
