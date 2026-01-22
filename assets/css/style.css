@@ -2,8 +2,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg: #fcfcfc;
+    --bg: #ffffff;
     --black: #111111;
+    --border: #e5e5e5;
     --serif: 'Crimson Text', serif;
     --sans: 'Inter', sans-serif;
 }
@@ -15,36 +16,42 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- SLIM ALD HEADER --- */
-.ald-header {
-    padding: 30px 20px 20px;
-    background: var(--bg);
-    position: sticky;
+/* --- YOUR SPECIFIC FIXED HEADER --- */
+.header {
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    text-align: center;
+    left: 0;
+    width: 100%;
+    height: 61px;
+    z-index: 101;
+    border-bottom: 1px solid var(--border);
+    transition: background .35s cubic-bezier(.645,.045,.355,1);
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Logo left, Nav right */
+    align-items: center;
 }
 
 .ald-logo {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.3em;
     text-decoration: none;
     color: var(--black);
-    display: block;
-    margin-bottom: 18px;
     text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 35px;
-    border-top: 1px solid #eeeeee;
-    max-width: 400px;
-    margin: 0 auto;
-    padding-top: 18px;
+    gap: 30px;
 }
 
 .nav-links a {
@@ -61,7 +68,11 @@ body {
     opacity: 1;
 }
 
-/* --- MAIN LAYOUT --- */
+/* --- LAYOUT UTILS --- */
+.header-spacer {
+    height: 61px; /* Matches header height */
+}
+
 .main-content {
     max-width: 1300px;
     margin: 0 auto;
@@ -71,46 +82,33 @@ body {
 .page-section { display: none; }
 .active-section { display: block; }
 
-/* --- THE LOOKBOOK GRID --- */
+/* --- GRID & PROJECTS --- */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-.project-item {
-    cursor: pointer;
-    margin-bottom: 40px;
-}
+.project-item { cursor: pointer; margin-bottom: 40px; }
 
 .image-container {
     background-color: #f3f3f3;
-    aspect-ratio: 4 / 5; /* ALD Portrait Ratio */
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.4s ease;
-}
-
-.project-item:hover img {
-    opacity: 0.85;
-}
-
-.project-info {
-    text-align: left;
 }
 
 .title {
     display: block;
     font-family: var(--serif);
     font-style: italic;
-    font-size: 1.25rem;
-    margin-bottom: 3px;
+    font-size: 1.2rem;
 }
 
 .category {
@@ -120,67 +118,18 @@ body {
     opacity: 0.5;
 }
 
-/* --- PROJECT DETAIL PAGES --- */
-.project-detail {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 20px 0 100px;
-}
+/* --- PROJECT DETAIL --- */
+.project-detail { max-width: 900px; margin: 0 auto; text-align: left; }
+.detail-header h1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.2rem; margin-bottom: 10px; }
+.detail-content img { width: 100%; margin-bottom: 20px; }
+.back-btn { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
 
-.detail-header {
-    margin-bottom: 50px;
-}
+/* --- ABOUT/CONTACT --- */
+.text-block.centered { margin: 100px auto; text-align: center; max-width: 500px; }
+.text-block h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2rem; margin-bottom: 20px; }
+.text-block p { line-height: 1.8; font-size: 0.95rem; }
 
-.detail-header h1 {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.detail-content img {
-    width: 100%;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 50px;
-    text-decoration: none;
-    color: var(--black);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    padding-bottom: 4px;
-}
-
-/* --- TEXT BLOCKS (ABOUT/CONTACT) --- */
-.text-block {
-    max-width: 550px;
-    line-height: 1.8;
-    font-size: 0.95rem;
-}
-
-.text-block.centered {
-    margin: 100px auto;
-    text-align: center;
-}
-
-.text-block h2 {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* --- MOBILE --- */
 @media (max-width: 768px) {
     .project-grid { grid-template-columns: 1fr; }
-    .ald-header { padding: 30px 20px; }
-    .nav-links { gap: 20px; }
+    .header-inner { padding: 0 20px; }
 }
