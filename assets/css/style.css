@@ -61,7 +61,7 @@ body {
 .detail-specs { border-top: 1px solid var(--border); margin-top: 30px; padding-top: 20px; }
 .spec-item { display: flex; justify-content: space-between; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; }
 .spec-item span:first-child { opacity: 0.4; }
-.detail-navigation { display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+.detail-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
 .nav-link { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: var(--black); letter-spacing: 0.12em; border-bottom: 1px solid transparent; transition: 0.3s; }
 .nav-link:hover { border-bottom: 1px solid var(--black); }
 
