@@ -114,7 +114,7 @@ body {
 }
 
 .image-container {
-    background-color: #f3f3f3;
+    background-color: #F6F6F6;
     overflow: hidden;
     margin-bottom: 12px;
     /* This creates a consistent box for images to sit in */
@@ -159,6 +159,11 @@ body {
     text-align: left; 
 }
 
+.h2-title {
+padding-bottom: 20px;
+border-bottom: solid 1px var(--border)
+}
+
 .bio-intro { 
     font-size: 1.4rem; 
     line-height: 1.4; 
@@ -178,7 +183,6 @@ body {
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
     gap: 40px; 
-    border-top: 1px solid var(--border); 
     padding-top: 40px; 
 }
 
