@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Spicer | Designer & Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=1.8">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.9">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
                     <div class="image-container"><img src="assets/images/Canvas.png" alt="Canvas"></div>
                     <div class="project-info">
                         <span class="title">Canvas</span>
-                        <span class="category">Software — 2026</span>
+                        <span class="category">Identity — 2026</span>
                     </div>
                 </article>
 
@@ -40,39 +40,62 @@
                     <div class="image-container"><img src="assets/images/Watermelon.png" alt="Watermelon"></div>
                     <div class="project-info">
                         <span class="title">Watermelon</span>
-                        <span class="category">Digital — 2025</span>
+                        <span class="category">Digital — 2026</span>
                     </div>
                 </article>
 
-                </div>
+                <article class="project-item" onclick="showSection('calico')">
+                    <div class="image-container"><img src="assets/images/Calico.png" alt="Calico"></div>
+                    <div class="project-info">
+                        <span class="title">Calico</span>
+                        <span class="category">Editorial — 2026</span>
+                    </div>
+                </article>
+
+                <article class="project-item" onclick="showSection('logos')">
+                    <div class="image-container"><img src="assets/images/Logos.png" alt="Logos"></div>
+                    <div class="project-info">
+                        <span class="title">Logos</span>
+                        <span class="category">Branding — 2026</span>
+                    </div>
+                </article>
+
+                <article class="project-item" onclick="showSection('design-work')">
+                    <div class="image-container"><img src="assets/images/Design Work.png" alt="Design Work"></div>
+                    <div class="project-info">
+                        <span class="title">Design Work</span>
+                        <span class="category">Case Study — 2026</span>
+                    </div>
+                </article>
+
+                <article class="project-item" onclick="showSection('inspiration-project')">
+                    <div class="image-container"><img src="assets/images/Inspiration.png" alt="Inspiration"></div>
+                    <div class="project-info">
+                        <span class="title">Inspiration</span>
+                        <span class="category">Curation — 2026</span>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <section id="watermelon" class="page-section">
+        <section id="canvas" class="page-section">
             <div class="project-detail-container">
                 <div class="detail-gallery">
-                    <img src="assets/images/watermelon/watermelon-1.png" alt="Detail 1">
-                    <img src="assets/images/watermelon/watermelon-2.png" alt="Detail 2">
-                    <img src="assets/images/watermelon/watermelon-3.png" alt="Detail 3">
-                    <img src="assets/images/watermelon/watermelon-4.png" alt="Detail 4">
-                    <img src="assets/images/watermelon/watermelon-5.png" alt="Detail 5">
-                    <img src="assets/images/watermelon/watermelon-6.png" alt="Detail 6">
+                    <img src="assets/images/Canvas.png" alt="Canvas 1">
+                    <img src="assets/images/Canvas.png" alt="Canvas 2">
                 </div>
-
                 <aside class="detail-sidebar">
                     <div class="sticky-content">
-                        <h1 class="serif-italic">Watermelon</h1>
-                        <p class="category">Digital / Website / 2025</p>
-                        
+                        <h1 class="serif-italic">Canvas</h1>
+                        <p class="category">Identity / 2026</p>
                         <div class="detail-description">
-                            <p class="description-lead">Complete brand overhaul for a design platform.</p>
-                            <p>Replacing outdated tools with collaborative practices. The rebrand contributed to new client wins and stronger proposals.</p>
+                            <p class="description-lead">Visual exploration of geometric forms and modernist grids.</p>
+                            <p>This project involved creating a flexible identity system for a contemporary art space, focusing on negative space and typography.</p>
                         </div>
-
                         <div class="detail-specs">
-                            <div class="spec-item"><span>Role</span><span>Lead Designer</span></div>
-                            <div class="spec-item"><span>Tools</span><span>Figma, CSS</span></div>
+                            <div class="spec-item"><span>Role</span><span>Creative Director</span></div>
+                            <div class="spec-item"><span>Deliverable</span><span>Brand Guidelines</span></div>
                         </div>
-
                         <div class="detail-navigation">
                             <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
                             <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
@@ -82,26 +105,156 @@
             </div>
         </section>
 
+        <section id="watermelon" class="page-section">
+            <div class="project-detail-container">
+                <div class="detail-gallery">
+                    <img src="assets/images/Watermelon.png" alt="Watermelon 1">
+                    <img src="assets/images/Watermelon.png" alt="Watermelon 2">
+                </div>
+                <aside class="detail-sidebar">
+                    <div class="sticky-content">
+                        <h1 class="serif-italic">Watermelon</h1>
+                        <p class="category">Digital / 2026</p>
+                        <div class="detail-description">
+                            <p class="description-lead">A complete brand overhaul for a design platform.</p>
+                            <p>Modernizing the creative workflow by replacing outdated tools with collaborative practices. Rated 9.5/10 by Gartner partners.</p>
+                        </div>
+                        <div class="detail-specs">
+                            <div class="spec-item"><span>Role</span><span>Lead Designer</span></div>
+                            <div class="spec-item"><span>Platform</span><span>Web Design</span></div>
+                        </div>
+                        <div class="detail-navigation">
+                            <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                            <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="calico" class="page-section">
+            <div class="project-detail-container">
+                <div class="detail-gallery">
+                    <img src="assets/images/Calico.png" alt="Calico 1">
+                    <img src="assets/images/Calico.png" alt="Calico 2">
+                </div>
+                <aside class="detail-sidebar">
+                    <div class="sticky-content">
+                        <h1 class="serif-italic">Calico</h1>
+                        <p class="category">Editorial / 2026</p>
+                        <div class="detail-description">
+                            <p class="description-lead">Experimental typography and layout for print.</p>
+                            <p>An exploration of tactile materials and the intersection of traditional publishing with digital-native aesthetics.</p>
+                        </div>
+                        <div class="detail-specs">
+                            <div class="spec-item"><span>Role</span><span>Editorial Designer</span></div>
+                            <div class="spec-item"><span>Format</span><span>Print / 120 Pages</span></div>
+                        </div>
+                        <div class="detail-navigation">
+                            <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                            <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="logos" class="page-section">
+            <div class="project-detail-container">
+                <div class="detail-gallery"><img src="assets/images/Logos.png" alt="Logos"></div>
+                <aside class="detail-sidebar">
+                    <div class="sticky-content">
+                        <h1 class="serif-italic">Logos</h1>
+                        <p class="category">Branding / 2026</p>
+                        <div class="detail-description"><p>A collection of marks designed for scale and clarity.</p></div>
+                        <div class="detail-navigation">
+                            <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                            <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="design-work" class="page-section">
+            <div class="project-detail-container">
+                <div class="detail-gallery"><img src="assets/images/Design Work.png" alt="Design Work"></div>
+                <aside class="detail-sidebar">
+                    <div class="sticky-content">
+                        <h1 class="serif-italic">Design Work</h1>
+                        <p class="category">Case Study / 2026</p>
+                        <div class="detail-description"><p>Deep dive into product thinking and user-centric design cycles.</p></div>
+                        <div class="detail-navigation">
+                            <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                            <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="inspiration-project" class="page-section">
+            <div class="project-detail-container">
+                <div class="detail-gallery"><img src="assets/images/Inspiration.png" alt="Inspiration"></div>
+                <aside class="detail-sidebar">
+                    <div class="sticky-content">
+                        <h1 class="serif-italic">Inspiration</h1>
+                        <p class="category">Curation / 2026</p>
+                        <div class="detail-description"><p>A curated archive of references across art, architecture, and technology.</p></div>
+                        <div class="detail-navigation">
+                            <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                            <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+
         <section id="about" class="page-section">
             <div class="about-container">
-                <h2 class="h2-title">About</h2>
-                <p class="bio-intro">Designer & Front-End Developer</p>
+                <div class="text-block">
+                    <h2 class="h2-title">About</h2>
+                    <p class="bio-intro">Designer & Front-End Developer</p>
+                    <p class="bio-intro-small">5+ years of experience building digital products to the highest standard. My background in art and music informs my eye for detail, helping me create interfaces that feel balanced and intuitive.</p>
+                </div>
                 <div class="info-grid">
                     <div class="info-column">
                         <h3>Skills</h3>
-                        <ul><li>UI Design</li><li>UX Design</li><li>Branding</li></ul>
+                        <ul><li>UI Design</li><li>UX Design</li><li>Graphic Design</li><li>Web Design</li><li>Branding and Strategy</li></ul>
                     </div>
+                    <div class="info-column">
+                        <h3>Expertise</h3>
+                        <ul><li>Figma</li><li>Sketch</li><li>Adobe Suite</li><li>HTML</li><li>CSS</li></ul>
                     </div>
+                    <div class="info-column">
+                        <h3>Inspiration</h3>
+                        <ul><li>Apple</li><li>Google</li><li>Nothing</li><li>Nike</li><li>Aimé Leon Dore</li><li>Denis Villeneuve</li></ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="page-section">
             <div class="about-container">
-                <h2 class="h2-title">Contact</h2>
+                <div class="text-block">
+                    <h2 class="h2-title">Contact</h2>
+                </div>
                 <div class="info-grid">
                     <div class="info-column">
                         <h3>Inquiries</h3>
                         <ul><li><a href="mailto:lucasspicer@icloud.com">lucasspicer@icloud.com</a></li></ul>
+                    </div>
+                    <div class="info-column">
+                        <h3>Social</h3>
+                        <ul>
+                            <li><a href="https://www.instagram.com/lspicer_/" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/in/lucas-spicer/" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="info-column">
+                        <h3>Location</h3>
+                        <ul><li>London / Remote</li></ul>
                     </div>
                 </div>
             </div>
@@ -110,31 +263,22 @@
     </main>
 
     <script>
-        // List IDs in the order you want them to appear
         const projectOrder = ['canvas', 'watermelon', 'calico', 'logos', 'design-work', 'inspiration-project'];
         let currentProjectIndex = 0;
 
         function showSection(sectionId) {
-            document.querySelectorAll('.page-section').forEach(sec => {
-                sec.classList.remove('active-section');
-            });
-            
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
             const target = document.getElementById(sectionId);
             if(target) target.classList.add('active-section');
             
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-            });
-            
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
             if(['work', 'about', 'contact'].includes(sectionId)) {
                 const navLink = document.getElementById('link-' + sectionId);
                 if(navLink) navLink.classList.add('active');
             }
 
-            // Track index for Next Project logic
             const index = projectOrder.indexOf(sectionId);
             if (index !== -1) currentProjectIndex = index;
-
             window.scrollTo(0, 0);
         }
 
