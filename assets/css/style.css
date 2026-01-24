@@ -114,11 +114,9 @@ body {
 }
 
 .image-container {
-    background-color: #f3f3f3;
+    background-color: #F6F6F6;
     overflow: hidden;
     margin-bottom: 12px;
-    /* This creates a consistent box for images to sit in */
-    aspect-ratio: 4 / 5; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +125,6 @@ body {
 .image-container img {
     width: 100%;
     height: 100%;
-    /* 'contain' ensures the whole image is visible without cropping */
     object-fit: contain; 
     transition: opacity 0.5s ease;
 }
