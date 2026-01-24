@@ -99,6 +99,113 @@ body {
 .page-section { display: none; }
 .active-section { display: block; }
 
+
+/* --- PROJECT DETAIL (LOOKBOOK STYLE) --- */
+
+.project-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Large gallery, fixed sidebar width */
+    gap: 60px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+/* The Gallery */
+.detail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-gallery img {
+    width: 100%;
+    height: auto;
+    background-color: #F6F6F6;
+    display: block;
+}
+
+/* Sticky Sidebar */
+.detail-sidebar {
+    position: sticky;
+    top: 101px; /* Header height + extra breathing room */
+}
+
+.serif-italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.description-lead {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.detail-description p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Metadata Specs */
+.detail-specs {
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.spec-item span:first-child {
+    opacity: 0.4;
+}
+
+/* Back Button */
+.back-link {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.back-link:hover {
+    border-bottom: 1px solid var(--black);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 1024px) {
+    .project-detail-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        gap: 40px;
+    }
+
+    .detail-sidebar {
+        position: static; /* Remove sticky on mobile */
+        order: -1; /* Move text above images on mobile if preferred */
+    }
+    
+    .serif-italic {
+        font-size: 1.8rem;
+    }
+}
+
 /* --- GRID --- */
 .project-grid {
     display: grid;
