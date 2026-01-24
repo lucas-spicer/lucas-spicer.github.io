@@ -1,10 +1,21 @@
 /* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 :root {
+    /* Layout Constants */
+    --max-width: 1440px;
+    --container-padding: 40px;
+    
+    /* Brand Colors */
     --bg: #ffffff;
     --black: #111111;
     --border: #e5e5e5;
+    
+    /* Typography */
     --serif: 'Crimson Text', serif;
     --sans: 'Inter', sans-serif;
 }
@@ -14,6 +25,7 @@ body {
     color: var(--black);
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
 }
 
 /* --- FIXED HEADER --- */
@@ -25,14 +37,17 @@ body {
     height: 61px;
     z-index: 101;
     border-bottom: 1px solid var(--border);
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency for a modern feel */
+    backdrop-filter: blur(5px); /* Blurs content behind header */
     display: flex;
     align-items: center;
 }
 
 .header-inner {
     width: 100%;
-    padding: 0 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,23 +72,27 @@ body {
     text-transform: uppercase;
     font-size: 0.6rem;
     letter-spacing: 0.12em;
-    cursor: pointer;
+    text-decoration: none;
     color: var(--black);
     opacity: 0.4;
     transition: opacity 0.3s ease;
 }
 
-.nav-links a.active, .nav-links a:hover {
+.nav-links a.active, 
+.nav-links a:hover {
     opacity: 1;
 }
 
-.header-spacer { height: 61px; }
+/* Offsets content so it doesn't hide under the fixed header */
+.header-spacer { 
+    height: 61px; 
+}
 
 /* --- MAIN LAYOUT --- */
 .main-content {
-    max-width: 1300px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px var(--container-padding); /* Added top padding for breathing room */
 }
 
 .page-section { display: none; }
@@ -82,33 +101,42 @@ body {
 /* --- GRID --- */
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     row-gap: 60px;
 }
 
-.project-item { cursor: pointer; }
+.project-item { 
+    text-decoration: none; 
+    color: inherit;
+    cursor: pointer; 
+}
 
 .image-container {
     background-color: #f3f3f3;
     overflow: hidden;
     margin-bottom: 12px;
+    aspect-ratio: 4 / 5; /* Keeps thumbnails uniform */
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transition: opacity 0.5s ease;
+    object-fit: cover; /* Changed from contain to cover for a cleaner grid */
+    transition: transform 0.6s ease, opacity 0.5s ease;
 }
 
-.project-item:hover img { opacity: 0.8; }
+.project-item:hover img { 
+    opacity: 0.9; 
+    transform: scale(1.02); /* Subtle zoom effect */
+}
 
 .title {
     display: block;
     font-family: var(--serif);
     font-style: italic;
     font-size: 1.25rem;
+    margin-top: 8px;
 }
 
 .category {
@@ -119,9 +147,10 @@ body {
 }
 
 /* --- ABOUT & CONTACT --- */
-.about-container { 
-    max-width: 900px; 
-    margin: 60px auto; 
+.about-container, 
+.project-detail { 
+    max-width: 900px; /* Kept narrower for readability */
+    margin: 60px 0;   /* Removed auto-margin so it aligns LEFT with your logo */
     text-align: left; 
 }
 
@@ -131,11 +160,6 @@ body {
     margin-bottom: 25px; 
     color: #000; 
 }
-
-.bio-intro-small { 
-    margin-bottom: 25px;
-}
-
 
 .about-container h2 { 
     font-family: var(--serif); 
@@ -163,18 +187,23 @@ body {
 
 .info-column ul { list-style: none; }
 .info-column ul li { font-size: 0.9rem; line-height: 2; }
-.info-column ul li a { color: var(--black); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.info-column ul li a { 
+    color: var(--black); 
+    text-decoration: none; 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+}
 .info-column ul li a:hover { border-bottom: 1px solid var(--black); }
-
-/* --- DETAIL PAGES --- */
-.project-detail { max-width: 900px; margin: 0 auto; text-align: left; }
-.detail-header h1 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.5rem; margin-bottom: 10px; }
-.detail-content img { width: 100%; margin-bottom: 20px; display: block; }
-.back-btn { display: inline-block; margin-top: 40px; font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: #111; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
+    :root {
+        --container-padding: 20px; /* Less padding on mobile */
+    }
+    
     .project-grid { grid-template-columns: 1fr; }
     .info-grid { grid-template-columns: 1fr; }
-    .header-inner { padding: 0 20px; }
+    
+    .about-container h2 {
+        font-size: 2rem;
+    }
 }
