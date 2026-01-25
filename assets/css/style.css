@@ -36,7 +36,7 @@ body {
 .header-spacer { height: 61px; }
 
 /* --- MAIN LAYOUT --- */
-.main-content { max-width: var(--max-width); margin: 0 auto; padding: 20px var(--container-padding); }
+.main-content { max-width: var(--max-width); margin: 0 auto; padding: 40px var(--container-padding); }
 .page-section { display: none; }
 .active-section { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
