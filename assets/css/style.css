@@ -72,7 +72,7 @@ body {
 /* --- ABOUT & CONTACT (RESTORED ORIGINAL) --- */
 .about-container { max-width: 900px; text-align: left; }
 .about-container h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.5rem; margin-bottom: 30px; }
-.h2-title { padding-bottom: 20px; border-bottom: solid 1px var(--border); }
+.h2-title { padding-bottom: 30px; border-bottom: solid 1px var(--border); }
 .bio-intro { font-size: 1.4rem; line-height: 1.4; margin-bottom: 30px; color: #000; }
 .bio-intro-small { font-size: 1rem; opacity: 0.8; line-height: 1.4; }
 .bio-intro-quote { font-size: 1rem; line-height: 1.4; margin-top: 30px; opacity: 0.5;}
