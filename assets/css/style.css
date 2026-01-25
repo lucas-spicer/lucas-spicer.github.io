@@ -74,6 +74,7 @@ body {
     font-size: 0.6rem;
     text-transform: uppercase;
     padding: 4px 8px;
+    width: 80px;
     cursor: pointer;
     letter-spacing: 0.1em;
     transition: all 0.2s ease;
