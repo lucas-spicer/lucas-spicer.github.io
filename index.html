@@ -18,7 +18,7 @@
                     <li><a onclick="showSection('work')" id="link-work" class="active">Work</a></li>
                     <li><a onclick="showSection('about')" id="link-about">About</a></li>
                     <li><a onclick="showSection('contact')" id="link-contact">Contact</a></li>
-                    <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Dark</button></li>
+                    <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Light</button></li>
                 </ul>
             </nav>
         </div>
@@ -377,7 +377,7 @@
     const isDark = body.classList.toggle('dark-mode');
     
     // Update button text
-    btn.innerText = isDark ? 'Light' : 'Dark';
+    btn.innerText = isDark ? 'Dark' : 'Light';
     
     // Handle Image Swapping
     const images = document.querySelectorAll('img');
