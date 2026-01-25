@@ -10,19 +10,25 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-inner">
-            <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a onclick="showSection('work')" id="link-work" class="active">Work</a></li>
-                    <li><a onclick="showSection('about')" id="link-about">About</a></li>
-                    <li><a onclick="showSection('contact')" id="link-contact">Contact</a></li>
-                    <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Dark</button></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header class="header">
+    <div class="header-inner">
+        <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a onclick="handleNav('work')" id="link-work" class="active">Work</a></li>
+                <li><a onclick="handleNav('about')" id="link-about">About</a></li>
+                <li><a onclick="handleNav('contact')" id="link-contact">Contact</a></li>
+                <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Dark</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <div class="header-spacer"></div>
 
@@ -420,6 +426,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // This ensures the button text and images are correct on refresh
     updateThemeUI(isDark);
 });
+
+
+        function toggleMenu() {
+    document.body.classList.toggle('mobile-menu-open');
+}
+
+// Closes menu after clicking a link
+function handleNav(sectionId) {
+    document.body.classList.remove('mobile-menu-open');
+    showSection(sectionId);
+}
+
+// Update your existing toggleTheme function slightly to make sure 
+// the images swap even when inside the mobile menu
+function toggleTheme() {
+    const body = document.body;
+    const isDark = body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+}
         
     </script>
 </body>
