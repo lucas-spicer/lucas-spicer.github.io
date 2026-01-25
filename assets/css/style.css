@@ -73,10 +73,10 @@ body {
 .about-container { max-width: 900px; text-align: left; }
 .about-container h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.5rem; margin-bottom: 30px; }
 .h2-title { padding-bottom: 20px; border-bottom: solid 1px var(--border); }
-.bio-intro { font-size: 1.4rem; line-height: 1.4; margin-bottom: 25px; color: #000; }
-.bio-intro-small { font-size: 1rem; opacity: 0.5; line-height: 1.4; }
-.bio-intro-quote { font-size: 1rem; line-height: 1.4; margin-top: 25px; font-weight: 500; }
-.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 40px; }
+.bio-intro { font-size: 1.4rem; line-height: 1.4; margin-bottom: 30px; color: #000; }
+.bio-intro-small { font-size: 1rem; opacity: 0.8; line-height: 1.4; }
+.bio-intro-quote { font-size: 1rem; line-height: 1.4; margin-top: 30px; opacity: 0.5;}
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 30px; }
 .info-column h3 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; opacity: 0.4; }
 .info-column ul { list-style: none; }
 .info-column ul li { font-size: 0.9rem; line-height: 2; }
