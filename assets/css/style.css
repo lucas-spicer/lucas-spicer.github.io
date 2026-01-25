@@ -100,7 +100,7 @@ body {
     color: var(--text);
     text-transform: uppercase;
 }
-.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links { list-style: none; display: flex; gap: 40px; }
 .nav-links a { text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.12em; text-decoration: none; color: var(--text); opacity: 0.4; transition: 0.3s; cursor: pointer; }
 .nav-links a.active, .nav-links a:hover { opacity: 1; }
 .header-spacer { height: 61px; }
