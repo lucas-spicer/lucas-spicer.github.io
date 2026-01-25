@@ -11,12 +11,15 @@
     --sans: 'Inter', sans-serif;
 }
 
+html {
+     overscroll-behavior-y: none;
+}
+
 body {
     background-color: var(--bg);
     color: var(--black);
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
-     overscroll-behavior-y: none;
 }
 
 /* --- FIXED HEADER --- */
