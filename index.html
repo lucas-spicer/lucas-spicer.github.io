@@ -370,6 +370,42 @@
             const nextIndex = (currentProjectIndex + 1) % projectOrder.length;
             showSection(projectOrder[nextIndex]);
         }
+
+        function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('theme-btn');
+    const isDark = body.classList.toggle('dark-mode');
+    
+    // Update button text
+    btn.innerText = isDark ? 'Light' : 'Dark';
+    
+    // Handle Image Swapping
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        let currentSrc = img.getAttribute('src');
+        
+        if (isDark) {
+            // Avoid double-adding -dark if it's already there
+            if (!currentSrc.includes('-dark.png')) {
+                img.src = currentSrc.replace('.png', '-dark.png');
+            }
+        } else {
+            // Remove -dark when returning to light mode
+            img.src = currentSrc.replace('-dark.png', '.png');
+        }
+    });
+
+    // Optional: Save preference to local storage
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+// Check for saved user preference on page load
+window.onload = () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        toggleTheme();
+    }
+};
+        
     </script>
 </body>
 </html>
