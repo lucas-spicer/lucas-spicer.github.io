@@ -10,15 +10,6 @@
 </head>
 <body>
 
-    <script>
-        // Check for saved theme immediately to prevent flashing on load
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            // We can't change the button text yet because it hasn't loaded, 
-            // but the background will be dark instantly.
-        }
-    </script>
-
     <header class="header">
         <div class="header-inner">
             <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
@@ -27,7 +18,7 @@
                     <li><a onclick="showSection('work')" id="link-work" class="active">Work</a></li>
                     <li><a onclick="showSection('about')" id="link-about">About</a></li>
                     <li><a onclick="showSection('contact')" id="link-contact">Contact</a></li>
-                    <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Light</button></li>
+                    <li><button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">Dark</button></li>
                 </ul>
             </nav>
         </div>
@@ -381,15 +372,15 @@
         }
 
 
-        function toggleTheme() {
+function toggleTheme() {
     const body = document.body;
-    const btn = document.getElementById('theme-btn');
+    // 1. Toggle the class
     const isDark = body.classList.toggle('dark-mode');
     
-    // Save preference
+    // 2. Save the preference
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     
-    // Sync the UI (Button text and Images)
+    // 3. Update the UI immediately
     updateThemeUI(isDark);
 }
 
@@ -397,33 +388,37 @@ function updateThemeUI(isDark) {
     const btn = document.getElementById('theme-btn');
     const images = document.querySelectorAll('img');
 
-    // 1. Update Button Text
+    // Update Button Text
     if (btn) {
         btn.innerText = isDark ? 'Light' : 'Dark';
     }
 
-    // 2. Update Image Sources
+    // Update Image Sources
     images.forEach(img => {
         let currentSrc = img.getAttribute('src');
         if (isDark) {
-            if (!currentSrc.includes('-dark.png')) {
+            if (currentSrc && !currentSrc.includes('-dark.png')) {
                 img.src = currentSrc.replace('.png', '-dark.png');
             }
         } else {
-            img.src = currentSrc.replace('-dark.png', '.png');
+            if (currentSrc && currentSrc.includes('-dark.png')) {
+                img.src = currentSrc.replace('-dark.png', '.png');
+            }
         }
     });
 }
 
-// Run this on every page load
-window.addEventListener('DOMContentLoaded', () => {
+// Logic to run when the page is ready
+document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        // Body class is likely already handled by the inline script 
-        // in the head, but we ensure it here too.
+    const isDark = savedTheme === 'dark';
+    
+    if (isDark) {
         document.body.classList.add('dark-mode');
-        updateThemeUI(true);
     }
+    
+    // This ensures the button text and images are correct on refresh
+    updateThemeUI(isDark);
 });
         
     </script>
