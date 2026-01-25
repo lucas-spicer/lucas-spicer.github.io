@@ -23,7 +23,7 @@ body.dark-mode {
     --text: #FFFFFF;
     --text-p: #666666;
     --border: #E5E5E5;
-    --image-bg: #161618;
+    --image-bg: #000000;
     --header-bg: rgba(24, 24, 24, 0.95);
 }
 
