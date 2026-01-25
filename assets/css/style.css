@@ -51,7 +51,7 @@ body {
 .category { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; }
 
 /* --- PROJECT DETAIL (STICKY LOOKBOOK) --- */
-.project-detail-container { display: grid; grid-template-columns: 1fr 350px; gap: 60px; align-items: start; }
+.project-detail-container { display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; }
 .detail-gallery { display: flex; flex-direction: column; gap: 20px; }
 .detail-gallery img { width: 100%; height: auto; background-color: #F6F6F6; display: block; }
 .detail-sidebar { position: sticky; top: 101px; height: fit-content; }
