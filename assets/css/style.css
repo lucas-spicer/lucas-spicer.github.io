@@ -16,6 +16,7 @@ body {
     color: var(--black);
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
+     overscroll-behavior-y: none;
 }
 
 /* --- FIXED HEADER --- */
