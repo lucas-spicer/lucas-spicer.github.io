@@ -407,6 +407,11 @@
     // Optional: Save preference to local storage
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
+        // Check for saved user preference on page load
+       window.onload = () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        toggleTheme();
+    }
 
 };
         
