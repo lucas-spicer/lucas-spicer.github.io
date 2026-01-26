@@ -17,7 +17,7 @@
     --header-bg: rgba(255, 255, 255, 0.95);
 }
 
-/* Dark Mode Overrides - Applied to html for Safari Browser Chrome compatibility */
+/* Force dark mode to cover the entire HTML and Body */
 html.dark-mode, 
 body.dark-mode {
     --bg: #181818;
@@ -32,7 +32,7 @@ html {
     background-color: var(--bg);
     transition: background-color 0.3s ease;
     overscroll-behavior-y: none;
-    min-height: 100%;
+    height: 100%;
 }
 
 body {
@@ -54,24 +54,14 @@ body {
 }
 
 .header-inner {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+    width: 100%; max-width: var(--max-width); margin: 0 auto;
+    padding: 0 var(--container-padding); display: flex;
+    justify-content: space-between; align-items: center; gap: 20px;
 }
 
 .ald-logo { 
-    flex-shrink: 0; 
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-decoration: none;
-    color: var(--text);
-    text-transform: uppercase;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em;
+    text-decoration: none; color: var(--text); text-transform: uppercase;
 }
 
 .nav-links { list-style: none; display: flex; gap: 40px; align-items: center; }
@@ -79,70 +69,57 @@ body {
 .nav-links a.active, .nav-links a:hover { opacity: 1; }
 .header-spacer { height: 61px; }
 
-/* Theme Toggle Styling */
 .theme-toggle {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    width: 60px;
-    cursor: pointer;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
+    background: none; border: 1px solid var(--border); color: var(--text);
+    font-size: 0.6rem; text-transform: uppercase; padding: 4px 8px;
+    width: 60px; cursor: pointer; letter-spacing: 0.1em; transition: all 0.3s ease;
 }
 
 /* --- MAIN LAYOUT --- */
-.main-content { max-width: var(--max-width); margin: 0 auto; padding: 40px var(--container-padding); }
-.page-section { display: none; }
+.main-content { 
+    max-width: var(--max-width); margin: 0 auto; 
+    padding: 40px var(--container-padding);
+    background-color: var(--bg); /* Ensures full coverage */
+}
+
+.page-section { display: none; background-color: var(--bg); }
 .active-section { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Transitions for sub-elements */
-.nav-links a, .ald-logo, .project-info span, .detail-description p, .spec-item, .h2-title, .info-column li, .image-container, .detail-specs {
+/* Universal transitions for theme switching */
+.nav-links a, .ald-logo, .project-info span, .detail-description p, 
+.spec-item, .h2-title, .info-column li, .image-container, .detail-specs, 
+.page-section, .main-content {
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* --- GRID (HOME) --- */
+/* --- GRID & GALLERY --- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; row-gap: 60px; }
-.project-item { cursor: pointer; }
 .image-container { background-color: var(--image-bg); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .image-container img { width: 100%; height: auto; transition: 0.5s; }
-.project-item:hover img { opacity: 0.7; }
 .title { display: block; font-family: var(--serif); font-style: italic; font-size: 1.25rem; margin-top: 8px; }
-.category { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; }
 
-/* --- PROJECT DETAIL --- */
 .project-detail-container { display: grid; grid-template-columns: 350px 1fr; gap: 50px; align-items: start; }
-.detail-gallery { display: flex; flex-direction: column; gap: 20px; }
-.detail-gallery img { width: 100%; height: auto; background-color: var(--image-bg); display: block; }
+.detail-gallery img { width: 100%; height: auto; background-color: var(--image-bg); display: block; margin-bottom: 20px; }
 .detail-sidebar { position: sticky; top: 101px; height: fit-content; }
+
 .serif-italic { font-family: var(--serif); font-style: italic; font-size: 2.2rem; font-weight: 400; margin-bottom: 5px; }
-.description-lead { font-size: 1rem; margin: 15px 0; font-weight: 500; line-height: 1.4; }
 .detail-description p { font-size: 0.8rem; color: var(--text-p); margin-bottom: 15px; line-height: 1.4; }
-.detail-specs { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-top: 15px; padding-top: 15px; padding-bottom: 15px; }
-.spec-item { display: flex; justify-content: space-between; font-size: 0.7rem; text-transform: normal; margin-bottom: 10px; }
-.spec-item span:first-child { opacity: 0.4; }
-.detail-navigation { display: flex; justify-content: space-between; padding-top: 15px;}
-.nav-link { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: var(--text); letter-spacing: 0.12em; border-bottom: 1px solid transparent; transition: 0.3s; }
-.nav-link:hover { border-bottom: 1px solid var(--text); }
+.detail-specs { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 15px 0; padding: 15px 0; }
+.spec-item { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 10px; }
 
-/* --- ABOUT & CONTACT --- */
-.about-container { max-width: 900px; text-align: left; }
-.about-container h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.5rem; margin-bottom: 30px; }
-.h2-title { padding-bottom: 15px; border-bottom: solid 1px var(--border); }
-.bio-intro { font-size: 1.4rem; line-height: 1.4; margin-bottom: 30px; color: var(--text); }
-.bio-intro-small { font-size: 1rem; opacity: 0.8; line-height: 1.4; }
-.bio-intro-quote { font-size: 1rem; line-height: 1.4; margin-top: 30px; opacity: 0.5;}
-.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 40px; }
-.info-column h3 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; opacity: 0.4; }
+/* Restored About/Contact Styling */
+.about-container { max-width: 900px; }
+.h2-title { padding-bottom: 15px; border-bottom: 1px solid var(--border); margin-bottom: 30px; font-family: var(--serif); font-style: italic; font-size: 2.5rem; }
+.bio-intro { font-size: 1.4rem; margin-bottom: 30px; }
+.info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.info-column h3 { font-size: 0.7rem; text-transform: uppercase; opacity: 0.4; margin-bottom: 20px; }
 .info-column ul { list-style: none; }
-.info-column ul li { font-size: 0.9rem; line-height: 2; }
-.info-column ul li a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.info-column li { font-size: 0.9rem; line-height: 2; }
+.info-column a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
 
-/* --- MOBILE MENU --- */
-.menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; z-index: 1000; }
+/* --- MOBILE --- */
+.menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
 .menu-toggle .bar { width: 25px; height: 1px; background-color: var(--text); transition: 0.3s; }
 
 @media (max-width: 1024px) {
@@ -154,13 +131,7 @@ body {
 
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
-    .main-nav {
-        position: fixed; top: 61px; left: 0; width: 100%; height: 0; 
-        background: var(--bg); overflow: hidden; transition: height 0.4s ease;
-    }
+    .main-nav { position: fixed; top: 61px; left: 0; width: 100%; height: 0; background: var(--bg); overflow: hidden; transition: 0.4s; }
     .mobile-menu-open .main-nav { height: calc(100vh - 61px); border-bottom: 1px solid var(--border); }
-    .nav-links { flex-direction: column; padding-top: 50px; gap: 40px; }
-    .nav-links a { font-size: 1.2rem; }
-    .mobile-menu-open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .mobile-menu-open .bar:nth-child(2) { transform: translateY(-1px) rotate(-45deg); }
+    .nav-links { flex-direction: column; padding-top: 50px; }
 }
