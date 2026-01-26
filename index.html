@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script>
-        // Immediate check to prevent flash
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode');
         }
@@ -86,12 +85,8 @@
                 </div>
             </aside>
             <div class="detail-gallery">
-                <img src="assets/images/watermelon/watermelon-1.png" alt="1">
-                <img src="assets/images/watermelon/watermelon-2.png" alt="2">
-                <img src="assets/images/watermelon/watermelon-3.png" alt="3">
-                <img src="assets/images/watermelon/watermelon-4.png" alt="4">
-                <img src="assets/images/watermelon/watermelon-5.png" alt="5">
-                <img src="assets/images/watermelon/watermelon-6.png" alt="6">
+                <img src="assets/images/watermelon/watermelon-1.png" alt="1"><img src="assets/images/watermelon/watermelon-2.png" alt="2"><img src="assets/images/watermelon/watermelon-3.png" alt="3">
+                <img src="assets/images/watermelon/watermelon-4.png" alt="4"><img src="assets/images/watermelon/watermelon-5.png" alt="5"><img src="assets/images/watermelon/watermelon-6.png" alt="6">
             </div>
         </div>
     </section>
@@ -231,7 +226,6 @@
             </div>
         </div>
     </section>
-
 </main>
 
 <script>
@@ -248,7 +242,6 @@
             const navLink = document.getElementById('link-' + sectionId);
             if(navLink) navLink.classList.add('active');
         }
-
         const index = projectOrder.indexOf(sectionId);
         if (index !== -1) currentProjectIndex = index;
         window.scrollTo(0, 0);
@@ -259,19 +252,20 @@
         showSection(projectOrder[nextIndex]);
     }
 
+    // THEME LOGIC
     function toggleTheme() {
         const html = document.documentElement;
         const isDark = html.classList.toggle('dark-mode');
-        
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         
-        // Update browser chrome
-        const meta = document.getElementById('theme-meta');
-        if(meta) meta.setAttribute('content', isDark ? '#181818' : '#ffffff');
-        
+        // 1. Update text & images
         updateThemeUI(isDark);
+        
+        // 2. Immediate Browser Chrome Fix
+        const metaTheme = document.getElementById('theme-meta');
+        if (metaTheme) metaTheme.setAttribute('content', isDark ? '#181818' : '#ffffff');
 
-        // FORCE REFLOW: This fixes the Safari browser UI color immediately
+        // 3. FORCE SAFARI RE-PAINT (This stops the need for refresh)
         html.style.display = 'none';
         html.offsetHeight; 
         html.style.display = '';
@@ -280,15 +274,10 @@
     function updateThemeUI(isDark) {
         const btn = document.getElementById('theme-btn');
         if (btn) btn.innerText = isDark ? 'Light' : 'Dark';
-
         document.querySelectorAll('img').forEach(img => {
             let src = img.getAttribute('src');
             if (!src) return;
-            if (isDark) {
-                if (!src.includes('-dark.png')) img.src = src.replace('.png', '-dark.png');
-            } else {
-                img.src = src.replace('-dark.png', '.png');
-            }
+            img.src = isDark ? (src.includes('-dark.png') ? src : src.replace('.png', '-dark.png')) : src.replace('-dark.png', '.png');
         });
     }
 
@@ -296,8 +285,8 @@
         const isDark = localStorage.getItem('theme') === 'dark';
         if (isDark) {
             document.documentElement.classList.add('dark-mode');
-            const meta = document.getElementById('theme-meta');
-            if(meta) meta.setAttribute('content', '#181818');
+            const metaTheme = document.getElementById('theme-meta');
+            if (metaTheme) metaTheme.setAttribute('content', '#181818');
         }
         updateThemeUI(isDark);
     });
@@ -305,6 +294,5 @@
     function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
     function handleNav(id) { document.body.classList.remove('mobile-menu-open'); showSection(id); }
 </script>
-
 </body>
 </html>
