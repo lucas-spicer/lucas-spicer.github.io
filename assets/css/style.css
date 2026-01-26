@@ -4,6 +4,7 @@
 html {
     /* This ensures the 'overflow' area matches the theme */
     background-color: var(--bg);
+    transition: background-color 0.3s ease;
 }
 
 
@@ -43,13 +44,13 @@ body.dark-mode {
 .h2-title,
 .info-column li,
 .image-container {
-    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Smooth border transitions for sections */
 .detail-specs, 
 .h2-title {
-    transition: border-color 0.2s ease;
+    transition: border-color 0.3s ease;
 }
 
 html {
@@ -60,7 +61,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -70,7 +71,7 @@ body {
     z-index: 101; border-bottom: 1px solid var(--border);
     background: var(--header-bg); backdrop-filter: blur(5px);
     display: flex; align-items: center;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Theme Toggle Styling */
@@ -84,7 +85,7 @@ body {
     width: 60px;
     cursor: pointer;
     letter-spacing: 0.1em;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 /* --- UPDATED HEADER LAYOUT --- */
