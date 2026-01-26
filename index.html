@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff" id="theme-meta">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Lucas Spicer | Designer & Front-End Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    
     <script>
-        // Check theme immediately to avoid white flash
+        // Immediate check to prevent flash
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark-mode');
         }
@@ -35,6 +35,7 @@
 <div class="header-spacer"></div>
 
 <main class="main-content">
+    
     <section id="work" class="page-section active-section">
         <div class="project-grid">
             <article class="project-item" onclick="showSection('watermelon')">
@@ -85,8 +86,12 @@
                 </div>
             </aside>
             <div class="detail-gallery">
-                <img src="assets/images/watermelon/watermelon-1.png" alt="1"><img src="assets/images/watermelon/watermelon-2.png" alt="2"><img src="assets/images/watermelon/watermelon-3.png" alt="3">
-                <img src="assets/images/watermelon/watermelon-4.png" alt="4"><img src="assets/images/watermelon/watermelon-5.png" alt="5"><img src="assets/images/watermelon/watermelon-6.png" alt="6">
+                <img src="assets/images/watermelon/watermelon-1.png" alt="1">
+                <img src="assets/images/watermelon/watermelon-2.png" alt="2">
+                <img src="assets/images/watermelon/watermelon-3.png" alt="3">
+                <img src="assets/images/watermelon/watermelon-4.png" alt="4">
+                <img src="assets/images/watermelon/watermelon-5.png" alt="5">
+                <img src="assets/images/watermelon/watermelon-6.png" alt="6">
             </div>
         </div>
     </section>
@@ -98,7 +103,13 @@
                 <p class="category">Creation</p>
                 <div class="detail-description">
                     <p class="description-lead">Full brand creation and website build.</p>
-                    <p>As the Creative Lead, I was responsible for all front-end design, UI, UX, and brand direction.</p>
+                    <p>As the Creative Lead for Watermelon's in-house software, Canvas, I was responsible for all front-end design, UI, UX, and brand direction.</p>
+                    <p>The result is a beautiful and highly functional platform that has already been used to complete over 1 million surveys and serves more than 3,000 users.</p>
+                </div>
+                <div class="detail-specs">
+                    <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
+                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Figma, Direction, Leadership</span></div>
+                    <div class="spec-item"><span>More</span><span><a href="https://www.watermelonresearch.com/canvas" target="_blank">Learn more</a></span></div>
                 </div>
                 <div class="detail-navigation">
                     <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
@@ -106,7 +117,92 @@
                 </div>
             </aside>
             <div class="detail-gallery">
-                <img src="assets/images/calico/calico-1.png" alt="1"><img src="assets/images/calico/calico-2.png" alt="2"><img src="assets/images/calico/calico-3.png" alt="3">
+                <img src="assets/images/calico/calico-1.png" alt="1"><img src="assets/images/calico/calico-2.png" alt="2"><img src="assets/images/calico/calico-3.png" alt="3"><img src="assets/images/calico/calico-4.png" alt="4"><img src="assets/images/calico/calico-5.png" alt="5"><img src="assets/images/calico/calico-6.png" alt="6">
+            </div>
+        </div>
+    </section>
+
+    <section id="canvas" class="page-section">
+        <div class="project-detail-container">
+            <aside class="detail-sidebar">
+                <h1 class="serif-italic">Canvas</h1>
+                <p class="category">Bespoke</p>
+                <div class="detail-description">
+                    <p class="description-lead">Full bespoke build of software platform.</p>
+                    <p>As the Creative Lead for Watermelon's in-house software, Canvas, I was responsible for all front-end design, UI, UX, and brand direction.</p>
+                    <p>My goal was to create a modern, clean interface that was intuitive and simple to use.</p>
+                    <p>The result is a beautiful and highly functional platform that has already been used to complete over 1 million surveys.</p>
+                </div>
+                <div class="detail-specs">
+                    <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
+                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Figma, Direction, Leadership</span></div>
+                </div>
+                <div class="detail-navigation">
+                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                </div>
+            </aside>
+            <div class="detail-gallery">
+                <img src="assets/images/canvas/canvas-1.png" alt="1"><img src="assets/images/canvas/canvas-2.png" alt="2"><img src="assets/images/canvas/canvas-3.png" alt="3"><img src="assets/images/canvas/canvas-4.png" alt="4"><img src="assets/images/canvas/canvas-5.png" alt="5"><img src="assets/images/canvas/canvas-6.png" alt="6">
+            </div>
+        </div>
+    </section>
+
+    <section id="design" class="page-section">
+        <div class="project-detail-container">
+            <aside class="detail-sidebar">
+                <h1 class="serif-italic">Design</h1>
+                <p class="category">Ad-Hoc</p>
+                <div class="detail-description">
+                    <p class="description-lead">Full bespoke build of software platform.</p>
+                    <p>As the Creative Lead for Watermelon's in-house software, Canvas, I was responsible for all front-end design, UI, UX, and brand direction.</p>
+                </div>
+                <div class="detail-navigation">
+                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                </div>
+            </aside>
+            <div class="detail-gallery">
+                <img src="assets/images/design/design-1.png" alt="1"><img src="assets/images/design/design-2.png" alt="2"><img src="assets/images/design/design-3.png" alt="3">
+            </div>
+        </div>
+    </section>
+
+    <section id="print" class="page-section">
+        <div class="project-detail-container">
+            <aside class="detail-sidebar">
+                <h1 class="serif-italic">Print</h1>
+                <p class="category">Branding</p>
+                <div class="detail-description">
+                    <p class="description-lead">Full bespoke build of software platform.</p>
+                    <p>As the Creative Lead for Watermelon's in-house software, Canvas, I was responsible for all front-end design, UI, UX, and brand direction.</p>
+                </div>
+                <div class="detail-navigation">
+                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                </div>
+            </aside>
+            <div class="detail-gallery">
+                <img src="assets/images/print/print-1.png" alt="1"><img src="assets/images/print/print-2.png" alt="2">
+            </div>
+        </div>
+    </section>
+
+    <section id="inspiration" class="page-section">
+        <div class="project-detail-container">
+            <aside class="detail-sidebar">
+                <h1 class="serif-italic">Inspiration</h1>
+                <p class="category">Curation</p>
+                <div class="detail-description">
+                    <p class="description-lead">Full bespoke build of software platform.</p>
+                </div>
+                <div class="detail-navigation">
+                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
+                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+                </div>
+            </aside>
+            <div class="detail-gallery">
+                <img src="assets/images/inspiration/inspiration-1.png" alt="1"><img src="assets/images/inspiration/inspiration-2.png" alt="2">
             </div>
         </div>
     </section>
@@ -115,11 +211,12 @@
         <div class="about-container">
             <h2 class="h2-title">About</h2>
             <p class="bio-intro">Designer & Front-End Developer</p>
-            <p class="bio-intro-small">I design and develop digital products with a focus on balance and flow. With over 5 years experience in the industry.</p>
+            <p class="bio-intro-small">I design and develop digital products with a focus on balance and flow. With over 5 years experience in the industry, I bridge the gap between design and code to create clean, modern experiences.</p>
+            <p class="bio-intro-quote">"Design is not just what it looks like and feels like. Design is how it works." — Steve Jobs.</p>
             <div class="info-grid">
-                <div class="info-column"><h3>Skills</h3><ul><li>UI Design</li><li>UX Design</li><li>Branding</li></ul></div>
-                <div class="info-column"><h3>Expertise</h3><ul><li>Figma</li><li>HTML/CSS</li><li>Adobe Suite</li></ul></div>
-                <div class="info-column"><h3>Inspiration</h3><ul><li>Apple</li><li>Nothing</li><li>Nike</li></ul></div>
+                <div class="info-column"><h3>Skills</h3><ul><li>UI Design</li><li>UX Design</li><li>Graphic Design</li><li>Web Design</li><li>Branding</li><li>Leadership</li></ul></div>
+                <div class="info-column"><h3>Expertise</h3><ul><li>Figma</li><li>Sketch</li><li>Adobe Suite</li><li>HTML</li><li>CSS</li><li>Audio & Video</li></ul></div>
+                <div class="info-column"><h3>Inspiration</h3><ul><li>Apple</li><li>Google</li><li>Nothing</li><li>Nike</li><li>Aimé Leon Dore</li><li>Denis Villeneuve</li></ul></div>
             </div>
         </div>
     </section>
@@ -130,9 +227,11 @@
             <div class="info-grid">
                 <div class="info-column"><h3>Inquiries</h3><ul><li><a href="mailto:lucasspicer@icloud.com">lucasspicer@icloud.com</a></li></ul></div>
                 <div class="info-column"><h3>Social</h3><ul><li><a href="https://www.instagram.com/lspicer_/" target="_blank">Instagram</a></li><li><a href="https://www.linkedin.com/in/lucas-spicer/" target="_blank">LinkedIn</a></li></ul></div>
+                <div class="info-column"><h3>Location</h3><ul><li>London / Remote</li></ul></div>
             </div>
         </div>
     </section>
+
 </main>
 
 <script>
@@ -149,42 +248,57 @@
             const navLink = document.getElementById('link-' + sectionId);
             if(navLink) navLink.classList.add('active');
         }
+
+        const index = projectOrder.indexOf(sectionId);
+        if (index !== -1) currentProjectIndex = index;
         window.scrollTo(0, 0);
     }
 
     function nextProject() {
         const nextIndex = (currentProjectIndex + 1) % projectOrder.length;
-        currentProjectIndex = nextIndex;
         showSection(projectOrder[nextIndex]);
     }
 
     function toggleTheme() {
-        const isDark = document.documentElement.classList.toggle('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        updateThemeUI(isDark);
+        const html = document.documentElement;
+        const isDark = html.classList.toggle('dark-mode');
         
-        // Safari Force Reflow
-        document.documentElement.style.display = 'none';
-        document.documentElement.offsetHeight; 
-        document.documentElement.style.display = '';
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Update browser chrome
+        const meta = document.getElementById('theme-meta');
+        if(meta) meta.setAttribute('content', isDark ? '#181818' : '#ffffff');
+        
+        updateThemeUI(isDark);
+
+        // FORCE REFLOW: This fixes the Safari browser UI color immediately
+        html.style.display = 'none';
+        html.offsetHeight; 
+        html.style.display = '';
     }
 
     function updateThemeUI(isDark) {
         const btn = document.getElementById('theme-btn');
-        const meta = document.getElementById('theme-meta');
         if (btn) btn.innerText = isDark ? 'Light' : 'Dark';
-        if (meta) meta.setAttribute('content', isDark ? '#181818' : '#ffffff');
 
         document.querySelectorAll('img').forEach(img => {
             let src = img.getAttribute('src');
             if (!src) return;
-            img.src = isDark ? (src.includes('-dark.png') ? src : src.replace('.png', '-dark.png')) : src.replace('-dark.png', '.png');
+            if (isDark) {
+                if (!src.includes('-dark.png')) img.src = src.replace('.png', '-dark.png');
+            } else {
+                img.src = src.replace('-dark.png', '.png');
+            }
         });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         const isDark = localStorage.getItem('theme') === 'dark';
-        if (isDark) document.documentElement.classList.add('dark-mode');
+        if (isDark) {
+            document.documentElement.classList.add('dark-mode');
+            const meta = document.getElementById('theme-meta');
+            if(meta) meta.setAttribute('content', '#181818');
+        }
         updateThemeUI(isDark);
     });
 
