@@ -396,16 +396,13 @@ function toggleTheme() {
 function updateThemeUI(isDark) {
     const btn = document.getElementById('theme-btn');
     const images = document.querySelectorAll('img');
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    // Update Button Text
 
-    if (btn) btn.innerText = isDark ? 'Light' : 'Dark';
-
-    if (metaTheme) {
-        // Use your specific hex code
-        metaTheme.setAttribute('content', isDark ? '#181818' : '#ffffff');
+    if (btn) {
+        btn.innerText = isDark ? 'Dark' : 'Light';
     }
 
-    // Image swapping logic remains the same...
+    // Update Image Sources
     images.forEach(img => {
         let currentSrc = img.getAttribute('src');
         if (isDark) {
@@ -413,6 +410,7 @@ function updateThemeUI(isDark) {
                 img.src = currentSrc.replace('.png', '-dark.png');
             }
         } else {
+
             if (currentSrc && currentSrc.includes('-dark.png')) {
                 img.src = currentSrc.replace('-dark.png', '.png');
             }
@@ -430,13 +428,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isDark) {
         document.body.classList.add('dark-mode');
     }
-    
     // This ensures the button text and images are correct on refresh
     updateThemeUI(isDark);
 });
 
 
-        function toggleMenu() {
+function toggleMenu() {
     document.body.classList.toggle('mobile-menu-open');
 }
 
