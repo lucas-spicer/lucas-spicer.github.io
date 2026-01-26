@@ -1,13 +1,6 @@
 /* --- RESET --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    /* This ensures the 'overflow' area matches the theme */
-    background-color: var(--bg);
-    transition: background-color 0.3s ease;
-}
-
-
 /* --- THEME VARIABLES --- */
 :root {
     --max-width: 1440px;
@@ -24,6 +17,8 @@ html {
     --header-bg: rgba(255, 255, 255, 0.95);
 }
 
+/* Dark Mode Overrides - Applied to html for Safari Browser Chrome compatibility */
+html.dark-mode, 
 body.dark-mode {
     --bg: #181818;
     --text: #FFFFFF;
@@ -33,26 +28,11 @@ body.dark-mode {
     --header-bg: rgba(24, 24, 24, 0.95);
 }
 
-/* Add transitions to links and containers */
-.nav-links a, 
-.ald-logo, 
-.project-info span, 
-.detail-description p,
-.spec-item,
-.h2-title,
-.info-column li,
-.image-container {
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Smooth border transitions for sections */
-.detail-specs, 
-.h2-title {
-    transition: border-color 0.3s ease;
-}
-
 html {
-     overscroll-behavior-y: none;
+    background-color: var(--bg);
+    transition: background-color 0.3s ease;
+    overscroll-behavior-y: none;
+    min-height: 100%;
 }
 
 body {
@@ -61,6 +41,7 @@ body {
     font-family: var(--sans);
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
 }
 
 /* --- FIXED HEADER --- */
@@ -72,21 +53,6 @@ body {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Theme Toggle Styling */
-.theme-toggle {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    padding: 4px 8px;
-    width: 60px;
-    cursor: pointer;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
-}
-
-/* --- UPDATED HEADER LAYOUT --- */
 .header-inner {
     width: 100%;
     max-width: var(--max-width);
@@ -107,16 +73,36 @@ body {
     color: var(--text);
     text-transform: uppercase;
 }
-.nav-links { list-style: none; display: flex; gap: 40px; }
+
+.nav-links { list-style: none; display: flex; gap: 40px; align-items: center; }
 .nav-links a { text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.12em; text-decoration: none; color: var(--text); opacity: 0.4; transition: 0.3s; cursor: pointer; }
 .nav-links a.active, .nav-links a:hover { opacity: 1; }
 .header-spacer { height: 61px; }
+
+/* Theme Toggle Styling */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    width: 60px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
 
 /* --- MAIN LAYOUT --- */
 .main-content { max-width: var(--max-width); margin: 0 auto; padding: 40px var(--container-padding); }
 .page-section { display: none; }
 .active-section { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Transitions for sub-elements */
+.nav-links a, .ald-logo, .project-info span, .detail-description p, .spec-item, .h2-title, .info-column li, .image-container, .detail-specs {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
 
 /* --- GRID (HOME) --- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; row-gap: 60px; }
@@ -127,7 +113,7 @@ body {
 .title { display: block; font-family: var(--serif); font-style: italic; font-size: 1.25rem; margin-top: 8px; }
 .category { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; }
 
-/* --- PROJECT DETAIL (STICKY LOOKBOOK) --- */
+/* --- PROJECT DETAIL --- */
 .project-detail-container { display: grid; grid-template-columns: 350px 1fr; gap: 50px; align-items: start; }
 .detail-gallery { display: flex; flex-direction: column; gap: 20px; }
 .detail-gallery img { width: 100%; height: auto; background-color: var(--image-bg); display: block; }
@@ -142,7 +128,7 @@ body {
 .nav-link { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: var(--text); letter-spacing: 0.12em; border-bottom: 1px solid transparent; transition: 0.3s; }
 .nav-link:hover { border-bottom: 1px solid var(--text); }
 
-/* --- ABOUT & CONTACT (RESTORED ORIGINAL) --- */
+/* --- ABOUT & CONTACT --- */
 .about-container { max-width: 900px; text-align: left; }
 .about-container h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 2.5rem; margin-bottom: 30px; }
 .h2-title { padding-bottom: 15px; border-bottom: solid 1px var(--border); }
@@ -154,9 +140,11 @@ body {
 .info-column ul { list-style: none; }
 .info-column ul li { font-size: 0.9rem; line-height: 2; }
 .info-column ul li a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
-.info-column ul li a:hover { border-bottom: 1px solid var(--text); }
 
-/* --- MOBILE --- */
+/* --- MOBILE MENU --- */
+.menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; z-index: 1000; }
+.menu-toggle .bar { width: 25px; height: 1px; background-color: var(--text); transition: 0.3s; }
+
 @media (max-width: 1024px) {
     .project-detail-container { grid-template-columns: 1fr; }
     .detail-sidebar { position: static; }
@@ -164,66 +152,15 @@ body {
     .info-grid { grid-template-columns: 1fr; }
 }
 
-/* --- MENU TOGGLE (HAMBURGER) --- */
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.menu-toggle .bar {
-    width: 25px;
-    height: 1px;
-    background-color: var(--text);
-    transition: 0.3s;
-}
-
-/* --- MOBILE NAVIGATION --- */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
+    .menu-toggle { display: flex; }
     .main-nav {
-        position: fixed;
-        top: 61px; /* Height of header */
-        left: 0;
-        width: 100%;
-        height: 0; /* Hidden by default */
-        background: var(--bg);
-        overflow: hidden;
-        transition: height 0.4s ease;
-        border-bottom: 0px solid var(--border);
+        position: fixed; top: 61px; left: 0; width: 100%; height: 0; 
+        background: var(--bg); overflow: hidden; transition: height 0.4s ease;
     }
-
-    /* When menu is open */
-    .mobile-menu-open .main-nav {
-        height: calc(100vh - 61px);
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        height: 100%;
-        padding-top: 50px;
-        gap: 40px; /* Space out links in mobile view */
-    }
-
-    .nav-links a {
-        font-size: 1.2rem; /* Make links larger on mobile */
-    }
-    
-    /* Hamburger to 'X' animation */
-    .mobile-menu-open .bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-    .mobile-menu-open .bar:nth-child(2) {
-        transform: translateY(-1px) rotate(-45deg);
-    }
+    .mobile-menu-open .main-nav { height: calc(100vh - 61px); border-bottom: 1px solid var(--border); }
+    .nav-links { flex-direction: column; padding-top: 50px; gap: 40px; }
+    .nav-links a { font-size: 1.2rem; }
+    .mobile-menu-open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-open .bar:nth-child(2) { transform: translateY(-1px) rotate(-45deg); }
 }
