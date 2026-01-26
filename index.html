@@ -395,13 +395,19 @@ function toggleTheme() {
 function updateThemeUI(isDark) {
     const btn = document.getElementById('theme-btn');
     const images = document.querySelectorAll('img');
+    const metaTheme = document.getElementById('theme-meta');
 
-    // Update Button Text
+    // 1. Update Button Text (Show the opposite of current mode)
     if (btn) {
         btn.innerText = isDark ? 'Dark' : 'Light';
     }
 
-    // Update Image Sources
+    // 2. Update Safari/Chrome Browser UI color
+    if (metaTheme) {
+        metaTheme.setAttribute('content', isDark ? '#181818' : '#ffffff');
+    }
+
+    // 3. Update Image Sources
     images.forEach(img => {
         let currentSrc = img.getAttribute('src');
         if (isDark) {
@@ -415,7 +421,6 @@ function updateThemeUI(isDark) {
         }
     });
 }
-
 // Logic to run when the page is ready
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
