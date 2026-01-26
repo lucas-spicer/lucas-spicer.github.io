@@ -396,17 +396,16 @@ function toggleTheme() {
 function updateThemeUI(isDark) {
     const btn = document.getElementById('theme-btn');
     const images = document.querySelectorAll('img');
-    const metaTheme = document.querySelector('meta[name="theme-color"]'); // More robust selector
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
 
-    // 1. Update Button Text
     if (btn) btn.innerText = isDark ? 'Light' : 'Dark';
 
-    // 2. Force Safari live update
     if (metaTheme) {
+        // Use your specific hex code
         metaTheme.setAttribute('content', isDark ? '#181818' : '#ffffff');
     }
 
-    // 3. Update Image Sources
+    // Image swapping logic remains the same...
     images.forEach(img => {
         let currentSrc = img.getAttribute('src');
         if (isDark) {
@@ -448,15 +447,24 @@ function handleNav(sectionId) {
 }
 
 function toggleTheme() {
-    // Target 'document.documentElement' (the <html> tag) instead of just body
-    const root = document.documentElement; 
-    const isDark = root.classList.toggle('dark-mode');
+    // 1. Target the <html> element
+    const htmlElement = document.documentElement;
+    const isDark = htmlElement.classList.toggle('dark-mode');
     
-    // Also toggle body for compatibility with your existing CSS
+    // 2. Also toggle body for CSS selector support
     document.body.classList.toggle('dark-mode', isDark);
     
+    // 3. Save preference
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // 4. Update UI (Images, Button, and Meta Tag)
     updateThemeUI(isDark);
+
+    // 5. THE SAFARI "FORCE UPDATE" TRICK
+    // Briefly toggling a style property forces Safari to re-render the UI/Status bar
+    htmlElement.style.display = 'none';
+    htmlElement.offsetHeight; // Accessing offsetHeight forces a reflow
+    htmlElement.style.display = '';
 }
         
     </script>
