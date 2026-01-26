@@ -1,14 +1,13 @@
-/* --- RESET --- */
+/* --- RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* --- THEME VARIABLES --- */
 :root {
     --max-width: 1440px;
     --container-padding: 40px;
     --serif: 'Crimson Text', serif;
     --sans: 'Inter', sans-serif;
     
-    /* Light Mode Colors */
+    /* Light Mode */
     --bg: #ffffff;
     --text: #181818;
     --text-p: #666666;
@@ -17,12 +16,12 @@
     --header-bg: rgba(255, 255, 255, 0.95);
 }
 
-/* Force dark mode to cover the entire HTML and Body */
+/* Logic for dark mode on the root elements */
 html.dark-mode, 
 body.dark-mode {
     --bg: #181818;
     --text: #FFFFFF;
-    --text-p: #666666;
+    --text-p: #999999;
     --border: #424245;
     --image-bg: #000000;
     --header-bg: rgba(24, 24, 24, 0.95);
@@ -31,7 +30,6 @@ body.dark-mode {
 html {
     background-color: var(--bg);
     transition: background-color 0.3s ease;
-    overscroll-behavior-y: none;
     height: 100%;
 }
 
@@ -44,7 +42,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- FIXED HEADER --- */
+/* --- HEADER --- */
 .header {
     position: fixed; top: 0; left: 0; width: 100%; height: 61px;
     z-index: 101; border-bottom: 1px solid var(--border);
@@ -56,7 +54,7 @@ body {
 .header-inner {
     width: 100%; max-width: var(--max-width); margin: 0 auto;
     padding: 0 var(--container-padding); display: flex;
-    justify-content: space-between; align-items: center; gap: 20px;
+    justify-content: space-between; align-items: center;
 }
 
 .ald-logo { 
@@ -67,48 +65,39 @@ body {
 .nav-links { list-style: none; display: flex; gap: 40px; align-items: center; }
 .nav-links a { text-transform: uppercase; font-size: 0.6rem; letter-spacing: 0.12em; text-decoration: none; color: var(--text); opacity: 0.4; transition: 0.3s; cursor: pointer; }
 .nav-links a.active, .nav-links a:hover { opacity: 1; }
-.header-spacer { height: 61px; }
 
 .theme-toggle {
     background: none; border: 1px solid var(--border); color: var(--text);
     font-size: 0.6rem; text-transform: uppercase; padding: 4px 8px;
-    width: 60px; cursor: pointer; letter-spacing: 0.1em; transition: all 0.3s ease;
+    width: 60px; cursor: pointer; transition: 0.3s;
 }
 
-/* --- MAIN LAYOUT --- */
-.main-content { 
-    max-width: var(--max-width); margin: 0 auto; 
-    padding: 40px var(--container-padding);
-    background-color: var(--bg); /* Ensures full coverage */
-}
+.header-spacer { height: 61px; }
 
-.page-section { display: none; background-color: var(--bg); }
+/* --- MAIN CONTENT --- */
+.main-content { max-width: var(--max-width); margin: 0 auto; padding: 40px var(--container-padding); }
+.page-section { display: none; }
 .active-section { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* Universal transitions for theme switching */
-.nav-links a, .ald-logo, .project-info span, .detail-description p, 
-.spec-item, .h2-title, .info-column li, .image-container, .detail-specs, 
-.page-section, .main-content {
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-/* --- GRID & GALLERY --- */
+/* --- GRID --- */
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; row-gap: 60px; }
-.image-container { background-color: var(--image-bg); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.image-container { background-color: var(--image-bg); margin-bottom: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: 0.3s; }
 .image-container img { width: 100%; height: auto; transition: 0.5s; }
 .title { display: block; font-family: var(--serif); font-style: italic; font-size: 1.25rem; margin-top: 8px; }
+.category { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; }
 
+/* --- DETAIL VIEW --- */
 .project-detail-container { display: grid; grid-template-columns: 350px 1fr; gap: 50px; align-items: start; }
-.detail-gallery img { width: 100%; height: auto; background-color: var(--image-bg); display: block; margin-bottom: 20px; }
-.detail-sidebar { position: sticky; top: 101px; height: fit-content; }
-
+.detail-sidebar { position: sticky; top: 101px; }
 .serif-italic { font-family: var(--serif); font-style: italic; font-size: 2.2rem; font-weight: 400; margin-bottom: 5px; }
 .detail-description p { font-size: 0.8rem; color: var(--text-p); margin-bottom: 15px; line-height: 1.4; }
 .detail-specs { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 15px 0; padding: 15px 0; }
 .spec-item { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 10px; }
+.detail-gallery img { width: 100%; margin-bottom: 20px; background-color: var(--image-bg); }
+.nav-link { font-size: 0.65rem; text-transform: uppercase; text-decoration: none; color: var(--text); letter-spacing: 0.12em; transition: 0.3s; }
 
-/* Restored About/Contact Styling */
+/* --- ABOUT/CONTACT --- */
 .about-container { max-width: 900px; }
 .h2-title { padding-bottom: 15px; border-bottom: 1px solid var(--border); margin-bottom: 30px; font-family: var(--serif); font-style: italic; font-size: 2.5rem; }
 .bio-intro { font-size: 1.4rem; margin-bottom: 30px; }
@@ -132,6 +121,6 @@ body {
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
     .main-nav { position: fixed; top: 61px; left: 0; width: 100%; height: 0; background: var(--bg); overflow: hidden; transition: 0.4s; }
-    .mobile-menu-open .main-nav { height: calc(100vh - 61px); border-bottom: 1px solid var(--border); }
+    .mobile-menu-open .main-nav { height: calc(100vh - 61px); }
     .nav-links { flex-direction: column; padding-top: 50px; }
 }
