@@ -23,7 +23,8 @@ html {
     --header-bg: rgba(255, 255, 255, 0.95);
 }
 
-/* Dark Mode Overrides */
+/* Dark Mode Overrides - Applied to both html and body for Safari compatibility */
+html.dark-mode, 
 body.dark-mode {
     --bg: #181818;
     --text: #FFFFFF;
