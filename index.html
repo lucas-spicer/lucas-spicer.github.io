@@ -307,7 +307,31 @@
         document.body.classList.remove('mobile-menu-open');
         showSection(sectionId);
     }
+
+
+
+
+
+    function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stop background scrolling
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+    
 </script>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+</div>
 
 </body>
 </html>
