@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -28,7 +29,6 @@ body {
     z-index: 101;
     border-bottom: 1px solid #E5E5E5;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
     display: flex;
     align-items: center;
 }
@@ -112,16 +112,20 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    aspect-ratio: 4 / 3; 
+    width: 100%; /* Ensures it fills the grid column */
 }
 
 .image-container img {
     width: 100%;
     height: auto;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .project-item:hover img {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .project-info {
