@@ -31,6 +31,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
+    transform: translateZ(0);
 }
 
 .header-inner {
@@ -97,31 +98,45 @@ body {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    row-gap: 60px;
+    gap: 30px;
+    row-gap: 40px;
 }
 
 .project-item {
     cursor: pointer;
 }
 
+/* --- GRID IMAGES (STABILITY UPDATE) --- */
 .image-container {
     background-color: #F6F6F6;
     margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block; /* Changed from flex to block for stability */
     overflow: hidden;
-    aspect-ratio: 4 / 3; 
-    width: 100%; /* Ensures it fills the grid column */
+    aspect-ratio: 4 / 3; /* Matches your 2400x1800 images */
+    width: 100%;
+    position: relative; /* Added to anchor the image */
 }
 
 .image-container img {
+    position: absolute; /* Lock the image to the container */
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* This is the secret for clean, no-jump grids */
     transition: opacity 0.3s ease;
     backface-visibility: hidden;
-    transform: translateZ(0);
+    -webkit-user-drag: none;
+}
+
+/* Apply the same logic to detail gallery for consistency */
+.detail-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #F6F6F6;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .project-item:hover img {
@@ -159,13 +174,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.detail-gallery img {
-    width: 100%;
-    height: auto;
-    background-color: #F6F6F6;
-    display: block;
 }
 
 .detail-sidebar {
