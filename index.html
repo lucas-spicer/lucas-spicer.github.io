@@ -340,10 +340,6 @@ function updateLightbox() {
     counterElement.innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
 }
 
-function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
 
 // Add Keyboard Support
 document.addEventListener('keydown', (e) => {
@@ -381,8 +377,22 @@ function handleSwipe() {
 }
 
 
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) {
+    // 1. Improved Close Function
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// 2. The "Click Outside" Logic
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    const isClickInsideImage = document.getElementById('lightbox-img').contains(e.target);
+    const isClickInsideNav = e.target.closest('.lightbox-nav');
+    const isCloseButton = e.target.closest('.close-lightbox');
+
+    // Close if clicking the background (this) OR the close button
+    // But NOT if clicking the image or navigation arrows
+    if (e.target === this || isCloseButton) {
         closeLightbox();
     }
 });
@@ -390,17 +400,17 @@ function handleSwipe() {
 </script>
 
 
-        <div id="lightbox" class="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
     
-    <button class="lightbox-nav prev" onclick="changeImage(-1)" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
     
     <div class="lightbox-content">
         <img id="lightbox-img" src="" alt="Enlarged view">
         <div id="lightbox-counter" class="lightbox-counter">01 / 01</div>
     </div>
 
-    <button class="lightbox-nav next" onclick="changeImage(1)" aria-label="Next">&#8594;</button>
+    <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
 </div>
 
 </body>
