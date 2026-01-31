@@ -80,6 +80,33 @@ body {
     .next { right: 20%; }
 }
 
+.close-lightbox {
+    position: fixed; /* Changed from absolute to fixed */
+    top: 30px;
+    right: 40px;
+    font-size: 32px;
+    line-height: 1;
+    color: #181818;
+    cursor: pointer;
+    z-index: 2200; /* Ensure it stays above everything */
+    padding: 10px; /* Larger hit area for thumbs */
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.close-lightbox:hover {
+    opacity: 1;
+}
+
+/* On Mobile: Make the close button even easier to hit */
+@media (max-width: 768px) {
+    .close-lightbox {
+        top: 20px;
+        right: 20px;
+        font-size: 40px; /* Bigger for mobile taps */
+    }
+}
+
 /* --- FIXED HEADER --- */
 .header {
     position: fixed;
