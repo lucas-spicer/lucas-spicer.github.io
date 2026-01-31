@@ -28,7 +28,7 @@ body {
     height: 61px;
     z-index: 101;
     border-bottom: 1px solid #E5E5E5;
-    background: rgba(255, 255, 255, 0.95);
+    background: #FFFFFF;
     display: flex;
     align-items: center;
     transform: translateZ(0);
