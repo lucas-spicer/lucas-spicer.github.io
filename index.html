@@ -396,6 +396,13 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
         closeLightbox();
     }
 });
+
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
     
 </script>
 
