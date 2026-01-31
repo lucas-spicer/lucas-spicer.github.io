@@ -271,19 +271,6 @@
             </div>
         </div>
     </section>
-
-    <div id="lightbox" class="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    
-    <button class="lightbox-nav prev" onclick="changeImage(-1)" aria-label="Previous">&#8592;</button>
-    
-    <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Enlarged view">
-        <div id="lightbox-counter" class="lightbox-counter">01 / 01</div>
-    </div>
-
-    <button class="lightbox-nav next" onclick="changeImage(1)" aria-label="Next">&#8594;</button>
-</div>
     
 </main>
 
@@ -392,9 +379,29 @@ function handleSwipe() {
         changeImage(-1);
     }
 }
+
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
     
 </script>
 
+
+        <div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    
+    <button class="lightbox-nav prev" onclick="changeImage(-1)" aria-label="Previous">&#8592;</button>
+    
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+        <div id="lightbox-counter" class="lightbox-counter">01 / 01</div>
+    </div>
+
+    <button class="lightbox-nav next" onclick="changeImage(1)" aria-label="Next">&#8594;</button>
+</div>
 
 </body>
 </html>
