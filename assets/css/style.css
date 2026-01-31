@@ -38,10 +38,18 @@ body {
 
 .lightbox.active { display: flex; }
 
+
+.lightbox-content img, 
+.lightbox-counter {
+    pointer-events: auto; /* ...but NOT the actual image or counter */
+    cursor: default;
+}
+
 .lightbox-content {
     position: relative;
     text-align: center;
     max-width: 90%;
+    pointer-events: none;
 }
 
 .lightbox img {
