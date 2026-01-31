@@ -30,6 +30,10 @@ body {
     align-items: center;
     justify-content: center;
     touch-action: none; /* Prevents background scrolling on mobile */
+
+    touch-action: none; /* Critical: prevents the background from moving while swiping */
+    user-select: none;  /* Prevents the 'copy/paste' menu popping up on long press */
+    -webkit-user-select: none;
 }
 
 .lightbox.active { display: flex; }
@@ -45,6 +49,7 @@ body {
     max-width: 100%;
     object-fit: contain;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    pointer-events: none; 
 }
 
 .lightbox-counter {
