@@ -365,6 +365,34 @@ document.addEventListener('keydown', (e) => {
     if (e.key === "ArrowLeft") changeImage(-1);
     if (e.key === "Escape") closeLightbox();
 });
+
+
+    let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxElement = document.getElementById('lightbox');
+
+lightboxElement.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+lightboxElement.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Minimum distance in pixels to count as a swipe
+    if (touchEndX < touchStartX - swipeThreshold) {
+        // Swiped Left -> Next Image
+        changeImage(1);
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+        // Swiped Right -> Previous Image
+        changeImage(-1);
+    }
+}
+    
 </script>
 
 
