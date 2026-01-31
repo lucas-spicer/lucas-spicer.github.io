@@ -19,6 +19,47 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000; /* Above the header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    cursor: zoom-out;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2rem;
+    color: #181818;
+    cursor: pointer;
+}
+
 /* --- FIXED HEADER --- */
 .header {
     position: fixed;
