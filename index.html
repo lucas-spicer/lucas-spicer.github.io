@@ -324,21 +324,47 @@
 
 
 
+let currentGalleryImages = [];
+let currentImageIndex = 0;
 
-    function openLightbox(src) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
+function openLightbox(clickedImg) {
+    const section = clickedImg.closest('.page-section');
+    // Get all images in the current gallery
+    currentGalleryImages = Array.from(section.querySelectorAll('.detail-gallery img')).map(img => img.src);
+    currentImageIndex = currentGalleryImages.indexOf(clickedImg.src);
+    
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    if (currentImageIndex >= currentGalleryImages.length) currentImageIndex = 0;
+    if (currentImageIndex < 0) currentImageIndex = currentGalleryImages.length - 1;
+    updateLightbox();
+}
+
+function updateLightbox() {
+    const imgElement = document.getElementById('lightbox-img');
+    const counterElement = document.getElementById('lightbox-counter');
+    
+    imgElement.src = currentGalleryImages[currentImageIndex];
+    counterElement.innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
 }
 
 function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = 'auto';
 }
-    
+
+// Add Keyboard Support
+document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === "ArrowRight") changeImage(1);
+    if (e.key === "ArrowLeft") changeImage(-1);
+    if (e.key === "Escape") closeLightbox();
+});
 </script>
 
 
