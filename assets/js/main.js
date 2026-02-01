@@ -31,14 +31,20 @@ function handleTouchEnd(evt, projectId) {
 }
 
 function showSection(sectionId) {
+    // 1. Standard section switching logic
     document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
     const target = document.getElementById(sectionId);
     if (target) target.classList.add('active-section');
 
-    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-    if (['work', 'about', 'contact'].includes(sectionId)) {
-        const nl = document.getElementById('link-' + sectionId);
-        if (nl) nl.classList.add('active');
+    // 2. Identify utility pages
+    const utilityPages = ['work', 'about', 'contact'];
+    const isProject = !utilityPages.includes(sectionId);
+
+    // 3. Toggle the class on the body
+    if (isProject) {
+        document.body.classList.add('is-project-page');
+    } else {
+        document.body.classList.remove('is-project-page');
     }
 
     // Initialize dots if we are entering a project section
