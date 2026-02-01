@@ -144,7 +144,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     }
 
     .nav-links { flex-direction: column; padding: 50px 40px; gap: 30px; }
-    .nav-links a { font-size: 1.5rem; opacity: 1; }
+    .nav-links a { font-size: 0.875rem; opacity: 1; }
     
     .new-detail-wrapper { flex-direction: column; height: auto; gap: 20px; }
     
