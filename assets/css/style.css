@@ -29,7 +29,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 .page-section { display: none; }
 .active-section { display: block; }
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.image-container { aspect-ratio: 4/3; background: var(--stage-bg); overflow: hidden; }
+.image-container { aspect-ratio: 4/3; background: var(--stage-bg); overflow: hidden; cursor: pointer; }
 .image-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
 .project-item:hover img { opacity: 0.8; }
 .project-info { margin-top: 12px; display: flex; flex-direction: column; }
