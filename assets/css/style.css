@@ -78,9 +78,11 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     z-index: 2000; 
     align-items: center; 
     justify-content: center; 
+    touch-action: none;
 }
 .lightbox.active { display: flex; }
-.lightbox-content img { max-height: 85vh; max-width: 90vw; object-fit: contain; }
+.lightbox-content img { max-height: 85vh; max-width: 90vw; object-fit: contain; user-select: none;
+    -webkit-user-drag: none; }
 
 .lightbox-nav { 
     position: absolute; 
