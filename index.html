@@ -257,11 +257,14 @@
     </section>
 
 </main>
-
-<div id="lightbox" class="lightbox">
+    
+<div id="lightbox" class="lightbox" ontouchstart="handleTouchStart(event)" ontouchend="handleLightboxTouchEnd(event)">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
     <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
-    <div class="lightbox-content"><img id="lightbox-img" src=""><div id="lightbox-counter" class="lightbox-counter"></div></div>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="">
+        <div id="lightbox-counter" class="lightbox-counter"></div>
+    </div>
     <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
 </div>
 
@@ -352,6 +355,27 @@
         document.getElementById('lightbox-counter').innerText = `${cidx + 1} / ${cgi.length}`;
     }
     function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+    function handleLightboxTouchEnd(evt) {
+    if (!xDown) return;
+
+    let xUp = evt.changedTouches[0].clientX;
+    let xDiff = xDown - xUp;
+
+    // Threshold of 50px to trigger the swipe
+    if (Math.abs(xDiff) > 50) {
+        if (xDiff > 0) {
+            // Swiped Left -> Show Next
+            changeImage(1);
+        } else {
+            // Swiped Right -> Show Prev
+            changeImage(-1);
+        }
+    }
+    /* reset values */
+    xDown = null;
+}
+    
 </script>
 </body>
 </html>
