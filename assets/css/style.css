@@ -44,7 +44,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 .vertical-thumbs img.active-thumb, .vertical-thumbs img:hover { opacity: 1; }
 
 .featured-stage { flex: 1; height: 100%; background: var(--stage-bg); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.featured-stage img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
+.featured-stage img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: pointer; }
 
 .project-meta { width: 280px; height: 100%; display: flex; flex-direction: column; }
 .meta-inner { height: 100%; display: flex; flex-direction: column; }
