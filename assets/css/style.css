@@ -289,24 +289,81 @@ body {
     opacity: 0.5;
 }
 
-/* --- PROJECT DETAIL --- */
+/* --- PROJECT DETAIL (Desktop: Nike Grid) --- */
 .project-detail-container {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 350px 1fr; /* Sidebar fixed width, Gallery takes rest */
     gap: 50px;
     align-items: start;
-}
-
-.detail-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .detail-sidebar {
     position: sticky;
-    top: 101px;
+    top: 101px; /* Adjust based on your header height */
     height: fit-content;
+}
+
+.detail-gallery {
+    width: 100%;
+}
+
+/* The Grid for Desktop */
+.gallery-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Nike's 2-column look */
+    gap: 12px;
+}
+
+.gallery-track img {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Closer to Nike's vertical-ish shoe shots */
+    object-fit: cover;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-track img:hover {
+    opacity: 0.9;
+}
+
+/* --- MOBILE GALLERY (The Swiping Carousel) --- */
+@media (max-width: 1024px) {
+    .project-detail-container {
+        grid-template-columns: 1fr; /* Stack text and gallery */
+        display: flex;
+        flex-direction: column-reverse; /* Images first, then text (Like Nike Mobile) */
+    }
+
+    /* Change Grid to a Horizontal Scroll */
+    .gallery-track {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 0; /* Remove gaps for seamless swipe */
+        margin: 0 calc(var(--container-padding) * -1); /* Bleed to edge of screen */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+
+    .gallery-track::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+
+    .gallery-track img {
+        min-width: 100vw; /* One image takes full width */
+        scroll-snap-align: start;
+        aspect-ratio: 1 / 1; /* Square images often work better for mobile swipe */
+        margin-bottom: 0;
+    }
+
+    .detail-sidebar {
+        position: static;
+        padding-top: 20px;
+    }
 }
 
 .serif-italic {
