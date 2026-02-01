@@ -320,6 +320,22 @@
         window.scrollTo(0, 0);
     }
 
+    function initDots(projectId) {
+    const section = document.getElementById(projectId);
+    const thumbs = section.querySelectorAll('.vertical-thumbs img');
+    const dotsContainer = document.getElementById(`dots-${projectId}`);
+    
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = ''; // Clear existing
+
+    thumbs.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+    });
+}
+
     function nextProject() {
         let ni = (currentProjectIndex + 1) % projectOrder.length;
         if(projectOrder[ni] === 'work') ni = 1;
@@ -334,14 +350,27 @@
         if(featured) featured.src = src;
     }
 
-    function lockImage(projectId, thumbElement) {
-        lockedImages[projectId] = thumbElement.src;
-        const parent = thumbElement.parentElement;
-        parent.querySelectorAll('img').forEach(img => img.classList.remove('active-thumb'));
-        thumbElement.classList.add('active-thumb');
-        previewImage(projectId, thumbElement.src);
-    }
+   // Update lockImage to also update dots
+function lockImage(projectId, thumbElement) {
+    lockedImages[projectId] = thumbElement.src;
+    
+    // Desktop thumb update
+    const parent = thumbElement.parentElement;
+    const thumbs = Array.from(parent.querySelectorAll('img'));
+    thumbs.forEach(img => img.classList.remove('active-thumb'));
+    thumbElement.classList.add('active-thumb');
+    
+    previewImage(projectId, thumbElement.src);
 
+    // Mobile dot update
+    const dotsContainer = document.getElementById(`dots-${projectId}`);
+    if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        const activeIdx = thumbs.indexOf(thumbElement);
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[activeIdx]) dots[activeIdx].classList.add('active');
+    }
+}
     function revertToClicked(projectId) {
         const featured = document.getElementById(`featured-${projectId}`);
         if(featured) featured.src = lockedImages[projectId];
