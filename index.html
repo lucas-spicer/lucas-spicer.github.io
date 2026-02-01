@@ -1,4 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Spicer | Designer & Front-End Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
+        
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a onclick="handleNav('work')" id="link-work" class="active">Work</a></li>
+                <li><a onclick="handleNav('about')" id="link-about">About</a></li>
+                <li><a onclick="handleNav('contact')" id="link-contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
 <main class="main-content">
+    
     <section id="work" class="page-section active-section">
         <div class="project-grid">
             <article class="project-item" onclick="showSection('watermelon')">
@@ -31,12 +65,12 @@
                 <p class="category">Rebrand</p>
                 <div class="detail-description">
                     <p class="description-lead">Brand redesign and website build.</p>
-                    <p>I led the complete brand overhaul for Watermelon, redesigning their entire visual identity. My work included creating a new website, logos, and a full suite of templates.</p>
+                    <p>I led the complete brand overhaul for Watermelon, redesigning their entire visual identity. My work included creating a new website, logos, and presentation decks.</p>
                 </div>
                 <div class="detail-specs">
                     <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
-                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Figma, Direction</span></div>
-                    <div class="spec-item"><span>More</span><span><a href="https://www.watermelonresearch.com" target="_blank">Visit Site</a></span></div>
+                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Figma, Leadership</span></div>
+                    <div class="spec-item"><span>More</span><span><a href="https://www.watermelonresearch.com" target="_blank">Learn more</a></span></div>
                 </div>
                 <div class="detail-navigation">
                     <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
@@ -45,7 +79,7 @@
             </aside>
             <div class="detail-gallery">
                 <div class="main-image-container">
-                    <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="Watermelon 1">
+                    <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="Featured View">
                 </div>
                 <div class="thumbnail-rail">
                     <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
@@ -66,12 +100,11 @@
                 <p class="category">Creation</p>
                 <div class="detail-description">
                     <p class="description-lead">Full brand creation and website build.</p>
-                    <p>A visual identity defined by vibrant colors, aesthetic fonts, and a casual, approachable tone.</p>
+                    <p>Building a brand that captured unique personality while maintaining parent company cohesion.</p>
                 </div>
                 <div class="detail-specs">
                     <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
-                    <div class="spec-item"><span>Skills</span><span>Branding, Graphic Design</span></div>
-                    <div class="spec-item"><span>More</span><span><a href="https://www.calicoservices.com" target="_blank">Visit Site</a></span></div>
+                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Graphic Design</span></div>
                 </div>
                 <div class="detail-navigation">
                     <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
@@ -80,7 +113,7 @@
             </aside>
             <div class="detail-gallery">
                 <div class="main-image-container">
-                    <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="Calico 1">
+                    <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="Featured View">
                 </div>
                 <div class="thumbnail-rail">
                     <img src="./assets/images/calico/calico-1.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
@@ -101,7 +134,7 @@
                 <p class="category">Software Build</p>
                 <div class="detail-description">
                     <p class="description-lead">Full bespoke build of our software platform.</p>
-                    <p>I was responsible for all front-end design, UI, UX, and brand direction for this highly functional platform.</p>
+                    <p>Responsible for all front-end design, UI, UX, and brand direction for this highly functional platform.</p>
                 </div>
                 <div class="detail-specs">
                     <div class="spec-item"><span>Role</span><span>Creative Front End Developer</span></div>
@@ -114,7 +147,7 @@
             </aside>
             <div class="detail-gallery">
                 <div class="main-image-container">
-                    <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="Canvas 1">
+                    <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="Featured View">
                 </div>
                 <div class="thumbnail-rail">
                     <img src="./assets/images/canvas/canvas-1.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
@@ -135,7 +168,7 @@
                 <p class="category">Ad-Hoc</p>
                 <div class="detail-description">
                     <p class="description-lead">Design work</p>
-                    <p>A collection of print, graphic, and digital design experiments.</p>
+                    <p>A portfolio of various print and digital design projects.</p>
                 </div>
                 <div class="detail-navigation">
                     <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
@@ -144,7 +177,7 @@
             </aside>
             <div class="detail-gallery">
                 <div class="main-image-container">
-                    <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="Design 1">
+                    <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="Featured View">
                 </div>
                 <div class="thumbnail-rail">
                     <img src="./assets/images/design/design-1.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
@@ -164,7 +197,7 @@
                 <p class="category">Curation</p>
                 <div class="detail-description">
                     <p class="description-lead">Print and Photography</p>
-                    <p>Visual curation and photography studies.</p>
+                    <p>Visual studies and curation of inspiration materials.</p>
                 </div>
                 <div class="detail-navigation">
                     <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
@@ -173,7 +206,7 @@
             </aside>
             <div class="detail-gallery">
                 <div class="main-image-container">
-                    <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="Board 1">
+                    <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="Featured View">
                 </div>
                 <div class="thumbnail-rail">
                     <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
@@ -188,27 +221,52 @@
         </div>
     </section>
 
-    <section id="about" class="page-section">...</section>
-    <section id="contact" class="page-section">...</section>
+    <section id="about" class="page-section">
+        <div class="about-container">
+            <h2 class="h2-title">About</h2>
+            <p class="bio-intro">Designer & Front-End Developer</p>
+            <p class="bio-intro-small">I specialize in high-end UI/UX, balancing visual aesthetic with clean, functional design.</p>
+            <div class="info-grid">
+                <div class="info-column">
+                    <h3>Skills</h3>
+                    <ul><li>UI Design</li><li>UX Design</li><li>Branding</li></ul>
+                </div>
+                <div class="info-column">
+                    <h3>Expertise</h3>
+                    <ul><li>Figma</li><li>HTML/CSS</li><li>Vue.js</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section">
+        <div class="about-container">
+            <h2 class="h2-title">Contact</h2>
+            <div class="info-grid">
+                <div class="info-column">
+                    <h3>Inquiries</h3>
+                    <ul><li><a href="mailto:lucasspicer@icloud.com">lucasspicer@icloud.com</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </main>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+        <div id="lightbox-counter" class="lightbox-counter">01 / 01</div>
+    </div>
+    <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
+</div>
 
 <script>
     const projectOrder = ['work', 'watermelon', 'calico', 'canvas', 'design', 'board'];
     let currentProjectIndex = 0;
 
-    // Nike-Style Image Swap Function
-    function updateFeatured(projectId, newSrc) {
-        const featuredImg = document.getElementById(`featured-${projectId}`);
-        if (featuredImg && featuredImg.src !== newSrc) {
-            featuredImg.style.opacity = '0.7';
-            setTimeout(() => {
-                featuredImg.src = newSrc;
-                featuredImg.style.opacity = '1';
-            }, 100);
-        }
-    }
-
-    // Core Navigation
     function showSection(sectionId) {
         document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
         const target = document.getElementById(sectionId);
@@ -226,30 +284,35 @@
     }
 
     function nextProject() {
-        const nextIndex = (currentProjectIndex + 1) % projectOrder.length;
-        if (projectOrder[nextIndex] === 'work') { // Skip home if cycling
-             showSection(projectOrder[nextIndex + 1]);
-        } else {
-             showSection(projectOrder[nextIndex]);
-        }
+        let nextIndex = (currentProjectIndex + 1) % projectOrder.length;
+        if(projectOrder[nextIndex] === 'work') nextIndex = 1;
+        showSection(projectOrder[nextIndex]);
     }
 
     function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
     function handleNav(sectionId) { document.body.classList.remove('mobile-menu-open'); showSection(sectionId); }
 
-    // Lightbox Logic (Now grabs images from the rail of the active section)
+    function updateFeatured(projectId, newSrc) {
+        const featuredImg = document.getElementById(`featured-${projectId}`);
+        if (featuredImg && featuredImg.src !== newSrc) {
+            featuredImg.style.opacity = '0.5';
+            setTimeout(() => {
+                featuredImg.src = newSrc;
+                featuredImg.style.opacity = '1';
+            }, 100);
+        }
+    }
+
+    // Lightbox Logic
     let currentGalleryImages = [];
     let currentImageIndex = 0;
 
     function openLightbox(clickedImg) {
         const section = clickedImg.closest('.page-section');
-        // We get images from the thumbnail rail to ensure we have the whole gallery set
         currentGalleryImages = Array.from(section.querySelectorAll('.thumbnail-rail img')).map(img => img.src);
         currentImageIndex = currentGalleryImages.indexOf(clickedImg.src);
+        if(currentImageIndex === -1) currentImageIndex = 0;
         
-        // If the main image was clicked but wasn't in the rail (fallback)
-        if (currentImageIndex === -1) currentImageIndex = 0;
-
         updateLightbox();
         document.getElementById('lightbox').classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -263,10 +326,8 @@
     }
 
     function updateLightbox() {
-        const imgElement = document.getElementById('lightbox-img');
-        const counterElement = document.getElementById('lightbox-counter');
-        imgElement.src = currentGalleryImages[currentImageIndex];
-        counterElement.innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
+        document.getElementById('lightbox-img').src = currentGalleryImages[currentImageIndex];
+        document.getElementById('lightbox-counter').innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
     }
 
     function closeLightbox() {
@@ -274,7 +335,6 @@
         document.body.style.overflow = 'auto';
     }
 
-    // Keyboard & Swipe Support (Simplified)
     document.addEventListener('keydown', (e) => {
         if (!document.getElementById('lightbox').classList.contains('active')) return;
         if (e.key === "ArrowRight") changeImage(1);
@@ -282,8 +342,10 @@
         if (e.key === "Escape") closeLightbox();
     });
 
-    // Close on background click
     document.getElementById('lightbox').addEventListener('click', function(e) {
         if (e.target === this) closeLightbox();
     });
 </script>
+
+</body>
+</html>
