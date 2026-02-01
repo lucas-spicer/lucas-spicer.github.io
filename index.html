@@ -340,6 +340,10 @@ function updateLightbox() {
     counterElement.innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
 }
 
+    function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
 
 // Add Keyboard Support
 document.addEventListener('keydown', (e) => {
@@ -376,33 +380,20 @@ function handleSwipe() {
     }
 }
 
-
-    // 1. Improved Close Function
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-// 2. The "Click Outside" Logic
+    // Add this to your script so clicking the background closes it
 document.getElementById('lightbox').addEventListener('click', function(e) {
-    const isClickInsideImage = document.getElementById('lightbox-img').contains(e.target);
-    const isClickInsideNav = e.target.closest('.lightbox-nav');
-    const isCloseButton = e.target.closest('.close-lightbox');
-
-    // Close if clicking the background (this) OR the close button
-    // But NOT if clicking the image or navigation arrows
-    if (e.target === this || isCloseButton) {
+    if (e.target === this) {
         closeLightbox();
     }
 });
+
 
     
 </script>
 
 
 <div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
     
     <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
     
