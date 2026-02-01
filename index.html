@@ -40,7 +40,19 @@
                 <div class="image-container"><img src="./assets/images/calico/calico-4.png" alt="Calico"></div>
                 <div class="project-info"><span class="title">Calico</span><span class="category">Creation</span></div>
             </article>
-            </div>
+            <article class="project-item" onclick="showSection('canvas')">
+                <div class="image-container"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
+                <div class="project-info"><span class="title">Canvas</span><span class="category">Software</span></div>
+            </article>
+            <article class="project-item" onclick="showSection('design')">
+                <div class="image-container"><img src="./assets/images/design/design-1.png" alt="Design"></div>
+                <div class="project-info"><span class="title">Design</span><span class="category">Ad-Hoc</span></div>
+            </article>
+            <article class="project-item" onclick="showSection('board')">
+                <div class="image-container"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
+                <div class="project-info"><span class="title">Board</span><span class="category">Curation</span></div>
+            </article>
+        </div>
     </section>
 
     <section id="watermelon" class="page-section">
@@ -73,6 +85,126 @@
         </div>
     </section>
 
+    <section id="calico" class="page-section">
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs" onmouseleave="revertToClicked('calico')">
+                <img src="./assets/images/calico/calico-1.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)" class="active-thumb">
+                <img src="./assets/images/calico/calico-2.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-3.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-4.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-5.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-6.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+            </div>
+            <div class="featured-stage" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event, 'calico')"> 
+                <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Calico</h1>
+                    <p class="category">Creation</p>
+                    <div class="meta-text">
+                        <p class="description-lead">Full brand creation and website build.</p>
+                        <p>A visual identity defined by vibrant colors, aesthetic fonts, and a casual, approachable tone.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="canvas" class="page-section">
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs" onmouseleave="revertToClicked('canvas')">
+                <img src="./assets/images/canvas/canvas-1.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)" class="active-thumb">
+                <img src="./assets/images/canvas/canvas-2.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-3.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-4.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-5.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-6.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+            </div>
+            <div class="featured-stage" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event, 'canvas')"> 
+                <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Canvas</h1>
+                    <p class="category">Software Build</p>
+                    <div class="meta-text">
+                        <p class="description-lead">Full bespoke build of our software platform.</p>
+                        <p>I was responsible for all front-end design, UI, UX, and brand direction for this highly functional platform.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="design" class="page-section">
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs" onmouseleave="revertToClicked('design')">
+                <img src="./assets/images/design/design-1.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)" class="active-thumb">
+                <img src="./assets/images/design/design-2.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-3.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-4.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-5.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+            </div>
+            <div class="featured-stage" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event, 'design')"> 
+                <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Design</h1>
+                    <p class="category">Ad-Hoc</p>
+                    <div class="meta-text">
+                        <p class="description-lead">Design work</p>
+                        <p>A collection of print, graphic, and digital designs.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="board" class="page-section">
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs" onmouseleave="revertToClicked('board')">
+                <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)" class="active-thumb">
+                <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-7.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+            </div>
+            <div class="featured-stage" ontouchstart="handleTouchStart(event)" ontouchend="handleTouchEnd(event, 'board')"> 
+                <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Board</h1>
+                    <p class="category">Curation</p>
+                    <div class="meta-text">
+                        <p class="description-lead">Print and Photography</p>
+                        <p>Visual curation and photography.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
     <section id="about" class="page-section">
         <div class="about-container">
             <h2 class="h2-title">About</h2>
@@ -82,22 +214,19 @@
                 <div class="info-column">
                     <h3>Skills</h3>
                     <ul>
-                        <li>UI Design</li><li>UX Design</li><li>Graphic Design</li>
-                        <li>Web Design</li><li>Branding</li><li>Audio / Video editing</li>
+                        <li>UI Design</li><li>UX Design</li><li>Graphic Design</li><li>Web Design</li><li>Branding</li><li>Audio / Video editing</li>
                     </ul>
                 </div>
                 <div class="info-column">
                     <h3>Expertise</h3>
                     <ul>
-                        <li>Figma</li><li>Sketch</li><li>Adobe Suite</li>
-                        <li>HTML</li><li>CSS</li><li>Vue.js</li>
+                        <li>Figma</li><li>Sketch</li><li>Adobe Suite</li><li>HTML</li><li>CSS</li><li>Vue.js</li>
                     </ul>
                 </div>
                 <div class="info-column">
                     <h3>Inspiration</h3>
                     <ul>
-                        <li>Apple</li><li>Google</li><li>Nothing</li><li>Nike</li>
-                        <li>Aimé Leon Dore</li><li>Denis Villeneuve</li>
+                        <li>Apple</li><li>Google</li><li>Nothing</li><li>Nike</li><li>Aimé Leon Dore</li><li>Denis Villeneuve</li>
                     </ul>
                 </div>
             </div>
@@ -132,10 +261,7 @@
 <div id="lightbox" class="lightbox">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
     <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
-    <div class="lightbox-content">
-        <img id="lightbox-img" src="">
-        <div id="lightbox-counter" class="lightbox-counter"></div>
-    </div>
+    <div class="lightbox-content"><img id="lightbox-img" src=""><div id="lightbox-counter" class="lightbox-counter"></div></div>
     <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
 </div>
 
@@ -151,7 +277,6 @@
         board: "./assets/images/inspiration/inspiration-1.png"
     };
 
-    // SWIPE LOGIC
     let xDown = null;                                                        
     function handleTouchStart(evt) { xDown = evt.touches[0].clientX; }                                               
 
@@ -161,8 +286,8 @@
         let xDiff = xDown - xUp;
         if (Math.abs(xDiff) > 50) { 
             const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
-            const currentSrc = document.getElementById(`featured-${projectId}`).src;
-            let idx = thumbs.findIndex(t => t.src === currentSrc);
+            const featuredImg = document.getElementById(`featured-${projectId}`);
+            let idx = thumbs.findIndex(t => t.src === featuredImg.src);
             if (xDiff > 0) { idx = (idx + 1) % thumbs.length; } 
             else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
             lockImage(projectId, thumbs[idx]);
@@ -210,7 +335,6 @@
         if(featured) featured.src = lockedImages[projectId];
     }
 
-    // LIGHTBOX LOGIC
     let cgi = []; let cidx = 0;
     function openLightbox(img) {
         const section = img.closest('.page-section');
