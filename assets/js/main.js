@@ -31,29 +31,56 @@ function handleTouchEnd(evt, projectId) {
 }
 
 function showSection(sectionId) {
-    // 1. Standard section switching logic
-    document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
-    const target = document.getElementById(sectionId);
-    if (target) target.classList.add('active-section');
+    // 1. Update the index immediately so 'next' knows where we are
+    const newIndex = projectOrder.indexOf(sectionId);
+    if (newIndex !== -1) {
+        currentProjectIndex = newIndex;
+    }
 
-    // 2. Identify utility pages
+    // 2. Clear mobile menu state
+    document.body.classList.remove('mobile-menu-open');
+
+    // 3. Switch visibility
+    document.querySelectorAll('.page-section').forEach(sec => {
+        sec.classList.remove('active-section');
+    });
+    
+    const target = document.getElementById(sectionId);
+    if (target) {
+        target.classList.add('active-section');
+    }
+
+    // 4. Update Navigation Links
+    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+    if (['work', 'about', 'contact'].includes(sectionId)) {
+        const nl = document.getElementById('link-' + sectionId);
+        if (nl) nl.classList.add('active');
+    }
+
+    // 5. Handle Project-Specific Classes and Dots
     const utilityPages = ['work', 'about', 'contact'];
     const isProject = !utilityPages.includes(sectionId);
 
-    // 3. Toggle the class on the body
     if (isProject) {
         document.body.classList.add('is-project-page');
+        initDots(sectionId);
     } else {
         document.body.classList.remove('is-project-page');
     }
 
-    // Initialize dots if we are entering a project section
-    if (!['work', 'about', 'contact'].includes(sectionId)) {
-        initDots(sectionId);
-    }
-
-    currentProjectIndex = projectOrder.indexOf(sectionId);
     window.scrollTo(0, 0);
+}
+
+function nextProject() {
+    // Calculate next index, skipping the 'work' grid to keep users in the project loop
+    let ni = (currentProjectIndex + 1) % projectOrder.length;
+    
+    // If the next index lands on 'work' (0), skip it and go to the first project (1)
+    if (projectOrder[ni] === 'work') {
+        ni = 1;
+    }
+    
+    showSection(projectOrder[ni]);
 }
 
 function initDots(projectId) {
@@ -82,12 +109,6 @@ function initDots(projectId) {
 
         dotsContainer.appendChild(dot);
     });
-}
-
-function nextProject() {
-    let ni = (currentProjectIndex + 1) % projectOrder.length;
-    if (projectOrder[ni] === 'work') ni = 1;
-    showSection(projectOrder[ni]);
 }
 
 function toggleMenu() { 
