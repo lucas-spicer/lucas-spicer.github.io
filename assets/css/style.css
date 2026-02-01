@@ -62,7 +62,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 .h2-title { font-family: var(--serif); font-style: italic; font-size: 2.5rem; font-weight: 400; margin-bottom: 20px; }
 .bio-intro { font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
 .bio-intro-small { font-size: 0.9rem; line-height: 1.6; margin-bottom: 40px; color: #666; }
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
 .info-column h3 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 15px; color: #999; }
 .info-column ul { list-style: none; }
 .info-column li { font-size: 0.85rem; margin-bottom: 8px; }
