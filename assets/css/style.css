@@ -152,7 +152,7 @@ body {
 
 /* Col 1: Vertical Thumbs */
 .vertical-thumbs {
-    width: 60px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -170,15 +170,13 @@ body {
     aspect-ratio: 1/1;
     object-fit: cover;
     cursor: pointer;
-    opacity: 0.2;
-    filter: grayscale(100%);
+    opacity: 0.7;
     transition: all 0.3s ease;
 }
 
 .vertical-thumbs img.active-thumb, 
 .vertical-thumbs img:hover { 
     opacity: 1; 
-    filter: grayscale(0%);
 }
 
 /* Col 2: The Stage */
