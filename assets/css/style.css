@@ -53,10 +53,9 @@ body {
 }
 
 .lightbox img {
-    max-height: 80vh;
-    max-width: 100%;
+    max-height: 90vh;
+    max-width: 95%;
     object-fit: contain;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     pointer-events: none; 
 }
 
@@ -112,6 +111,38 @@ body {
         top: 20px;
         right: 20px;
         font-size: 40px; /* Bigger for mobile taps */
+    }
+}
+
+
+/* Mobile Specific Immersive View */
+@media (max-width: 768px) {
+    .lightbox img {
+        max-height: 75vh; /* Leaves room for navigation at the bottom */
+        max-width: 100%;
+    }
+
+    .lightbox-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Move navigation arrows to the bottom so they don't squeeze the image */
+    .lightbox-nav {
+        position: fixed;
+        bottom: 20px;
+        padding: 15px 30px;
+        background: rgba(255, 255, 255, 0.8); /* Slight background for visibility */
+        border-radius: 50px;
+        font-size: 1.2rem;
+    }
+
+    .prev { left: 15%; }
+    .next { right: 15%; }
+
+    .lightbox-counter {
+        margin-top: 10px;
+        font-weight: 500;
     }
 }
 
