@@ -146,6 +146,9 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 1024px) {
+    .menu-toggle {
+        display: flex;
+    }
     
     .main-nav { 
         position: fixed; 
