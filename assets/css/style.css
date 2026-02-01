@@ -507,7 +507,7 @@ a.learn-more-link:hover {
     }
 
     .main-content {
-        padding: 15px var(--p-gap);
+        padding: 0px 15px var(--p-gap);
     }
 
     /* Mobile Nav */
