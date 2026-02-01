@@ -164,3 +164,26 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     .project-grid { grid-template-columns: 1fr; }
     .info-grid { grid-template-columns: 1fr; gap: 30px; }
 }
+
+/* Rotate the top bar */
+.mobile-menu-open .menu-toggle .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+/* Hide the middle bar */
+.mobile-menu-open .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+/* Rotate the bottom bar */
+.mobile-menu-open .menu-toggle .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-toggle .bar {
+    width: 22px;
+    height: 1px;
+    background: #181818;
+    transition: all 0.3s ease-in-out; /* Smooths out the opacity and transform */
+    transform-origin: center; /* Ensures it rotates around the middle */
+}
