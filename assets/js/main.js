@@ -59,13 +59,21 @@ function initDots(projectId) {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = ''; 
 
-    thumbs.forEach((thumb) => {
-        const dot = document.createElement('div');
+    thumbs.forEach((thumb, idx) => {
+        const dot = document.createElement('button'); // Changed to button for better accessibility
         dot.classList.add('dot');
-        // Check if this dot should be active based on current featured image
+        dot.setAttribute('aria-label', `Go to image ${idx + 1}`);
+        
         if (thumb.src === featuredImg.src) {
             dot.classList.add('active');
         }
+
+        // Add Click Event to the Dot
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents triggering lightbox if dots overlap image
+            lockImage(projectId, thumb);
+        });
+
         dotsContainer.appendChild(dot);
     });
 }
