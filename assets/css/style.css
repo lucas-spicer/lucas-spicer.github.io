@@ -235,20 +235,67 @@ a.learn-more-link {
     .nav-links { flex-direction: column; padding: 50px 40px; gap: 30px; }
     .nav-links a { font-size: 0.875rem; opacity: 1; }
     
-    .new-detail-wrapper { flex-direction: column; height: auto; gap: 20px; }
-    
-    .featured-stage { 
-        width: 100%; 
-        height: 50vh; 
-        order: 1; 
-        touch-action: pan-y; /* Crucial for swiping */
-    }
-    
-    .vertical-thumbs { flex-direction: row; width: 100%; height: auto; order: 2; overflow-x: auto; }
-    .vertical-thumbs img { width: 70px; }
-    
     .project-meta { width: 100%; order: 3; }
     .project-grid { grid-template-columns: 1fr; }
     .info-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+
+@media (max-width: 1024px) {
+    :root {
+        --p-gap: 15px; /* Significantly reduced from 40px */
+    }
+
+    .main-content {
+        padding: 20px var(--p-gap);
+    }
+
+    .new-detail-wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    /* Hide the thumbnails on mobile */
+    .vertical-thumbs {
+        display: none;
+    }
+
+    .featured-stage {
+        width: calc(100% + (var(--p-gap) * 2)); /* Bleed to edges */
+        margin-left: calc(var(--p-gap) * -1);
+        height: 60vh; /* Increased height for larger images */
+    }
+
+    .featured-stage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Or 'contain' if you prefer seeing the whole frame */
+    }
+
+    /* Dot Styling */
+    .mobile-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 15px 0;
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #ddd;
+        transition: background 0.3s;
+    }
+
+    .dot.active {
+        background: #181818;
+    }
+
+    .project-meta {
+        width: 100%;
+        padding: 0;
+    }
 }
 
