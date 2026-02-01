@@ -352,13 +352,9 @@
         updateLightbox();
     }
 function updateLightbox() {
-    const img = document.getElementById('lightbox-img');
-    img.style.opacity = 0; // fade out
-    setTimeout(() => {
-        img.src = cgi[cidx];
-        img.onload = () => { img.style.opacity = 1; }; // fade in when loaded
-        document.getElementById('lightbox-counter').innerText = `${cidx + 1} / ${cgi.length}`;
-    }, 100);
+    // Immediate source swap for a snappy feel
+    document.getElementById('lightbox-img').src = cgi[cidx];
+    document.getElementById('lightbox-counter').innerText = `${cidx + 1} / ${cgi.length}`;
 }
     function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
 
