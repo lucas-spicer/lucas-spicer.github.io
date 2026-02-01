@@ -502,12 +502,9 @@ a.learn-more-link:hover {
 
 /* --- CONSOLIDATED MOBILE RESPONSIVE (1024px) --- */
 @media (max-width: 1024px) {
-    :root {
-        --p-gap: 15px;
-    }
 
     body.is-project-page .main-content {
-        padding: 0px 15px var(--p-gap);
+        padding: 0px 25px 25px var(--p-gap);
     }
 
     /* Mobile Nav */
