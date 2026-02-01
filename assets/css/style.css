@@ -506,7 +506,7 @@ a.learn-more-link:hover {
         --p-gap: 15px;
     }
 
-    .main-content {
+    body.is-project-page .main-content {
         padding: 0px 15px var(--p-gap);
     }
 
