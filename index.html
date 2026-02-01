@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Spicer | Designer & Front-End Developer</title>
+    <title>Lucas Spicer | Designer & Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
 
 <header class="header">
     <div class="header-inner">
         <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
-        
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <span class="bar"></span><span class="bar"></span>
         </button>
-
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a onclick="handleNav('work')" id="link-work" class="active">Work</a></li>
@@ -59,207 +55,174 @@
     </section>
 
     <section id="watermelon" class="page-section">
-        <div class="project-detail-container">
-            <aside class="detail-sidebar">
-                <h1 class="serif-italic">Watermelon</h1>
-                <p class="category">Rebrand</p>
-                <div class="detail-description">
-                    <p class="description-lead">Brand redesign and website build.</p>
-                    <p>I led the complete brand overhaul for Watermelon, redesigning their entire visual identity. My work included creating a new website, logos, and presentation decks.</p>
-                </div>
-                <div class="detail-specs">
-                    <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
-                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Figma, Leadership</span></div>
-                    <div class="spec-item"><span>More</span><span><a href="https://www.watermelonresearch.com" target="_blank">Learn more</a></span></div>
-                </div>
-                <div class="detail-navigation">
-                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
-                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs">
+                <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)" class="active-thumb">
+                <img src="./assets/images/watermelon/watermelon-2.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-3.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-4.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-5.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-6.png" onmouseover="updateFeatured('watermelon', this)" onclick="updateFeatured('watermelon', this)">
+            </div>
+            <div class="featured-stage">
+                <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Watermelon</h1>
+                    <p class="category">Rebrand</p>
+                    <div class="meta-text">
+                        <p>I led the complete brand overhaul for Watermelon, redesigning their entire visual identity including a new website, logos, and presentation decks.</p>
+                    </div>
+                    <div class="meta-specs">
+                        <div class="spec-row"><span>Role</span><span>Creative Lead</span></div>
+                        <div class="spec-row"><span>Skills</span><span>HTML, CSS, Figma</span></div>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Back</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next →</a>
+                    </div>
                 </div>
             </aside>
-            <div class="detail-gallery">
-                <div class="main-image-container">
-                    <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="Featured View">
-                </div>
-                <div class="thumbnail-rail">
-                    <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                    <img src="./assets/images/watermelon/watermelon-2.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                    <img src="./assets/images/watermelon/watermelon-3.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                    <img src="./assets/images/watermelon/watermelon-4.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                    <img src="./assets/images/watermelon/watermelon-5.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                    <img src="./assets/images/watermelon/watermelon-6.png" onmouseover="updateFeatured('watermelon', this.src)" onclick="updateFeatured('watermelon', this.src)">
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="calico" class="page-section">
-        <div class="project-detail-container">
-            <aside class="detail-sidebar">
-                <h1 class="serif-italic">Calico</h1>
-                <p class="category">Creation</p>
-                <div class="detail-description">
-                    <p class="description-lead">Full brand creation and website build.</p>
-                    <p>Building a brand that captured unique personality while maintaining parent company cohesion.</p>
-                </div>
-                <div class="detail-specs">
-                    <div class="spec-item"><span>Role</span><span>Creative Lead</span></div>
-                    <div class="spec-item"><span>Skills</span><span>HTML, CSS, Graphic Design</span></div>
-                </div>
-                <div class="detail-navigation">
-                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
-                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs">
+                <img src="./assets/images/calico/calico-1.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)" class="active-thumb">
+                <img src="./assets/images/calico/calico-2.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)">
+                <img src="./assets/images/calico/calico-3.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)">
+                <img src="./assets/images/calico/calico-4.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)">
+                <img src="./assets/images/calico/calico-5.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)">
+                <img src="./assets/images/calico/calico-6.png" onmouseover="updateFeatured('calico', this)" onclick="updateFeatured('calico', this)">
+            </div>
+            <div class="featured-stage">
+                <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Calico</h1>
+                    <p class="category">Creation</p>
+                    <div class="meta-text">
+                        <p>A visual identity defined by vibrant colors and aesthetic fonts, building a brand that stood out while maintaining cohesion.</p>
+                    </div>
+                    <div class="meta-specs">
+                        <div class="spec-row"><span>Role</span><span>Creative Lead</span></div>
+                        <div class="spec-row"><span>Skills</span><span>Branding, Design</span></div>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Back</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next →</a>
+                    </div>
                 </div>
             </aside>
-            <div class="detail-gallery">
-                <div class="main-image-container">
-                    <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="Featured View">
-                </div>
-                <div class="thumbnail-rail">
-                    <img src="./assets/images/calico/calico-1.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                    <img src="./assets/images/calico/calico-2.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                    <img src="./assets/images/calico/calico-3.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                    <img src="./assets/images/calico/calico-4.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                    <img src="./assets/images/calico/calico-5.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                    <img src="./assets/images/calico/calico-6.png" onmouseover="updateFeatured('calico', this.src)" onclick="updateFeatured('calico', this.src)">
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="canvas" class="page-section">
-        <div class="project-detail-container">
-            <aside class="detail-sidebar">
-                <h1 class="serif-italic">Canvas</h1>
-                <p class="category">Software Build</p>
-                <div class="detail-description">
-                    <p class="description-lead">Full bespoke build of our software platform.</p>
-                    <p>Responsible for all front-end design, UI, UX, and brand direction for this highly functional platform.</p>
-                </div>
-                <div class="detail-specs">
-                    <div class="spec-item"><span>Role</span><span>Creative Front End Developer</span></div>
-                    <div class="spec-item"><span>Skills</span><span>Vue.js, HTML, CSS, Figma</span></div>
-                </div>
-                <div class="detail-navigation">
-                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
-                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs">
+                <img src="./assets/images/canvas/canvas-1.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)" class="active-thumb">
+                <img src="./assets/images/canvas/canvas-2.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)">
+                <img src="./assets/images/canvas/canvas-3.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)">
+                <img src="./assets/images/canvas/canvas-4.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)">
+                <img src="./assets/images/canvas/canvas-5.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)">
+                <img src="./assets/images/canvas/canvas-6.png" onmouseover="updateFeatured('canvas', this)" onclick="updateFeatured('canvas', this)">
+            </div>
+            <div class="featured-stage">
+                <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Canvas</h1>
+                    <p class="category">Software</p>
+                    <div class="meta-text">
+                        <p>Responsible for all front-end design, UI, UX, and brand direction for this bespoke software platform build.</p>
+                    </div>
+                    <div class="meta-specs">
+                        <div class="spec-row"><span>Role</span><span>Creative Developer</span></div>
+                        <div class="spec-row"><span>Skills</span><span>Vue.js, CSS</span></div>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Back</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next →</a>
+                    </div>
                 </div>
             </aside>
-            <div class="detail-gallery">
-                <div class="main-image-container">
-                    <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="Featured View">
-                </div>
-                <div class="thumbnail-rail">
-                    <img src="./assets/images/canvas/canvas-1.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                    <img src="./assets/images/canvas/canvas-2.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                    <img src="./assets/images/canvas/canvas-3.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                    <img src="./assets/images/canvas/canvas-4.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                    <img src="./assets/images/canvas/canvas-5.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                    <img src="./assets/images/canvas/canvas-6.png" onmouseover="updateFeatured('canvas', this.src)" onclick="updateFeatured('canvas', this.src)">
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="design" class="page-section">
-        <div class="project-detail-container">
-            <aside class="detail-sidebar">
-                <h1 class="serif-italic">Design</h1>
-                <p class="category">Ad-Hoc</p>
-                <div class="detail-description">
-                    <p class="description-lead">Design work</p>
-                    <p>A portfolio of various print and digital design projects.</p>
-                </div>
-                <div class="detail-navigation">
-                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
-                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs">
+                <img src="./assets/images/design/design-1.png" onmouseover="updateFeatured('design', this)" onclick="updateFeatured('design', this)" class="active-thumb">
+                <img src="./assets/images/design/design-2.png" onmouseover="updateFeatured('design', this)" onclick="updateFeatured('design', this)">
+                <img src="./assets/images/design/design-3.png" onmouseover="updateFeatured('design', this)" onclick="updateFeatured('design', this)">
+                <img src="./assets/images/design/design-4.png" onmouseover="updateFeatured('design', this)" onclick="updateFeatured('design', this)">
+                <img src="./assets/images/design/design-5.png" onmouseover="updateFeatured('design', this)" onclick="updateFeatured('design', this)">
+            </div>
+            <div class="featured-stage">
+                <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Design</h1>
+                    <p class="category">Ad-Hoc</p>
+                    <div class="meta-text">
+                        <p>A portfolio of various print, digital, and branding experiments across multiple mediums.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Back</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next →</a>
+                    </div>
                 </div>
             </aside>
-            <div class="detail-gallery">
-                <div class="main-image-container">
-                    <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="Featured View">
-                </div>
-                <div class="thumbnail-rail">
-                    <img src="./assets/images/design/design-1.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
-                    <img src="./assets/images/design/design-2.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
-                    <img src="./assets/images/design/design-3.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
-                    <img src="./assets/images/design/design-4.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
-                    <img src="./assets/images/design/design-5.png" onmouseover="updateFeatured('design', this.src)" onclick="updateFeatured('design', this.src)">
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="board" class="page-section">
-        <div class="project-detail-container">
-            <aside class="detail-sidebar">
-                <h1 class="serif-italic">Board</h1>
-                <p class="category">Curation</p>
-                <div class="detail-description">
-                    <p class="description-lead">Print and Photography</p>
-                    <p>Visual studies and curation of inspiration materials.</p>
-                </div>
-                <div class="detail-navigation">
-                    <a href="javascript:void(0)" onclick="showSection('work')" class="nav-link">← Return</a>
-                    <a href="javascript:void(0)" onclick="nextProject()" class="nav-link">Next Project →</a>
+        <div class="new-detail-wrapper">
+            <div class="vertical-thumbs">
+                <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)" class="active-thumb">
+                <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)">
+                <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)">
+                <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)">
+                <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)">
+                <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="updateFeatured('board', this)" onclick="updateFeatured('board', this)">
+            </div>
+            <div class="featured-stage">
+                <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="View">
+            </div>
+            <aside class="project-meta">
+                <div class="meta-inner">
+                    <h1 class="serif-italic">Board</h1>
+                    <p class="category">Curation</p>
+                    <div class="meta-text">
+                        <p>A collection of photography and visual studies focusing on texture, light, and composition.</p>
+                    </div>
+                    <div class="meta-nav">
+                        <a href="javascript:void(0)" onclick="showSection('work')">← Back</a>
+                        <a href="javascript:void(0)" onclick="nextProject()">Next →</a>
+                    </div>
                 </div>
             </aside>
-            <div class="detail-gallery">
-                <div class="main-image-container">
-                    <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="Featured View">
-                </div>
-                <div class="thumbnail-rail">
-                    <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                    <img src="./assets/images/inspiration/inspiration-7.png" onmouseover="updateFeatured('board', this.src)" onclick="updateFeatured('board', this.src)">
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="about" class="page-section">
         <div class="about-container">
-            <h2 class="h2-title">About</h2>
-            <p class="bio-intro">Designer & Front-End Developer</p>
-            <p class="bio-intro-small">I specialize in high-end UI/UX, balancing visual aesthetic with clean, functional design.</p>
-            <div class="info-grid">
-                <div class="info-column">
-                    <h3>Skills</h3>
-                    <ul><li>UI Design</li><li>UX Design</li><li>Branding</li></ul>
-                </div>
-                <div class="info-column">
-                    <h3>Expertise</h3>
-                    <ul><li>Figma</li><li>HTML/CSS</li><li>Vue.js</li></ul>
-                </div>
-            </div>
+            <h2 class="serif-italic">About</h2>
+            <p>Designer & Developer based in the UK.</p>
         </div>
     </section>
 
-    <section id="contact" class="page-section">
-        <div class="about-container">
-            <h2 class="h2-title">Contact</h2>
-            <div class="info-grid">
-                <div class="info-column">
-                    <h3>Inquiries</h3>
-                    <ul><li><a href="mailto:lucasspicer@icloud.com">lucasspicer@icloud.com</a></li></ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
 </main>
 
 <div id="lightbox" class="lightbox">
     <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
     <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
-    <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Enlarged view">
-        <div id="lightbox-counter" class="lightbox-counter">01 / 01</div>
-    </div>
+    <div class="lightbox-content"><img id="lightbox-img" src=""><div id="lightbox-counter" class="lightbox-counter"></div></div>
     <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
 </div>
 
@@ -274,78 +237,54 @@
         
         document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
         if(['work', 'about', 'contact'].includes(sectionId)) {
-            const navLink = document.getElementById('link-' + sectionId);
-            if(navLink) navLink.classList.add('active');
+            const nl = document.getElementById('link-' + sectionId);
+            if(nl) nl.classList.add('active');
         }
-
-        const index = projectOrder.indexOf(sectionId);
-        if (index !== -1) currentProjectIndex = index;
+        currentProjectIndex = projectOrder.indexOf(sectionId);
         window.scrollTo(0, 0);
     }
 
     function nextProject() {
-        let nextIndex = (currentProjectIndex + 1) % projectOrder.length;
-        if(projectOrder[nextIndex] === 'work') nextIndex = 1;
-        showSection(projectOrder[nextIndex]);
+        let ni = (currentProjectIndex + 1) % projectOrder.length;
+        if(projectOrder[ni] === 'work') ni = 1;
+        showSection(projectOrder[ni]);
     }
 
-    function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
-    function handleNav(sectionId) { document.body.classList.remove('mobile-menu-open'); showSection(sectionId); }
-
-    function updateFeatured(projectId, newSrc) {
+    function updateFeatured(projectId, thumbElement) {
         const featuredImg = document.getElementById(`featured-${projectId}`);
-        if (featuredImg && featuredImg.src !== newSrc) {
-            featuredImg.style.opacity = '0.5';
+        const parent = thumbElement.parentElement;
+        parent.querySelectorAll('img').forEach(img => img.classList.remove('active-thumb'));
+        thumbElement.classList.add('active-thumb');
+        
+        if (featuredImg && featuredImg.src !== thumbElement.src) {
+            featuredImg.style.opacity = '0.4';
             setTimeout(() => {
-                featuredImg.src = newSrc;
+                featuredImg.src = thumbElement.src;
                 featuredImg.style.opacity = '1';
             }, 100);
         }
     }
 
-    // Lightbox Logic
-    let currentGalleryImages = [];
-    let currentImageIndex = 0;
-
-    function openLightbox(clickedImg) {
-        const section = clickedImg.closest('.page-section');
-        currentGalleryImages = Array.from(section.querySelectorAll('.thumbnail-rail img')).map(img => img.src);
-        currentImageIndex = currentGalleryImages.indexOf(clickedImg.src);
-        if(currentImageIndex === -1) currentImageIndex = 0;
-        
+    // Lightbox
+    let cgi = []; let cidx = 0;
+    function openLightbox(img) {
+        const section = img.closest('.page-section');
+        cgi = Array.from(section.querySelectorAll('.vertical-thumbs img')).map(i => i.src);
+        cidx = cgi.indexOf(img.src);
         updateLightbox();
         document.getElementById('lightbox').classList.add('active');
-        document.body.style.overflow = 'hidden';
     }
-
-    function changeImage(direction) {
-        currentImageIndex += direction;
-        if (currentImageIndex >= currentGalleryImages.length) currentImageIndex = 0;
-        if (currentImageIndex < 0) currentImageIndex = currentGalleryImages.length - 1;
+    function changeImage(d) {
+        cidx = (cidx + d + cgi.length) % cgi.length;
         updateLightbox();
     }
-
     function updateLightbox() {
-        document.getElementById('lightbox-img').src = currentGalleryImages[currentImageIndex];
-        document.getElementById('lightbox-counter').innerText = `${String(currentImageIndex + 1).padStart(2, '0')} / ${String(currentGalleryImages.length).padStart(2, '0')}`;
+        document.getElementById('lightbox-img').src = cgi[cidx];
+        document.getElementById('lightbox-counter').innerText = `${cidx + 1} / ${cgi.length}`;
     }
-
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (!document.getElementById('lightbox').classList.contains('active')) return;
-        if (e.key === "ArrowRight") changeImage(1);
-        if (e.key === "ArrowLeft") changeImage(-1);
-        if (e.key === "Escape") closeLightbox();
-    });
-
-    document.getElementById('lightbox').addEventListener('click', function(e) {
-        if (e.target === this) closeLightbox();
-    });
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+    function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
+    function handleNav(s) { document.body.classList.remove('mobile-menu-open'); showSection(s); }
 </script>
-
 </body>
 </html>
