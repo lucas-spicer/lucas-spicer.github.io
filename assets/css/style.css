@@ -96,7 +96,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     top: 50%;
     transform: translateY(-50%);
     opacity: 0.2;
-    transition: opacity 0.3s;
+    transition: opacity 0.2s;
 }
 
 .lightbox-nav:hover { opacity: 1; }
@@ -122,6 +122,26 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     font-size: 0.65rem; 
     letter-spacing: 0.2em; 
     color: #999; 
+}
+
+@media (max-width: 1024px) {
+    .lightbox-nav {
+        display: none;
+    }
+
+    .lightbox-content img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+    
+    .lightbox-counter {
+        bottom: 40px;
+        opacity: 0.6;
+    }
+}
+
+#lightbox-img {
+    transition: opacity 0.2s ease-in-out;
 }
 
 /* --- MOBILE RESPONSIVE --- */
@@ -170,9 +190,10 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     transform: translateY(7px) rotate(45deg);
 }
 
-/* Hide the middle bar */
 .mobile-menu-open .menu-toggle .bar:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0); /* Shrinks the width to zero */
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 /* Rotate the bottom bar */
@@ -184,6 +205,10 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     width: 22px;
     height: 1px;
     background: #181818;
-    transition: all 0.3s ease-in-out; /* Smooths out the opacity and transform */
+    transition: all 0.2s ease-in-out; /* Smooths out the opacity and transform */
     transform-origin: center; /* Ensures it rotates around the middle */
+}
+
+.mobile-menu-open .menu-toggle {
+    gap: 0; /* Removes the spacing so the bars rotate from the exact same center point */
 }
