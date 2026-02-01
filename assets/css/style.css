@@ -50,8 +50,8 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 .meta-inner { height: 100%; display: flex; flex-direction: column; }
 .serif-italic { font-family: var(--serif); font-style: italic; font-size: 2.2rem; font-weight: 400; }
 .description-lead { font-size: 0.9rem; font-weight: 500; margin-top: 15px; }
-.meta-text p { font-size: 0.8rem; line-height: 1.6; color: #666; margin-bottom: 10px; }
-.meta-text p:last-child { margin-top: 20px; }
+.meta-text p { font-size: 0.8rem; line-height: 1.6; color: #666;}
+.meta-text p:last-child { margin-top: 20px; margin-bottom: 20px; }
 .meta-specs { border-top: 1px solid var(--border-color); padding: 20px 0; margin-top: auto; }
 .spec-row { display: flex; justify-content: space-between; font-size: 0.65rem; text-transform: uppercase; margin-bottom: 6px; color: #999; }
 .spec-row span:last-child { color: #181818; }
