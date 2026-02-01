@@ -70,18 +70,76 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 .info-column a:hover { border-bottom: 1px solid #181818; }
 
 /* LIGHTBOX */
-.lightbox { display: none; position: fixed; inset: 0; background: #fff; z-index: 2000; align-items: center; justify-content: center; }
-.lightbox.active { display: flex; }
-.lightbox-content img { max-height: 85vh; max-width: 90vw; object-fit: contain; }
-.lightbox-nav { position: absolute; background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 20px; }
-.prev { left: 40px; } .next { right: 40px; }
-.close-lightbox { position: absolute; top: 30px; right: 40px; font-size: 2.5rem; cursor: pointer; opacity: 0.3; }
+/* --- LIGHTBOX NAV REVERTED --- */
+.lightbox-nav { 
+    position: absolute; 
+    background: none; 
+    border: none; 
+    font-size: 2rem; /* Larger, cleaner arrows */
+    font-weight: 200;
+    cursor: pointer; 
+    padding: 20px; 
+    color: #181818;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.2;
+    transition: opacity 0.3s;
+}
+
+.lightbox-nav:hover { opacity: 1; }
+.prev { left: 20px; } 
+.next { right: 20px; }
+
+.close-lightbox { 
+    position: absolute; 
+    top: 20px; 
+    right: 30px; 
+    font-size: 2.5rem; 
+    font-weight: 200;
+    cursor: pointer; 
+    opacity: 0.2;
+}
+
+.close-lightbox:hover { opacity: 1; }
+
+.lightbox-counter { 
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem; 
+    letter-spacing: 0.2em; 
+    color: #999; 
+}
+
+/* --- MOBILE SWIPE OPTIMIZATION --- */
+@media (max-width: 1024px) {
+    .featured-stage {
+        touch-action: pan-y; /* Allows scrolling page up/down but catches left/right swipes */
+    }
+    
+    /* Ensure the mobile menu still works exactly as before */
+    .main-nav { 
+        position: fixed; 
+        top: 61px; 
+        left: 0; 
+        width: 100%; 
+        height: 0; 
+        background: #fff; 
+        overflow: hidden; 
+        transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+        z-index: 999;
+    }
+    
+    .mobile-menu-open .main-nav { 
+        height: calc(100vh - 61px); 
+        border-bottom: 1px solid #eee; 
+    }
+}
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 1024px) {
     .menu-toggle { display: flex; }
-    .main-nav { position: fixed; top: 61px; left: 0; width: 100%; height: 0; background: #fff; overflow: hidden; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .mobile-menu-open .main-nav { height: calc(100vh - 61px); border-bottom: 1px solid #eee; }
     .nav-links { flex-direction: column; padding: 50px 40px; gap: 30px; }
     .nav-links a { font-size: 1.5rem; opacity: 1; }
     
