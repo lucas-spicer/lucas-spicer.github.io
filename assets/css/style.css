@@ -74,7 +74,7 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     display: none; 
     position: fixed; 
     inset: 0; 
-    background: #fff; 
+    background: #F6F6F6; 
     z-index: 2000; 
     align-items: center; 
     justify-content: center; 
@@ -146,7 +146,6 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
 
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 1024px) {
-    .menu-toggle { display: flex; }
     
     .main-nav { 
         position: fixed; 
@@ -185,30 +184,53 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     .info-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
-/* Rotate the top bar */
-.mobile-menu-open .menu-toggle .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
 
-.mobile-menu-open .menu-toggle .bar:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0); /* Shrinks the width to zero */
-    transition: opacity 0.2s, transform 0.2s;
-}
-
-/* Rotate the bottom bar */
-.mobile-menu-open .menu-toggle .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+/* Base Toggle Styling */
+.menu-toggle {
+    display: none; /* Shown in media query */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px; /* Fixed width/height helps alignment */
+    height: 30px;
+    position: relative;
 }
 
 .menu-toggle .bar {
     width: 22px;
     height: 1px;
     background: #181818;
-    transition: all 0.2s ease-in-out; /* Smooths out the opacity and transform */
-    transform-origin: center; /* Ensures it rotates around the middle */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
 }
 
+/* --- The "X" State --- */
+
+/* 1. Remove the gap and make bars stack */
 .mobile-menu-open .menu-toggle {
-    gap: 0; /* Removes the spacing so the bars rotate from the exact same center point */
+    gap: 0;
+}
+
+.mobile-menu-open .menu-toggle .bar {
+    position: absolute; /* Stack them on top of each other */
+}
+
+/* 2. Top Bar -> Rotate 45deg */
+.mobile-menu-open .menu-toggle .bar:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+/* 3. Middle Bar -> Shrink and Fade */
+.mobile-menu-open .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+/* 4. Bottom Bar -> Rotate -45deg */
+.mobile-menu-open .menu-toggle .bar:nth-child(3) {
+    transform: rotate(-45deg);
 }
