@@ -144,6 +144,14 @@ body { font-family: var(--sans); background: #fff; color: #181818; -webkit-font-
     transition: opacity 0.2s ease-in-out;
 }
 
+a.learn-more-link {
+    border: solid 1px var(--border-color);
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: black;
+    font-size: 0.75rem;
+}
+
 
 
 /* Base Toggle Styling */
