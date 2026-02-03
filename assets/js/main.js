@@ -12,34 +12,39 @@ const lockedImages = {
 let xDown = null;
 let yDown = null;
 
-function handleTouchStart(evt) { 
-    xDown = evt.touches[0].clientX; 
-    yDown = evt.touches[0].clientY;
-}
+// Use this to bind the events properly in your script
+function setupTouchListeners(projectId) {
+    const stage = document.querySelector(`#${projectId} .featured-stage`);
+    if (!stage) return;
 
-function handleTouchEnd(evt, projectId) {
-    if (!xDown || !yDown) return;
+    // 'passive: true' allows the browser to keep buttons clickable while swiping
+    stage.addEventListener('touchstart', (e) => {
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
+    }, { passive: true });
 
-    let xUp = evt.changedTouches[0].clientX;
-    let yUp = evt.changedTouches[0].clientY;
-    let xDiff = xDown - xUp;
-    let yDiff = yDown - yUp;
+    stage.addEventListener('touchend', (e) => {
+        if (!xDown || !yDown) return;
 
-    // Only trigger swipe if horizontal movement is greater than vertical
-    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) { 
-        const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
-        const featuredImg = document.getElementById(`featured-${projectId}`);
-        let idx = thumbs.findIndex(t => t.src === featuredImg.src);
-        
-        if (xDiff > 0) { idx = (idx + 1) % thumbs.length; } 
-        else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
-        
-        lockImage(projectId, thumbs[idx]);
-    }
+        let xUp = e.changedTouches[0].clientX;
+        let yUp = e.changedTouches[0].clientY;
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
 
-    // RESET: Crucial for releasing the browser's focus from the swipe
-    xDown = null;
-    yDown = null;
+        // Check if horizontal swipe is dominant
+        if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) {
+            const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
+            const featuredImg = document.getElementById(`featured-${projectId}`);
+            let idx = thumbs.findIndex(t => t.src === featuredImg.src);
+
+            if (xDiff > 0) { idx = (idx + 1) % thumbs.length; } 
+            else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
+            
+            lockImage(projectId, thumbs[idx]);
+        }
+        xDown = null;
+        yDown = null;
+    }, { passive: true });
 }
 
 function showSection(sectionId) {
