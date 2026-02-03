@@ -610,3 +610,16 @@ a.learn-more-link:hover {
         transition: none !important;
     }
 }
+
+.featured-stage {
+    touch-action: pan-y; /* Allows vertical scrolling */
+    -webkit-tap-highlight-color: transparent; /* Removes the grey box on tap */
+}
+
+/* Ensure buttons always sit on top and are ready to be clicked */
+.meta-nav a, .nav-links a, .dot, .menu-toggle {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto !important;
+}
