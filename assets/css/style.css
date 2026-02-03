@@ -254,7 +254,7 @@ a.learn-more-link:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    touch-action: pan-y; /* Allows vertical page scrolling, leaves horizontal to JS */
+    touch-action: auto; 
 }
 
 .featured-stage img {
