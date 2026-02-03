@@ -9,9 +9,6 @@ const lockedImages = {
     board: "./assets/images/inspiration/inspiration-1.png"
 };
 
-let xDown = null;
-let yDown = null; // Added to track vertical movement
-let isSwiping = false; // Added to prevent clicks after a swipe
 
 // Add these to your top-level variables
 let xDown = null;
