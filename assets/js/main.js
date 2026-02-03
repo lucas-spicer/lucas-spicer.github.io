@@ -48,27 +48,31 @@ function setupTouchListeners(projectId) {
 }
 
 function showSection(sectionId) {
+    // 1. Force the browser to blur any active focus
+    if (document.activeElement) document.activeElement.blur();
+
+    // 2. Standard navigation logic
     const newIndex = projectOrder.indexOf(sectionId);
     if (newIndex !== -1) currentProjectIndex = newIndex;
 
     document.body.classList.remove('mobile-menu-open');
 
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(sec => sec.classList.remove('active-section'));
+    document.querySelectorAll('.page-section').forEach(sec => {
+        sec.classList.remove('active-section');
+    });
     
     const target = document.getElementById(sectionId);
-    if (target) target.classList.add('active-section');
-
-    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
-    const nl = document.getElementById('link-' + sectionId);
-    if (nl) nl.classList.add('active');
-
-    if (!['work', 'about', 'contact'].includes(sectionId)) {
-        document.body.classList.add('is-project-page');
-        initDots(sectionId);
-    } else {
-        document.body.classList.remove('is-project-page');
+    if (target) {
+        target.classList.add('active-section');
+        
+        // 3. Re-initialize touch listeners specifically for this section
+        const utilityPages = ['work', 'about', 'contact'];
+        if (!utilityPages.includes(sectionId)) {
+            setupTouchListeners(sectionId); 
+            initDots(sectionId);
+        }
     }
+
     window.scrollTo(0, 0);
 }
 
