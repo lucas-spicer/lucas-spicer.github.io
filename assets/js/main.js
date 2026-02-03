@@ -180,17 +180,41 @@ function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active'); 
 }
 
-function handleLightboxTouchEnd(evt) {
-    if (!xDown) return;
-    let xUp = evt.changedTouches[0].clientX;
-    let xDiff = xDown - xUp;
+let xDown = null;
+let yDown = null; // Add this to track vertical movement
 
-    if (Math.abs(xDiff) > 50) {
-        if (evt.cancelable) evt.preventDefault();
-        if (xDiff > 0) { changeImage(1); } 
-        else { changeImage(-1); }
+function handleTouchStart(evt) { 
+    xDown = evt.touches[0].clientX; 
+    yDown = evt.touches[0].clientY; // Track starting Y position
+}
+
+function handleTouchEnd(evt, projectId) {
+    if (!xDown || !yDown) return;
+
+    let xUp = evt.changedTouches[0].clientX;
+    let yUp = evt.changedTouches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    // Check if the horizontal swipe is stronger than the vertical scroll
+    // This is how Instagram decides to swipe instead of scroll
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        if (Math.abs(xDiff) > 50) { 
+            const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
+            const featuredImg = document.getElementById(`featured-${projectId}`);
+            let idx = thumbs.findIndex(t => t.src === featuredImg.src);
+            
+            if (xDiff > 0) { idx = (idx + 1) % thumbs.length; } 
+            else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
+            
+            lockImage(projectId, thumbs[idx]);
+        }
     }
+    
+    // Reset values
     xDown = null;
+    yDown = null;
 }
 
 // Keyboard Listeners
