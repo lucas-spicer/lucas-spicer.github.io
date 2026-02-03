@@ -250,17 +250,6 @@ a.learn-more-link:hover {
     opacity: 1;
 }
 
-.featured-stage {
-    flex: 1;
-    height: 100%;
-    background: var(--stage-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    touch-action: auto; 
-}
-
 .featured-stage img {
     max-width: 100%;
     max-height: 100%;
@@ -616,4 +605,39 @@ a.learn-more-link:hover {
 /* Force buttons to be clickable even if a touch event is lingering */
 button, a {
     touch-action: manipulation;
+}
+
+/* 1. Update this block in your CSS */
+.featured-stage {
+    flex: 1;
+    height: 100%;
+    background: var(--stage-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* CHANGE THIS FROM 'auto' TO 'pan-y' */
+    touch-action: pan-y; 
+    /* ADD THIS: prevents the "sticky" grey highlight/focus */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+/* 2. Add this to your Button/Link styles */
+.meta-nav a, .nav-links a, .dot, .menu-toggle {
+    /* This forces the browser to treat taps as immediate clicks */
+    touch-action: manipulation;
+    /* Ensures buttons are always 'on top' of any invisible swipe layers */
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Disable hover effects on mobile entirely */
+@media (max-width: 1024px) {
+    .project-item:hover img,
+    .vertical-thumbs img:hover,
+    .nav-links a:hover {
+        opacity: inherit !important;
+        transition: none !important;
+    }
 }
