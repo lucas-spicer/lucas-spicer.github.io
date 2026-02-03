@@ -605,3 +605,15 @@ a.learn-more-link:hover {
         opacity: 0.6;
     }
 }
+
+/* This allows the browser to know that vertical swipes 
+   should always be treated as page scrolls */
+.featured-stage {
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Force buttons to be clickable even if a touch event is lingering */
+button, a {
+    touch-action: manipulation;
+}
