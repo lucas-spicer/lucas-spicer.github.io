@@ -570,7 +570,7 @@ a.learn-more-link:hover {
     .featured-stage {
         width: calc(100% + (var(--p-gap) * 2));
         margin-left: calc(var(--p-gap) * -1);
-        height: 100vh; /* Scaled for mobile viewport */
+        height: 70vh; /* Scaled for mobile viewport */
         aspect-ratio: auto;
     }
 
