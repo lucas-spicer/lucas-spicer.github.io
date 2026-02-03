@@ -15,8 +15,8 @@
 
 <header class="header">
     <div class="header-inner">
-        <a href="javascript:void(0)" onpointerdown="showSection('work')" class="ald-logo">LUCAS SPICER</a>
-        <button class="menu-toggle" onpointerdown="toggleMenu()" aria-label="Toggle Menu">
+        <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
 
             <span class="bar"></span>
             <span class="bar"></span>
@@ -24,9 +24,9 @@
         </button>
         <nav class="main-nav">
             <ul class="nav-links">
-                <li><a onpointerdown="handleNav('work')" id="link-work" class="active">Work</a></li>
-                <li><a onpointerdown="handleNav('about')" id="link-about">About</a></li>
-                <li><a onpointerdown="handleNav('contact')" id="link-contact">Contact</a></li>
+                <li><a onclick="handleNav('work')" id="link-work" class="active">Work</a></li>
+                <li><a onclick="handleNav('about')" id="link-about">About</a></li>
+                <li><a onclick="handleNav('contact')" id="link-contact">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -38,23 +38,23 @@
     
     <section id="work" class="page-section active-section">
         <div class="project-grid">
-            <article class="project-item" onpointerdown="showSection('watermelon')">
+            <article class="project-item" onclick="showSection('watermelon')">
                 <div class="image-container"><img src="./assets/images/watermelon/watermelon-1.png" alt="Watermelon"></div>
                 <div class="project-info"><span class="title">Watermelon</span><span class="category">Rebrand</span></div>
             </article>
-            <article class="project-item" onpointerdown="showSection('calico')">
+            <article class="project-item" onclick="showSection('calico')">
                 <div class="image-container"><img src="./assets/images/calico/calico-1.png" alt="Calico"></div>
                 <div class="project-info"><span class="title">Calico</span><span class="category">Creation</span></div>
             </article>
-            <article class="project-item" onpointerdown="showSection('canvas')">
+            <article class="project-item" onclick="showSection('canvas')">
                 <div class="image-container"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
                 <div class="project-info"><span class="title">Canvas</span><span class="category">Software</span></div>
             </article>
-            <article class="project-item" onpointerdown="showSection('design')">
+            <article class="project-item" onclick="showSection('design')">
                 <div class="image-container"><img src="./assets/images/design/design-1.png" alt="Design"></div>
                 <div class="project-info"><span class="title">Design</span><span class="category">Ad-Hoc</span></div>
             </article>
-            <article class="project-item" onpointerdown="showSection('board')">
+            <article class="project-item" onclick="showSection('board')">
                 <div class="image-container"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
                 <div class="project-info"><span class="title">Board</span><span class="category">Curation</span></div>
             </article>
@@ -64,15 +64,15 @@
     <section id="watermelon" class="page-section">
         <div class="new-detail-wrapper">
             <div class="vertical-thumbs" onmouseleave="revertToClicked('watermelon')">
-                <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)" class="active-thumb">
-                <img src="./assets/images/watermelon/watermelon-2.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-3.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-4.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-5.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-6.png" onmouseover="previewImage('watermelon', this.src)" onpointerdown="lockImage('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)" class="active-thumb">
+                <img src="./assets/images/watermelon/watermelon-2.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-3.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-4.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-5.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
+                <img src="./assets/images/watermelon/watermelon-6.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
             </div>
             <div class="featured-stage"> 
-                <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onpointerdown="openLightbox(this)" alt="View">
+                <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="View">
             </div>
             <div class="mobile-dots" id="dots-watermelon"></div>
             <aside class="project-meta">
@@ -85,8 +85,8 @@
                         <p class="learn"><a href="https://www.watermelonresearch.com" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
                     </div>
 <div class="meta-nav">
-    <a href="javascript:void(0)" onpointerdown="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onpointerdown="nextProject()">Next Project →</a>
+    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
 </div>
                 </div>
             </aside>
@@ -96,15 +96,15 @@
     <section id="calico" class="page-section">
         <div class="new-detail-wrapper">
             <div class="vertical-thumbs" onmouseleave="revertToClicked('calico')">
-                <img src="./assets/images/calico/calico-1.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)" class="active-thumb">
-                <img src="./assets/images/calico/calico-2.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-3.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-4.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-5.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-6.png" onmouseover="previewImage('calico', this.src)" onpointerdown="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-1.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)" class="active-thumb">
+                <img src="./assets/images/calico/calico-2.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-3.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-4.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-5.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
+                <img src="./assets/images/calico/calico-6.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
             </div>
             <div class="featured-stage"> 
-                <img id="featured-calico" src="./assets/images/calico/calico-1.png" onpointerdown="openLightbox(this)" alt="View">
+                <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="View">
             </div>
             <div class="mobile-dots" id="dots-calico"></div>
             <aside class="project-meta">
@@ -117,8 +117,8 @@
                         <p class="learn"><a href="https://www.calicoservices.com" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
                     </div>
 <div class="meta-nav">
-    <a href="javascript:void(0)" onpointerdown="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onpointerdown="nextProject()">Next Project →</a>
+    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
 </div>
                 </div>
             </aside>
@@ -128,15 +128,15 @@
     <section id="canvas" class="page-section">
         <div class="new-detail-wrapper">
             <div class="vertical-thumbs" onmouseleave="revertToClicked('canvas')">
-                <img src="./assets/images/canvas/canvas-1.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)" class="active-thumb">
-                <img src="./assets/images/canvas/canvas-2.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-3.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-4.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-5.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-6.png" onmouseover="previewImage('canvas', this.src)" onpointerdown="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-1.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)" class="active-thumb">
+                <img src="./assets/images/canvas/canvas-2.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-3.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-4.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-5.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
+                <img src="./assets/images/canvas/canvas-6.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
             </div>
             <div class="featured-stage"> 
-                <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onpointerdown="openLightbox(this)" alt="View">
+                <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="View">
             </div>
             <div class="mobile-dots" id="dots-canvas"></div>
             <aside class="project-meta">
@@ -149,8 +149,8 @@
                         <p class="learn"><a href="https://www.watermelonresearch.com/canvas" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
                     </div>
 <div class="meta-nav">
-    <a href="javascript:void(0)" onpointerdown="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onpointerdown="nextProject()">Next Project →</a>
+    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
 </div>
                 </div>
             </aside>
@@ -160,14 +160,14 @@
     <section id="design" class="page-section">
         <div class="new-detail-wrapper">
             <div class="vertical-thumbs" onmouseleave="revertToClicked('design')">
-                <img src="./assets/images/design/design-1.png" onmouseover="previewImage('design', this.src)" onpointerdown="lockImage('design', this)" class="active-thumb">
-                <img src="./assets/images/design/design-2.png" onmouseover="previewImage('design', this.src)" onpointerdown="lockImage('design', this)">
-                <img src="./assets/images/design/design-3.png" onmouseover="previewImage('design', this.src)" onpointerdown="lockImage('design', this)">
-                <img src="./assets/images/design/design-4.png" onmouseover="previewImage('design', this.src)" onpointerdown="lockImage('design', this)">
-                <img src="./assets/images/design/design-5.png" onmouseover="previewImage('design', this.src)" onpointerdown="lockImage('design', this)">
+                <img src="./assets/images/design/design-1.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)" class="active-thumb">
+                <img src="./assets/images/design/design-2.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-3.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-4.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
+                <img src="./assets/images/design/design-5.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
             </div>
             <div class="featured-stage"> 
-                <img id="featured-design" src="./assets/images/design/design-1.png" onpointerdown="openLightbox(this)" alt="View">
+                <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="View">
             </div>
             <div class="mobile-dots" id="dots-design"></div>
             <aside class="project-meta">
@@ -179,8 +179,8 @@
                         <p>A collection of print, graphic, and digital designs.</p>
                     </div>
 <div class="meta-nav">
-    <a href="javascript:void(0)" onpointerdown="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onpointerdown="nextProject()">Next Project →</a>
+    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
 </div>
                 </div>
             </aside>
@@ -190,16 +190,16 @@
     <section id="board" class="page-section">
         <div class="new-detail-wrapper">
             <div class="vertical-thumbs" onmouseleave="revertToClicked('board')">
-                <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)" class="active-thumb">
-                <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-7.png" onmouseover="previewImage('board', this.src)" onpointerdown="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)" class="active-thumb">
+                <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
+                <img src="./assets/images/inspiration/inspiration-7.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
             </div>
             <div class="featured-stage"> 
-                <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onpointerdown="openLightbox(this)" alt="View">
+                <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="View">
             </div>
             <div class="mobile-dots" id="dots-board"></div>
             <aside class="project-meta">
@@ -211,8 +211,8 @@
                         <p>Visual mood board.</p>
                     </div>
 <div class="meta-nav">
-    <a href="javascript:void(0)" onpointerdown="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onpointerdown="nextProject()">Next Project →</a>
+    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
+    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
 </div>
                 </div>
             </aside>
@@ -273,13 +273,13 @@
 </main>
     
 <div id="lightbox" class="lightbox" ontouchstart="handleTouchStart(event)" ontouchend="handleLightboxTouchEnd(event)">
-    <span class="close-lightbox" onpointerdown="closeLightbox()">&times;</span>
-    <button class="lightbox-nav prev" onpointerdown="changeImage(-1)">&#8592;</button>
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
     <div class="lightbox-content">
         <img id="lightbox-img" src="">
         <div id="lightbox-counter" class="lightbox-counter"></div>
     </div>
-    <button class="lightbox-nav next" onpointerdown="changeImage(1)">&#8594;</button>
+    <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
 </div>
 
 </body>
