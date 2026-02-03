@@ -291,59 +291,64 @@ body {
     user-select: none;
 }
 
-/* --- MOBILE RESPONSIVE (1024px) --- */
+/* --- MOBILE DOTS --- */
+.mobile-dots {
+    display: none; /* Hidden by default on Desktop */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.dot.active {
+    background: #181818;
+    transform: scale(1.2);
+}
+
+/* --- RESPONSIVE FIXES (1024px) --- */
 @media (max-width: 1024px) {
-    .menu-toggle { display: flex; }
-
-    .main-nav {
-        position: fixed;
-        top: 61px;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background: #fff;
-        overflow: hidden;
-        transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 999;
-        pointer-events: none; /* Crucial: stops nav blocking content when closed */
+    /* 1. Hide the vertical thumbnails on mobile */
+    .vertical-thumbs {
+        display: none !important;
     }
 
-    .mobile-menu-open .main-nav {
-        height: calc(100vh - 61px);
-        border-bottom: 1px solid #eee;
-        pointer-events: auto;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        padding: 50px 40px;
-    }
-
-    .nav-links a { font-size: 0.875rem; opacity: 1; }
-
-    .project-grid { grid-template-columns: 1fr; }
-
-    .new-detail-wrapper {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .vertical-thumbs { display: none; }
-
+    /* 2. Show the dots only when thumbs are hidden */
     .mobile-dots {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        padding: 20px 0;
+        display: flex !important;
     }
 
+    /* 3. Adjust stage height for mobile swipe experience */
     .featured-stage {
         width: calc(100% + (var(--p-gap) * 2));
         margin-left: calc(var(--p-gap) * -1);
         height: 50vh;
+        aspect-ratio: auto;
+    }
+    
+    .new-detail-wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 0; /* Dots provide the spacing now */
     }
 
-    .project-meta { width: 100%; }
+    .project-meta {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
 
 /* --- TOUCH OPTIMIZATION --- */
