@@ -601,3 +601,12 @@ a.learn-more-link:hover {
         opacity: 0.6;
     }
 }
+
+@media (hover: none) {
+    .featured-stage img:hover,
+    .project-item:hover img,
+    .vertical-thumbs img:hover {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
