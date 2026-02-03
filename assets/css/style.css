@@ -254,7 +254,6 @@ a.learn-more-link:hover {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    touch-action: auto;
 }
 
 .featured-stage img {
