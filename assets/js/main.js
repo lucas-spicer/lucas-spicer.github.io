@@ -11,9 +11,7 @@ const lockedImages = {
 
 let xDown = null;
 let yDown = null;
-let lastSwipeTime = 0; 
 
-// --- IMPROVED TOUCH HANDLING ---
 function handleTouchStart(evt) { 
     xDown = evt.touches[0].clientX; 
     yDown = evt.touches[0].clientY;
@@ -27,10 +25,8 @@ function handleTouchEnd(evt, projectId) {
     let xDiff = xDown - xUp;
     let yDiff = yDown - yUp;
 
-    // Swipe threshold: Horizontal must be greater than vertical
-    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 40) { 
-        lastSwipeTime = Date.now(); // Mark the time of the swipe
-        
+    // Only trigger swipe if horizontal movement is greater than vertical
+    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) { 
         const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
         const featuredImg = document.getElementById(`featured-${projectId}`);
         let idx = thumbs.findIndex(t => t.src === featuredImg.src);
@@ -40,30 +36,21 @@ function handleTouchEnd(evt, projectId) {
         
         lockImage(projectId, thumbs[idx]);
     }
+
+    // RESET: Crucial for releasing the browser's focus from the swipe
     xDown = null;
     yDown = null;
 }
 
-// --- LIGHTBOX FIX ---
-function openLightbox(img) {
-    // If we swiped in the last 300ms, this is a "ghost click" from the swipe. Kill it.
-    if (Date.now() - lastSwipeTime < 300) return;
-
-    const section = img.closest('.page-section');
-    cgi = Array.from(section.querySelectorAll('.vertical-thumbs img')).map(i => i.src);
-    cidx = cgi.indexOf(img.src);
-    updateLightbox();
-    document.getElementById('lightbox').classList.add('active');
-}
-
-// --- CORE NAVIGATION ---
 function showSection(sectionId) {
     const newIndex = projectOrder.indexOf(sectionId);
     if (newIndex !== -1) currentProjectIndex = newIndex;
 
     document.body.classList.remove('mobile-menu-open');
 
-    document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-section'));
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(sec => sec.classList.remove('active-section'));
+    
     const target = document.getElementById(sectionId);
     if (target) target.classList.add('active-section');
 
@@ -80,7 +67,6 @@ function showSection(sectionId) {
     window.scrollTo(0, 0);
 }
 
-// --- DOTS (Fixed for Single Tap) ---
 function initDots(projectId) {
     const section = document.getElementById(projectId);
     const dotsContainer = document.getElementById(`dots-${projectId}`);
@@ -93,11 +79,10 @@ function initDots(projectId) {
     thumbs.forEach((thumb) => {
         const dot = document.createElement('button');
         dot.className = (thumb.src === featuredImg.src) ? 'dot active' : 'dot';
-        
-        // Use pointerdown for faster response than 'click'
-        dot.onpointerdown = (e) => {
+        dot.onclick = (e) => { 
             e.preventDefault();
-            lockImage(projectId, thumb);
+            e.stopPropagation(); 
+            lockImage(projectId, thumb); 
         };
         dotsContainer.appendChild(dot);
     });
@@ -109,52 +94,36 @@ function nextProject() {
     showSection(projectOrder[ni]);
 }
 
-function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
-function handleNav(s) { showSection(s); }
-function previewImage(projectId, src) {
-    const featured = document.getElementById(`featured-${projectId}`);
-    if (featured) featured.src = src;
-}
-
 function lockImage(projectId, thumbElement) {
     lockedImages[projectId] = thumbElement.src;
     const thumbs = Array.from(thumbElement.parentElement.querySelectorAll('img'));
     thumbs.forEach(img => img.classList.remove('active-thumb'));
     thumbElement.classList.add('active-thumb');
-    previewImage(projectId, thumbElement.src);
+    
+    const featured = document.getElementById(`featured-${projectId}`);
+    if (featured) featured.src = thumbElement.src;
+    
     initDots(projectId); 
 }
 
+function toggleMenu() { document.body.classList.toggle('mobile-menu-open'); }
+function handleNav(s) { showSection(s); }
 function revertToClicked(projectId) {
     const featured = document.getElementById(`featured-${projectId}`);
     if (featured) featured.src = lockedImages[projectId];
 }
 
-// --- LIGHTBOX CONTROLS ---
-let cgi = []; let cidx = 0;
-function changeImage(d) {
-    cidx = (cidx + d + cgi.length) % cgi.length;
+// --- LIGHTBOX ---
+function openLightbox(img) {
+    const section = img.closest('.page-section');
+    cgi = Array.from(section.querySelectorAll('.vertical-thumbs img')).map(i => i.src);
+    cidx = cgi.indexOf(img.src);
     updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
 }
+function changeImage(d) { cidx = (cidx + d + cgi.length) % cgi.length; updateLightbox(); }
 function updateLightbox() {
     document.getElementById('lightbox-img').src = cgi[cidx];
     document.getElementById('lightbox-counter').innerText = `${cidx + 1} / ${cgi.length}`;
 }
 function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
-
-function handleLightboxTouchEnd(evt) {
-    if (!xDown) return;
-    let xUp = evt.changedTouches[0].clientX;
-    let xDiff = xDown - xUp;
-    if (Math.abs(xDiff) > 50) {
-        if (xDiff > 0) changeImage(1); else changeImage(-1);
-    }
-    xDown = null;
-}
-
-document.addEventListener('keydown', (e) => {
-    if (!document.getElementById('lightbox').classList.contains('active')) return;
-    if (e.key === "ArrowLeft") changeImage(-1);
-    if (e.key === "ArrowRight") changeImage(1);
-    if (e.key === "Escape") closeLightbox();
-});
