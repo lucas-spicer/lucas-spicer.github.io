@@ -13,11 +13,14 @@ let xDown = null;
 let yDown = null; // Added to track vertical movement
 let isSwiping = false; // Added to prevent clicks after a swipe
 
-// --- TOUCH HANDLING ---
+// Add these to your top-level variables
+let xDown = null;
+let yDown = null;
+let lastSwipeTime = 0; // The "shield" variable
+
 function handleTouchStart(evt) { 
     xDown = evt.touches[0].clientX; 
-    yDown = evt.touches[0].clientY; // Track starting Y
-    isSwiping = false; // Reset on every new touch
+    yDown = evt.touches[0].clientY; 
 }
 
 function handleTouchEnd(evt, projectId) {
@@ -25,13 +28,13 @@ function handleTouchEnd(evt, projectId) {
 
     let xUp = evt.changedTouches[0].clientX;
     let yUp = evt.changedTouches[0].clientY;
-
     let xDiff = xDown - xUp;
     let yDiff = yDown - yUp;
 
-    // AXIS LOCK: Only trigger swipe if horizontal movement is greater than vertical
+    // AXIS LOCK: Only swipe if horizontal is clearly the intent
     if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) { 
-        isSwiping = true; // Mark as a swipe to block the upcoming click event
+        // 1. Record the exact time of the swipe
+        lastSwipeTime = Date.now(); 
         
         const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
         const featuredImg = document.getElementById(`featured-${projectId}`);
@@ -39,11 +42,26 @@ function handleTouchEnd(evt, projectId) {
         
         if (xDiff > 0) { idx = (idx + 1) % thumbs.length; } 
         else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
+        
         lockImage(projectId, thumbs[idx]);
     }
 
     xDown = null;
     yDown = null;
+}
+
+// Update openLightbox to check the TIME since the last swipe
+function openLightbox(img) {
+    // If less than 400ms has passed since a swipe, it's a "ghost click" - ignore it.
+    if (Date.now() - lastSwipeTime < 400) {
+        return;
+    }
+
+    const section = img.closest('.page-section');
+    cgi = Array.from(section.querySelectorAll('.vertical-thumbs img')).map(i => i.src);
+    cidx = cgi.indexOf(img.src);
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
 }
 
 // --- CORE NAVIGATION ---
