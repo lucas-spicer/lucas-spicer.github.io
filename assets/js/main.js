@@ -118,6 +118,9 @@ function nextProject() {
 }
 
 function lockImage(projectId, thumbElement) {
+    // Clear any accidental text/image selection caused by swiping
+    window.getSelection().removeAllRanges();
+
     lockedImages[projectId] = thumbElement.src;
     
     const parent = thumbElement.parentElement;
