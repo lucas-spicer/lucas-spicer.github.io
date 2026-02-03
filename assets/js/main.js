@@ -10,20 +10,28 @@ const lockedImages = {
 };
 
 let xDown = null;
+let yDown = null; // Added to track vertical movement
+let isSwiping = false; // Added to prevent clicks after a swipe
 
-// --- TOUCH HANDLING FIX ---
+// --- TOUCH HANDLING ---
 function handleTouchStart(evt) { 
     xDown = evt.touches[0].clientX; 
+    yDown = evt.touches[0].clientY; // Track starting Y
+    isSwiping = false; // Reset on every new touch
 }
 
 function handleTouchEnd(evt, projectId) {
-    if (!xDown) return;
+    if (!xDown || !yDown) return;
+
     let xUp = evt.changedTouches[0].clientX;
+    let yUp = evt.changedTouches[0].clientY;
+
     let xDiff = xDown - xUp;
-    
-    if (Math.abs(xDiff) > 50) { 
-        // If it's a swipe, prevent the "click" from firing afterward
-        if (evt.cancelable) evt.preventDefault(); 
+    let yDiff = yDown - yUp;
+
+    // AXIS LOCK: Only trigger swipe if horizontal movement is greater than vertical
+    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) { 
+        isSwiping = true; // Mark as a swipe to block the upcoming click event
         
         const thumbs = Array.from(document.querySelector(`#${projectId} .vertical-thumbs`).querySelectorAll('img'));
         const featuredImg = document.getElementById(`featured-${projectId}`);
@@ -33,7 +41,9 @@ function handleTouchEnd(evt, projectId) {
         else { idx = (idx - 1 + thumbs.length) % thumbs.length; }
         lockImage(projectId, thumbs[idx]);
     }
+
     xDown = null;
+    yDown = null;
 }
 
 // --- CORE NAVIGATION ---
@@ -43,29 +53,22 @@ function showSection(sectionId) {
         currentProjectIndex = newIndex;
     }
 
-    // Close menu
     document.body.classList.remove('mobile-menu-open');
 
-    // Switch visibility using a more robust method
     const sections = document.querySelectorAll('.page-section');
     sections.forEach(sec => {
         sec.classList.remove('active-section');
-        // Optional: Force display none if your CSS doesn't handle it
-        // sec.style.display = 'none'; 
     });
     
     const target = document.getElementById(sectionId);
     if (target) {
         target.classList.add('active-section');
-        // target.style.display = 'block';
     }
 
-    // Update Nav Links
     document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
     const nl = document.getElementById('link-' + sectionId);
     if (nl) nl.classList.add('active');
 
-    // Project State
     const utilityPages = ['work', 'about', 'contact'];
     const isProject = !utilityPages.includes(sectionId);
 
@@ -102,7 +105,6 @@ function initDots(projectId) {
         dot.className = 'dot';
         dot.setAttribute('aria-label', `Go to image ${idx + 1}`);
         
-        // Use full URL comparison to avoid mismatch
         if (thumb.src === featuredImg.src) {
             dot.classList.add('active');
         }
@@ -123,7 +125,6 @@ function toggleMenu() {
 }
 
 function handleNav(s) { 
-    // Added a small delay to ensure the menu closing doesn't conflict with navigation
     document.body.classList.remove('mobile-menu-open'); 
     showSection(s); 
 }
@@ -156,6 +157,12 @@ let cgi = [];
 let cidx = 0;
 
 function openLightbox(img) {
+    // BLOCK LIGHTBOX IF USER JUST FINISHED SWIPING
+    if (isSwiping) {
+        isSwiping = false;
+        return;
+    }
+
     const section = img.closest('.page-section');
     cgi = Array.from(section.querySelectorAll('.vertical-thumbs img')).map(i => i.src);
     cidx = cgi.indexOf(img.src);
@@ -181,16 +188,18 @@ function closeLightbox() {
 }
 
 function handleLightboxTouchEnd(evt) {
-    if (!xDown) return;
+    if (!xDown || !yDown) return;
     let xUp = evt.changedTouches[0].clientX;
+    let yUp = evt.changedTouches[0].clientY;
     let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
 
-    if (Math.abs(xDiff) > 50) {
-        if (evt.cancelable) evt.preventDefault();
+    if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 50) {
         if (xDiff > 0) { changeImage(1); } 
         else { changeImage(-1); }
     }
     xDown = null;
+    yDown = null;
 }
 
 // Keyboard Listeners
