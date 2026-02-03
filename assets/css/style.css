@@ -137,10 +137,14 @@ body {
 
 .page-section {
     display: none;
+    visibility: hidden;
+    pointer-events: none; /* This prevents hidden sections from "stealing" clicks */
 }
 
 .active-section {
     display: block;
+    visibility: visible;
+    pointer-events: auto; /* Only the active section can receive clicks */
 }
 
 .project-grid {
