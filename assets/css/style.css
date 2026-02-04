@@ -56,7 +56,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .project-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 2000; display: none; overflow-y: auto; padding: 100px 5%; }
 .project-overlay.active { display: block; }
 .overlay-container { max-width: 1200px; margin: 0 auto; }
-.gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); padding: 5%; }
+.gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); }
 .close-overlay { position: fixed; top: 20px; right: 25px; background: white; border: 1px solid black; padding: 10px 20px; cursor: pointer; font-size: 0.7rem; }
 
 /* Add this to your style.css */
