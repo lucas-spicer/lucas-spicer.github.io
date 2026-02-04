@@ -59,6 +59,24 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); padding: 5%; }
 .close-overlay { position: fixed; top: 20px; right: 25px; background: white; border: 1px solid black; padding: 10px 20px; cursor: pointer; font-size: 0.7rem; }
 
+/* Add this to your style.css */
+.learn-more-link {
+    display: inline-block;
+    border: solid 1px var(--border); /* Original border color */
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: #181818;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.learn-more-link:hover {
+    background: #181818;
+    color: #ffffff;
+}
 
 /* --- RESPONSIVE MOBILE STYLES --- */
 @media (max-width: 1024px) {
