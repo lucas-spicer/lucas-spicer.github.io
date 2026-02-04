@@ -3,6 +3,7 @@ const projectsData = {
         title: "Watermelon",
         category: "Brand Identity & UI",
         desc: "Visual identity refresh for Watermelon. The project involved completely overhauling the brand, with a new website, logo and visual style across all templates and systems.",
+        link: "https://www.watermelonresearch.com/",
         images: [
             "./assets/images/watermelon/watermelon-1.png",
             "./assets/images/watermelon/watermelon-2.png",
@@ -16,6 +17,7 @@ const projectsData = {
         title: "Calico",
         category: "Web Creation",
         desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design templates.",
+        link: "https://www.calicoservices.com/",
         images: [
             "./assets/images/calico/calico-1.png",
             "./assets/images/calico/calico-2.png",
@@ -29,6 +31,7 @@ const projectsData = {
         title: "Canvas",
         category: "Software Build",
         desc: "Full UI / UX and software design for Canvas, our software platform. Responsible for all deisgn decisions and direction of the software, with 3000 users across 30+ markets.",
+        link: "https://www.watermelonresearch.com/canvas/",
         images: [
             "./assets/images/canvas/canvas-1.png",
             "./assets/images/canvas/canvas-2.png",
@@ -42,6 +45,7 @@ const projectsData = {
         title: "Design",
         category: "Visual Explorations",
         desc: "A collection of ad-hoc visual designs across print and digital media.",
+        link: "#",
         images: [
             "./assets/images/design/design-1.png",
             "./assets/images/design/design-2.png",
@@ -54,6 +58,7 @@ const projectsData = {
         title: "Board",
         category: "Curation & Mood",
         desc: "Visual research and moodboard curation.",
+        link: "#",
         images: [
             "./assets/images/inspiration/inspiration-1.png",
             "./assets/images/inspiration/inspiration-2.png",
@@ -71,11 +76,17 @@ function showProject(id) {
     const overlay = document.getElementById('project-overlay');
     const content = document.getElementById('overlay-content');
 
+    // Create the HTML for the link only if it's not a placeholder
+    const linkHTML = (data.link && data.link !== "#") 
+        ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
+        : "";
+
     content.innerHTML = `
         <div style="margin-bottom: 60px;">
             <h2 style="font-family: 'Crimson Text', serif; font-size: 4rem; font-style: italic; font-weight: 400;">${data.title}</h2>
             <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.4; margin: 10px 0 20px;">${data.category}</p>
             <p style="font-size: 1.1rem; line-height: 1.6; max-width: 600px;">${data.desc}</p>
+            ${linkHTML}
         </div>
         <div class="gallery">
             ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
