@@ -39,7 +39,8 @@ const projectsData = {
             "./assets/images/canvas/canvas-4.png",
             "./assets/images/canvas/canvas-5.png",
             "./assets/images/canvas/canvas-6.png"
-        ]
+        ],
+        videoId: "YhJjwyEdJX8"
     },
     design: {
         title: "Design",
@@ -81,6 +82,18 @@ function showProject(id) {
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
+    // Generate Video HTML if a videoId exists
+    const videoHTML = data.videoId ? `
+        <div class="video-stage">
+            <iframe 
+                src="https://www.youtube.com/embed/${data.videoId}?autoplay=1&mute=1&loop=1&playlist=${data.videoId}&controls=0&modestbranding=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    ` : "";
+
     content.innerHTML = `
         <div style="margin-bottom: 40px;">
             <h2 style="font-family: 'Crimson Text', serif; font-size: 4rem; font-style: italic; font-weight: 400;">${data.title}</h2>
@@ -89,6 +102,7 @@ function showProject(id) {
             ${linkHTML}
         </div>
         <div class="gallery">
+            ${videoHTML}
             ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
         </div>
     `;
