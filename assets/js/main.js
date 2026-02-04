@@ -82,18 +82,6 @@ function showProject(id) {
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-// Replace the videoHTML block inside your showProject function
-const videoHTML = data.videoId ? `
-    <div class="video-stage">
-        <iframe 
-            src="https://www.youtube.com/embed/${data.videoId}?autoplay=1&controls=1&modestbranding=1&rel=0" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
-    </div>
-` : "";
-
     content.innerHTML = `
         <div style="margin-bottom: 40px;">
             <h2 style="font-family: 'Crimson Text', serif; font-size: 4rem; font-style: italic; font-weight: 400;">${data.title}</h2>
@@ -102,7 +90,6 @@ const videoHTML = data.videoId ? `
             ${linkHTML}
         </div>
         <div class="gallery">
-            ${videoHTML}
             ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
         </div>
     `;
