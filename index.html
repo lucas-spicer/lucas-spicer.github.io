@@ -3,284 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Spicer | Designer & Front-End Developer</title>
-    
+    <title>Lucas Spicer | Designer & Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js"></script>
-    
+    <script src="assets/js/main.js" defer></script>
 </head>
-    
-<body class="home">
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-<header class="header">
-    <div class="header-inner">
-        <a href="javascript:void(0)" onclick="showSection('work')" class="ald-logo">LUCAS SPICER</a>
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">
-
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav class="main-nav">
-            <ul class="nav-links">
-                <li><a onclick="handleNav('work')" id="link-work" class="active">Work</a></li>
-                <li><a onclick="handleNav('about')" id="link-about">About</a></li>
-                <li><a onclick="handleNav('contact')" id="link-contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<div class="header-spacer"></div>
-
-<main class="main-content">
-    
-    <section id="work" class="page-section active-section">
-        <div class="project-grid">
-            <article class="project-item" onclick="showSection('watermelon')">
-                <div class="image-container"><img src="./assets/images/watermelon/watermelon-1.png" alt="Watermelon"></div>
-                <div class="project-info"><span class="title">Watermelon</span><span class="category">Rebrand</span></div>
-            </article>
-            <article class="project-item" onclick="showSection('calico')">
-                <div class="image-container"><img src="./assets/images/calico/calico-1.png" alt="Calico"></div>
-                <div class="project-info"><span class="title">Calico</span><span class="category">Creation</span></div>
-            </article>
-            <article class="project-item" onclick="showSection('canvas')">
-                <div class="image-container"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
-                <div class="project-info"><span class="title">Canvas</span><span class="category">Software</span></div>
-            </article>
-            <article class="project-item" onclick="showSection('design')">
-                <div class="image-container"><img src="./assets/images/design/design-1.png" alt="Design"></div>
-                <div class="project-info"><span class="title">Design</span><span class="category">Ad-Hoc</span></div>
-            </article>
-            <article class="project-item" onclick="showSection('board')">
-                <div class="image-container"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
-                <div class="project-info"><span class="title">Board</span><span class="category">Curation</span></div>
-            </article>
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="ald-logo">L. SPICER</a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <section id="watermelon" class="page-section">
-        <div class="new-detail-wrapper">
-            <div class="vertical-thumbs" onmouseleave="revertToClicked('watermelon')">
-                <img src="./assets/images/watermelon/watermelon-1.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)" class="active-thumb">
-                <img src="./assets/images/watermelon/watermelon-2.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-3.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-4.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-5.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
-                <img src="./assets/images/watermelon/watermelon-6.png" onmouseover="previewImage('watermelon', this.src)" onclick="lockImage('watermelon', this)">
+    <main class="horizontal-container">
+        <section class="horizontal-item hero-section" id="work">
+            <div class="hero-content">
+                <h1 class="massive-title">DIGITAL<br>DESIGNER</h1>
+                <p class="hero-sub">LUCAS SPICER — PORTFOLIO 2024</p>
             </div>
-            <div class="featured-stage"> 
-                <img id="featured-watermelon" src="./assets/images/watermelon/watermelon-1.png" onclick="openLightbox(this)" alt="View">
-            </div>
-            <div class="mobile-dots" id="dots-watermelon"></div>
-            <aside class="project-meta">
-                <div class="meta-inner">
-                    <h1 class="serif-italic">Watermelon</h1>
-                    <p class="category">Rebrand</p>
-                    <div class="meta-text">
-                        <p class="description-lead">Brand redesign and website build.</p>
-                        <p>I led the complete brand overhaul for Watermelon, redesigning our entire visual identity. My work included creating a new website, logos, and a full suite of templates.</p>
-                        <p class="learn"><a href="https://www.watermelonresearch.com" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
-                    </div>
-<div class="meta-nav">
-    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
-</div>
+        </section>
+
+        <section class="horizontal-item project-slide">
+            <div class="project-wrap">
+                <div class="image-reveal"><img src="./assets/images/watermelon/watermelon-1.png" alt="Watermelon"></div>
+                <div class="project-details">
+                    <span class="index">01</span>
+                    <h2 class="serif-title">Watermelon</h2>
+                    <p class="category">Brand Identity & UI</p>
                 </div>
-            </aside>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="calico" class="page-section">
-        <div class="new-detail-wrapper">
-            <div class="vertical-thumbs" onmouseleave="revertToClicked('calico')">
-                <img src="./assets/images/calico/calico-1.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)" class="active-thumb">
-                <img src="./assets/images/calico/calico-2.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-3.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-4.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-5.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
-                <img src="./assets/images/calico/calico-6.png" onmouseover="previewImage('calico', this.src)" onclick="lockImage('calico', this)">
-            </div>
-            <div class="featured-stage"> 
-                <img id="featured-calico" src="./assets/images/calico/calico-1.png" onclick="openLightbox(this)" alt="View">
-            </div>
-            <div class="mobile-dots" id="dots-calico"></div>
-            <aside class="project-meta">
-                <div class="meta-inner">
-                    <h1 class="serif-italic">Calico</h1>
-                    <p class="category">Creation</p>
-                    <div class="meta-text">
-                        <p class="description-lead">Full brand creation and website build.</p>
-                        <p>For Calico I designed a visual identity defined by vibrant colors, aesthetic fonts, and a casual, approachable tone.</p>
-                        <p class="learn"><a href="https://www.calicoservices.com" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
-                    </div>
-<div class="meta-nav">
-    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
-</div>
+        <section class="horizontal-item project-slide">
+            <div class="project-wrap">
+                <div class="image-reveal"><img src="./assets/images/calico/calico-1.png" alt="Calico"></div>
+                <div class="project-details">
+                    <span class="index">02</span>
+                    <h2 class="serif-title">Calico</h2>
+                    <p class="category">Creation & Web Build</p>
                 </div>
-            </aside>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="canvas" class="page-section">
-        <div class="new-detail-wrapper">
-            <div class="vertical-thumbs" onmouseleave="revertToClicked('canvas')">
-                <img src="./assets/images/canvas/canvas-1.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)" class="active-thumb">
-                <img src="./assets/images/canvas/canvas-2.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-3.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-4.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-5.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
-                <img src="./assets/images/canvas/canvas-6.png" onmouseover="previewImage('canvas', this.src)" onclick="lockImage('canvas', this)">
-            </div>
-            <div class="featured-stage"> 
-                <img id="featured-canvas" src="./assets/images/canvas/canvas-1.png" onclick="openLightbox(this)" alt="View">
-            </div>
-            <div class="mobile-dots" id="dots-canvas"></div>
-            <aside class="project-meta">
-                <div class="meta-inner">
-                    <h1 class="serif-italic">Canvas</h1>
+        <section class="horizontal-item project-slide">
+            <div class="project-wrap">
+                <div class="image-reveal"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
+                <div class="project-details">
+                    <span class="index">03</span>
+                    <h2 class="serif-title">Canvas</h2>
                     <p class="category">Software Build</p>
-                    <div class="meta-text">
-                        <p class="description-lead">Full bespoke build of our software platform.</p>
-                        <p>I am responsible for all front-end design, UI, UX, and brand direction for our in house software platform, Canvas. We have over 3000 users across 30+ markets.</p>
-                        <p class="learn"><a href="https://www.watermelonresearch.com/canvas" target="_blank" class="learn-more-link" onclick="event.stopPropagation();">Learn More</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="horizontal-item project-slide">
+            <div class="project-wrap">
+                <div class="image-reveal"><img src="./assets/images/design/design-1.png" alt="Design"></div>
+                <div class="project-details">
+                    <span class="index">04</span>
+                    <h2 class="serif-title">Design</h2>
+                    <p class="category">Ad-Hoc Visuals</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="horizontal-item project-slide">
+            <div class="project-wrap">
+                <div class="image-reveal"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
+                <div class="project-details">
+                    <span class="index">05</span>
+                    <h2 class="serif-title">Board</h2>
+                    <p class="category">Curation & Mood</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="horizontal-item" id="about">
+            <div class="about-container">
+                <h2 class="serif-title">About</h2>
+                <p class="bio-intro">Designer & Front-End Developer</p>
+                <p class="bio-intro-small">I specialize in high-end UI/UX, balancing visual aesthetic with clean, functional design.</p>
+                <div class="info-grid">
+                    <div class="info-column">
+                        <h3>Skills</h3>
+                        <ul><li>UI/UX Design</li><li>Branding</li><li>Web Design</li></ul>
                     </div>
-<div class="meta-nav">
-    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
-</div>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <section id="design" class="page-section">
-        <div class="new-detail-wrapper">
-            <div class="vertical-thumbs" onmouseleave="revertToClicked('design')">
-                <img src="./assets/images/design/design-1.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)" class="active-thumb">
-                <img src="./assets/images/design/design-2.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
-                <img src="./assets/images/design/design-3.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
-                <img src="./assets/images/design/design-4.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
-                <img src="./assets/images/design/design-5.png" onmouseover="previewImage('design', this.src)" onclick="lockImage('design', this)">
-            </div>
-            <div class="featured-stage"> 
-                <img id="featured-design" src="./assets/images/design/design-1.png" onclick="openLightbox(this)" alt="View">
-            </div>
-            <div class="mobile-dots" id="dots-design"></div>
-            <aside class="project-meta">
-                <div class="meta-inner">
-                    <h1 class="serif-italic">Design</h1>
-                    <p class="category">Ad-Hoc</p>
-                    <div class="meta-text">
-                        <p class="description-lead">Design work</p>
-                        <p>A collection of print, graphic, and digital designs.</p>
+                    <div class="info-column">
+                        <h3>Tools</h3>
+                        <ul><li>Figma</li><li>HTML/CSS</li><li>Adobe Suite</li></ul>
                     </div>
-<div class="meta-nav">
-    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
-</div>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <section id="board" class="page-section">
-        <div class="new-detail-wrapper">
-            <div class="vertical-thumbs" onmouseleave="revertToClicked('board')">
-                <img src="./assets/images/inspiration/inspiration-1.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)" class="active-thumb">
-                <img src="./assets/images/inspiration/inspiration-2.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-3.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-4.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-5.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-6.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-                <img src="./assets/images/inspiration/inspiration-7.png" onmouseover="previewImage('board', this.src)" onclick="lockImage('board', this)">
-            </div>
-            <div class="featured-stage"> 
-                <img id="featured-board" src="./assets/images/inspiration/inspiration-1.png" onclick="openLightbox(this)" alt="View">
-            </div>
-            <div class="mobile-dots" id="dots-board"></div>
-            <aside class="project-meta">
-                <div class="meta-inner">
-                    <h1 class="serif-italic">Board</h1>
-                    <p class="category">Curation</p>
-                    <div class="meta-text">
-                        <p class="description-lead">Print and Photography</p>
-                        <p>Visual mood board.</p>
-                    </div>
-<div class="meta-nav">
-    <a href="javascript:void(0)" onclick="showSection('work')">← Return</a>
-    <a href="javascript:void(0)" onclick="nextProject()">Next Project →</a>
-</div>
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <section id="about" class="page-section">
-        <div class="about-container">
-            <h2 class="h2-title">About</h2>
-            <p class="bio-intro">Designer & Front-End Developer</p>
-            <p class="bio-intro-small">I specialize in high-end UI/UX, balancing visual aesthetic with clean, functional design.</p>
-            <div class="info-grid">
-                <div class="info-column">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>UI Design</li><li>UX Design</li><li>Graphic Design</li><li>Web Design</li><li>Branding</li><li>Audio / Video editing</li>
-                    </ul>
-                </div>
-                <div class="info-column">
-                    <h3>Expertise</h3>
-                    <ul>
-                        <li>Figma</li><li>Sketch</li><li>HTML</li><li>CSS</li><li>Vue.js</li><li>Adobe Suite</li>
-                    </ul>
-                </div>
-                <div class="info-column">
-                    <h3>Inspiration</h3>
-                    <ul>
-                        <li>Apple</li><li>Google</li><li>Nothing</li><li>Nike</li><li>Aimé Leon Dore</li><li>Denis Villeneuve</li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="page-section">
-        <div class="about-container">
-            <h2 class="h2-title">Contact</h2>
-            <div class="info-grid">
-                <div class="info-column">
-                    <h3>Inquiries</h3>
-                    <ul><li><a href="mailto:lucasspicer@icloud.com">lucasspicer@icloud.com</a></li></ul>
-                </div>
-                <div class="info-column">
-                    <h3>Social</h3>
-                    <ul>
-                        <li><a href="https://www.instagram.com/lspicer_/" target="_blank">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/in/lucas-spicer/" target="_blank">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="info-column">
-                    <h3>Location</h3>
-                    <ul><li>London / Remote</li></ul>
+        <section class="horizontal-item" id="contact">
+            <div class="contact-content">
+                <h2 class="serif-title">Contact</h2>
+                <a href="mailto:lucasspicer@icloud.com" class="massive-link">lucasspicer@icloud.com →</a>
+                <div class="social-links-footer">
+                    <a href="https://www.instagram.com/lspicer_/" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com/in/lucas-spicer/" target="_blank">LinkedIn</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-</main>
-    
-<div id="lightbox" class="lightbox" ontouchstart="handleTouchStart(event)" ontouchend="handleLightboxTouchEnd(event)">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <button class="lightbox-nav prev" onclick="changeImage(-1)">&#8592;</button>
-    <div class="lightbox-content">
-        <img id="lightbox-img" src="">
-        <div id="lightbox-counter" class="lightbox-counter"></div>
-    </div>
-    <button class="lightbox-nav next" onclick="changeImage(1)">&#8594;</button>
-</div>
-
+        </section>
+    </main>
 </body>
 </html>
