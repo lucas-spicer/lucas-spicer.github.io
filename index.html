@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/main.js" defer></script>
 </head>
-<body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+<body class="clean-theme">
 
     <header class="header">
         <div class="header-inner">
@@ -25,76 +23,54 @@
         </div>
     </header>
 
-    <main id="main-content">
-        <section id="hero" class="v-section">
-            <h1 class="massive-title">DIGITAL<br>DESIGNER</h1>
-            <p class="hero-sub">LUCAS SPICER — 2024</p>
+    <main>
+        <section id="hero" class="hero-section">
+            <h1 class="massive-title">LUCAS<br>SPICER</h1>
+            <p class="hero-sub">DIGITAL DESIGNER</p>
         </section>
 
-        <div id="work">
-            <section class="v-section project-card" onclick="showProject('watermelon')">
-                <div class="image-box"><img src="./assets/images/watermelon/watermelon-1.png" alt="Watermelon"></div>
-                <div class="project-meta"><span>01</span><h2>Watermelon</h2><p>Brand Identity & UI</p></div>
-            </section>
+        <div id="work" class="project-grid">
+            <div class="project-card" onclick="showProject('watermelon')">
+                <div class="image-stage"><img src="./assets/images/watermelon/watermelon-1.png" alt="Watermelon"></div>
+                <div class="project-info"><h2>Watermelon</h2><p>Brand Identity & UI</p></div>
+            </div>
 
-            <section class="v-section project-card" onclick="showProject('calico')">
-                <div class="image-box"><img src="./assets/images/calico/calico-1.png" alt="Calico"></div>
-                <div class="project-meta"><span>02</span><h2>Calico</h2><p>Web Creation</p></div>
-            </section>
+            <div class="project-card" onclick="showProject('calico')">
+                <div class="image-stage"><img src="./assets/images/calico/calico-1.png" alt="Calico"></div>
+                <div class="project-info"><h2>Calico</h2><p>Web Creation</p></div>
+            </div>
 
-            <section class="v-section project-card" onclick="showProject('canvas')">
-                <div class="image-box"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
-                <div class="project-meta"><span>03</span><h2>Canvas</h2><p>Software Build</p></div>
-            </section>
+            <div class="project-card" onclick="showProject('canvas')">
+                <div class="image-stage"><img src="./assets/images/canvas/canvas-1.png" alt="Canvas"></div>
+                <div class="project-info"><h2>Canvas</h2><p>Software Build</p></div>
+            </div>
 
-            <section class="v-section project-card" onclick="showProject('design')">
-                <div class="image-box"><img src="./assets/images/design/design-1.png" alt="Design"></div>
-                <div class="project-meta"><span>04</span><h2>Design</h2><p>Visual Explorations</p></div>
-            </section>
+            <div class="project-card" onclick="showProject('design')">
+                <div class="image-stage"><img src="./assets/images/design/design-1.png" alt="Design"></div>
+                <div class="project-info"><h2>Design</h2><p>Visual Explorations</p></div>
+            </div>
 
-            <section class="v-section project-card" onclick="showProject('board')">
-                <div class="image-box"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
-                <div class="project-meta"><span>05</span><h2>Board</h2><p>Curation & Mood</p></div>
-            </section>
+            <div class="project-card" onclick="showProject('board')">
+                <div class="image-stage"><img src="./assets/images/inspiration/inspiration-1.png" alt="Board"></div>
+                <div class="project-info"><h2>Board</h2><p>Curation & Mood</p></div>
+            </div>
         </div>
 
-        <section id="about" class="v-section text-section">
-            <div class="about-container">
-                <h2 class="serif-title">About</h2>
-                <p class="bio-large">Designer & Front-End Developer based in London. Balancing aesthetic minimalism with clean, functional code.</p>
-                <div class="info-grid">
-                    <div class="info-col">
-                        <h3>Expertise</h3>
-                        <ul><li>UI/UX Design</li><li>Branding</li><li>Web Development</li></ul>
-                    </div>
-                    <div class="info-col">
-                        <h3>Tools</h3>
-                        <ul><li>Figma</li><li>HTML/CSS</li><li>Vue.js</li></ul>
-                    </div>
-                </div>
-            </div>
+        <section id="about" class="page-section">
+            <h2 class="serif-title">About</h2>
+            <p class="bio">I specialize in high-end UI/UX, balancing visual aesthetic with clean, functional design.</p>
         </section>
 
-        <section id="contact" class="v-section text-section">
+        <section id="contact" class="page-section">
             <h2 class="serif-title">Contact</h2>
-            <a href="mailto:lucasspicer@icloud.com" class="massive-link">lucasspicer@icloud.com →</a>
-            <div class="social-footer">
-                <a href="https://www.instagram.com/lspicer_/" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/in/lucas-spicer/" target="_blank">LinkedIn</a>
-            </div>
+            <a href="mailto:lucasspicer@icloud.com" class="email-link">lucasspicer@icloud.com →</a>
         </section>
     </main>
 
-    <div id="project-detail-overlay" class="detail-overlay">
-        <div class="overlay-header">
-            <button class="close-btn" onclick="closeProject()">← BACK TO WORK</button>
-        </div>
-        <div id="detail-content" class="detail-container">
-            </div>
+    <div id="project-overlay" class="project-overlay">
+        <button class="close-overlay" onclick="closeProject()">CLOSE</button>
+        <div id="overlay-content"></div>
     </div>
 
-    <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
-        <img id="lightbox-img" src="">
-    </div>
 </body>
 </html>
