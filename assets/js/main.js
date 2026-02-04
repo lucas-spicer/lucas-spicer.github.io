@@ -82,17 +82,17 @@ function showProject(id) {
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // Generate Video HTML if a videoId exists
-    const videoHTML = data.videoId ? `
-        <div class="video-stage">
-            <iframe 
-                src="https://www.youtube.com/embed/${data.videoId}?autoplay=1&mute=1&loop=1&playlist=${data.videoId}&controls=0&modestbranding=1" 
-                frameborder="0" 
-                allow="autoplay; encrypted-media" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    ` : "";
+// Replace the videoHTML block inside your showProject function
+const videoHTML = data.videoId ? `
+    <div class="video-stage">
+        <iframe 
+            src="https://www.youtube.com/embed/${data.videoId}?autoplay=1&controls=1&modestbranding=1&rel=0" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+` : "";
 
     content.innerHTML = `
         <div style="margin-bottom: 40px;">
