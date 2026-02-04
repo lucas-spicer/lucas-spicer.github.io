@@ -82,7 +82,7 @@ function showProject(id) {
         : "";
 
     content.innerHTML = `
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 40px;">
             <h2 style="font-family: 'Crimson Text', serif; font-size: 4rem; font-style: italic; font-weight: 400;">${data.title}</h2>
             <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.4; margin: 10px 0 20px;">${data.category}</p>
             <p style="font-size: 1.1rem; line-height: 1.6; max-width: 600px;">${data.desc}</p>
