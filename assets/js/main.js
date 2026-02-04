@@ -30,7 +30,7 @@ const projectsData = {
     canvas: {
         title: "Canvas",
         category: "Software Build",
-        desc: "Full UI / UX and software design for Canvas, our software platform. Responsible for all deisgn decisions and direction of the software, with 3000 users across 30+ markets.",
+        desc: "Full UI / UX and software design for Canvas, our software platform. Responsible for all deisgn decisions and direction of the software, with 3000 users across 30+ markets. Also responsible for all branding and video content.",
         link: "https://www.watermelonresearch.com/canvas/",
         images: [
             "./assets/images/canvas/canvas-1.png",
