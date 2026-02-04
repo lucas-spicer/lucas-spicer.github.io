@@ -106,13 +106,13 @@ a {color: #A3A3A3; text-decoration: none;}
 
 }
 
-.massive-title span {
+.massive-title span, .hero-sub span {
     display: block;
     overflow: hidden; /* This creates the "mask" */
     line-height: 1.1;
 }
 
-.massive-title span i {
+.massive-title span i, .hero-sub span i {
     display: block;
     font-style: normal;
     transform: translateY(100%); /* Start below the mask */
@@ -122,6 +122,11 @@ a {color: #A3A3A3; text-decoration: none;}
 .massive-title span:nth-child(2) i {
     animation-delay: 0.3s; /* Subtle delay for the second name */
 }
+
+.hero-sub span i {
+    animation-delay: 0.4s; /* Subtle delay for the third name */
+}
+
 
 @keyframes revealText {
     to {
