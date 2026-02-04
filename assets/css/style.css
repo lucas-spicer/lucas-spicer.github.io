@@ -19,7 +19,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 
 /* Hero - Added Margin Top */
 .hero-section { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 5% 60px; border-bottom: 1px solid var(--border); }
-.massive-title { font-size: clamp(4rem, 18vw, 15rem); line-height: 0.8; letter-spacing: -0.04em; text-transform: uppercase; }
+.massive-title { font-size: clamp(4rem, 18vw, 15rem); line-height: 0.9; letter-spacing: -0.04em; text-transform: uppercase; font-weight: 400; }
 .hero-sub { font-size: 0.7rem; margin-top: 30px; letter-spacing: 0.2em; opacity: 0.4; }
 
 /* Work */
