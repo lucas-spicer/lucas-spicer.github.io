@@ -24,10 +24,10 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 
 /* Work */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
-.project-card { padding: 60px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); cursor: pointer; }
+.project-card { padding: 60px; cursor: pointer; }
 .image-stage { background: var(--stage-bg); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; padding: 40px; }
 .image-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
-.project-card:hover img { transform: scale(1.02); }
+.project-card:hover img { transform: scale(1.05); }
 .project-info h2 { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; margin-top: 20px; }
 .project-info p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.1em; }
 
@@ -46,3 +46,24 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .overlay-container { max-width: 1200px; margin: 0 auto; }
 .gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); padding: 5%; }
 .close-overlay { position: fixed; top: 20px; right: 25px; background: white; border: 1px solid black; padding: 10px 20px; cursor: pointer; font-size: 0.7rem; }
+
+
+/* --- RESPONSIVE MOBILE STYLES --- */
+@media (max-width: 1024px) {
+    /* Stack Project Grid */
+    .project-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 40px 25px; border-right: none; }
+    
+    /* Adjust Hero Spacing */
+    .hero-section { padding-top: 100px; min-height: 70vh; }
+    .massive-title { font-size: 4rem; }
+    
+    /* Stack About/Contact Grids */
+    .details-grid { flex-direction: column; gap: 40px; }
+    .bio-large { font-size: 1.4rem; }
+    .serif-title { font-size: 2.5rem; }
+    
+    /* Overlay Adjustments */
+    .project-overlay { padding: 80px 20px 40px; }
+    .overlay-container h2 { font-size: 2.5rem !important; }
+}
