@@ -2,7 +2,7 @@ const projectsData = {
     watermelon: {
         title: "Watermelon",
         category: "Brand Identity & UI",
-        desc: "Visual identity for a digital-first platform focused on vibrant, organic growth. The project involved creating a modular design system that could scale across web and mobile interfaces.",
+        desc: "Visual identity refresh for Watermelon. The project involved completely overhauling the brand, with a new website, logo and visual style across all templates and systems.",
         images: [
             "./assets/images/watermelon/watermelon-1.png",
             "./assets/images/watermelon/watermelon-2.png",
@@ -15,7 +15,7 @@ const projectsData = {
     calico: {
         title: "Calico",
         category: "Web Creation",
-        desc: "Full-scale development and architectural design for the Calico ecosystem. This included a custom CMS integration and a highly responsive front-end built for speed and accessibility.",
+        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design templates.",
         images: [
             "./assets/images/calico/calico-1.png",
             "./assets/images/calico/calico-2.png",
@@ -28,7 +28,7 @@ const projectsData = {
     canvas: {
         title: "Canvas",
         category: "Software Build",
-        desc: "Interface architecture and user flow design for the Canvas SaaS platform. Focused on reducing cognitive load for power users while maintaining a minimalist aesthetic.",
+        desc: "Full UI / UX and software design for Canvas, our software platform. Responsible for all deisgn decisions and direction of the software, with 3000 users across 30+ markets.",
         images: [
             "./assets/images/canvas/canvas-1.png",
             "./assets/images/canvas/canvas-2.png",
@@ -41,7 +41,7 @@ const projectsData = {
     design: {
         title: "Design",
         category: "Visual Explorations",
-        desc: "A collection of ad-hoc visual experiments across print and digital media, exploring typography, grid systems, and color theory.",
+        desc: "A collection of ad-hoc visual designs across print and digital media.",
         images: [
             "./assets/images/design/design-1.png",
             "./assets/images/design/design-2.png",
@@ -53,7 +53,7 @@ const projectsData = {
     board: {
         title: "Board",
         category: "Curation & Mood",
-        desc: "Visual research and moodboard curation for upcoming 2024-2025 design trends. This board serves as the foundational inspiration for multiple active projects.",
+        desc: "Visual research and moodboard curation.",
         images: [
             "./assets/images/inspiration/inspiration-1.png",
             "./assets/images/inspiration/inspiration-2.png",
