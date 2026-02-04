@@ -4,41 +4,45 @@
     --stage-bg: #F6F6F6;
     --border: #EEEEEE;
     --serif: 'Crimson Text', serif;
-    --sans: 'Inter', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
 
-/* Clean Header */
-.header { position: fixed; top: 0; width: 100%; height: 60px; background: white; border-bottom: 1px solid var(--border); z-index: 1000; display: flex; align-items: center; padding: 0 25px; }
-.header-inner { display: flex; justify-content: space-between; width: 100%; max-width: 1440px; margin: 0 auto; }
+/* Header */
+.header { position: fixed; top: 0; width: 100%; height: 60px; background: white; border-bottom: 1px solid var(--border); z-index: 1000; }
+.header-inner { max-width: 1440px; margin: 0 auto; height: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 25px; }
 .ald-logo { font-size: 0.7rem; letter-spacing: 0.3em; text-decoration: none; color: black; font-weight: 500; }
 .nav-links { display: flex; gap: 25px; list-style: none; }
-.nav-links a { font-size: 0.7rem; text-transform: uppercase; text-decoration: none; color: black; opacity: 0.6; cursor: pointer; }
+.nav-links a { font-size: 0.7rem; text-transform: uppercase; text-decoration: none; color: black; opacity: 0.6; }
 
-/* Landing Hero (Awwwards Style, Clean Colors) */
-.hero-section { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 5%; border-bottom: 1px solid var(--border); }
-.massive-title { font-size: clamp(4rem, 18vw, 15rem); line-height: 0.8; letter-spacing: -0.04em; text-transform: uppercase; font-weight: 400; }
-.hero-sub { font-size: 0.7rem; margin-top: 20px; letter-spacing: 0.2em; opacity: 0.4; }
+/* Hero - Added Margin Top */
+.hero-section { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 5% 0; border-bottom: 1px solid var(--border); }
+.massive-title { font-size: clamp(4rem, 18vw, 15rem); line-height: 0.8; letter-spacing: -0.04em; text-transform: uppercase; }
+.hero-sub { font-size: 0.7rem; margin-top: 30px; letter-spacing: 0.2em; opacity: 0.4; }
 
-/* Work Grid */
+/* Work */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
-.project-card { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px; cursor: pointer; transition: background 0.3s; }
-.project-card:hover { background: #fafafa; }
+.project-card { padding: 60px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); cursor: pointer; }
 .image-stage { background: var(--stage-bg); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; padding: 40px; }
-.image-stage img { max-width: 100%; height: auto; }
-.project-info h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; margin-top: 20px; }
-.project-info p { font-size: 0.7rem; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.1em; }
+.image-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+.project-card:hover img { transform: scale(1.02); }
+.project-info h2 { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; margin-top: 20px; }
+.project-info p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.1em; }
 
-/* Overlay View */
+/* Details */
+.page-section { padding: 100px 5%; border-bottom: 1px solid var(--border); }
+.serif-title { font-family: var(--serif); font-size: 3.5rem; font-style: italic; margin-bottom: 30px; font-weight: 400; }
+.bio-large { font-size: 1.8rem; line-height: 1.3; max-width: 900px; margin-bottom: 50px; }
+.details-grid { display: flex; gap: 80px; }
+.detail-col h3 { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.4; margin-bottom: 15px; }
+.detail-col ul { list-style: none; line-height: 2; font-size: 0.9rem; }
+.clean-link { color: black; text-decoration: none; border-bottom: 1px solid black; padding-bottom: 2px; }
+
+/* Overlay */
 .project-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 2000; display: none; overflow-y: auto; padding: 100px 5%; }
 .project-overlay.active { display: block; }
-.close-overlay { position: fixed; top: 20px; right: 25px; background: none; border: 1px solid black; padding: 10px 20px; cursor: pointer; font-size: 0.7rem; }
+.overlay-container { max-width: 1200px; margin: 0 auto; }
 .gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); padding: 5%; }
-
-/* Sections */
-.page-section { padding: 100px 5%; border-bottom: 1px solid var(--border); }
-.serif-title { font-family: var(--serif); font-size: 4rem; font-weight: 400; font-style: italic; margin-bottom: 20px; }
-.email-link { font-family: var(--serif); font-size: 3rem; text-decoration: none; color: black; font-style: italic; }
+.close-overlay { position: fixed; top: 20px; right: 25px; background: white; border: 1px solid black; padding: 10px 20px; cursor: pointer; font-size: 0.7rem; }
