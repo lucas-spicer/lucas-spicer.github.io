@@ -87,18 +87,18 @@ function showProject(id) {
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // New logic to handle Vimeo videos
-    const videoHTML = data.vimeoId ? `
-        <div class="video-stage" style="margin-bottom: 40px; aspect-ratio: 16/9; background: var(--stage-bg);">
-            <iframe 
-                src="https://player.vimeo.com/video/${data.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                style="width:100%; height:100%;"
-                title="${data.title}">
-            </iframe>
-        </div>
-    ` : "";
+// Inside your showProject function in main.js
+const videoHTML = data.vimeoId ? `
+    <div class="video-stage" style="margin-bottom: 40px; aspect-ratio: 16/9; background: var(--stage-bg);">
+        <iframe 
+            src="https://player.vimeo.com/video/${data.vimeoId}?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&badge=0" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            style="width:100%; height:100%;"
+            title="${data.title}">
+        </iframe>
+    </div>
+` : "";
 
     overlay.innerHTML = `
         <div class="overlay-sticky-header">
