@@ -102,10 +102,18 @@ function showProject(id) {
     `;
     
     overlay.classList.add('active');
+   // LOCK BOTH HTML AND BODY
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
+    
+    // Reset overlay scroll position to top
+    overlay.scrollTop = 0;
 }
 
 function closeProject() {
     document.getElementById('project-overlay').classList.remove('active');
     document.body.style.overflow = 'auto';
+    // UNLOCK BOTH
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
 }
