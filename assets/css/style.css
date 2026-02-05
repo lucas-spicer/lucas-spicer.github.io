@@ -55,6 +55,19 @@ a {color: #A3A3A3; text-decoration: none;}
 /* Overlay */
 .gallery-img { width: 100%; height: auto; margin-bottom: 40px; background: var(--stage-bg); }
 
+.overlay-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.overlay-category {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    opacity: 0.4;
+    letter-spacing: 0.1em;
+}
+
 /* 1. The main overlay container is now a fixed, non-scrolling box */
 .project-overlay { 
     position: fixed; 
