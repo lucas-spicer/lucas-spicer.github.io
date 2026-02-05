@@ -107,10 +107,9 @@ a {color: #A3A3A3; text-decoration: none;}
 }
 
 
-/* Add this to your style.css */
-.learn-more-link, .close-project-btn {
+.learn-more-link {
     display: inline-block;
-    border: solid 1px var(--border); /* Original border color */
+    border: solid 1px var(--border);
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     color: #181818;
@@ -118,11 +117,25 @@ a {color: #A3A3A3; text-decoration: none;}
     margin-top: 15px;
     transition: 0.3s ease;
     letter-spacing: 0.05em;
+    background: white;
+}
+
+  .close-project-btn {
+    display: inline-block;
+    border: solid 1px var(--border);
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: #181818;
+    font-size: 0.75rem;
+    transition: 0.3s ease;
+    letter-spacing: 0.05em;
+    background: white;
 }
 
 .learn-more-link:hover, .close-project-btn:hover {
     background: #181818;
     color: #ffffff;
+    cursor: pointer;
 }
 
 /* --- RESPONSIVE MOBILE STYLES --- */
