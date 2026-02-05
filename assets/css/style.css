@@ -45,7 +45,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Restored from original */
+    padding: 0 40px; /* Restored from original */
 }
 
 /* 4. Ensure sections fill correctly */
@@ -84,7 +84,7 @@ main {
 .project-info p { font-size: 0.65rem; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.1em; }
 
 /* Details */
-.page-section { padding: 50px; border-bottom: 1px solid var(--border); }
+.page-section { padding: 40px; border-bottom: 1px solid var(--border); }
 .serif-title { font-family: var(--serif); font-size: 2.2rem; font-style: italic; margin-bottom: 30px; font-weight: 400; }
 .bio-large { font-size: 1.2rem; line-height: 1.3; max-width: 900px; margin-bottom: 50px; }
 .details-grid { display: flex; gap: 80px; }
@@ -132,7 +132,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px; /* Matched to your site padding */
+    padding: 20px 30px; /* Matched to your site padding */
     border-bottom: 1px solid var(--border);
     background: white;
     z-index: 10;
@@ -152,7 +152,7 @@ main {
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 750px;
-    padding: 20px 40px; /* Matched to your site padding */
+    padding: 30px; /* Matched to your site padding */
 }
 
 .learn-more-link {
@@ -195,6 +195,10 @@ main {
     }
     .header-inner {
     padding: 0 30px; 
+    }
+
+    .overlay-sticky-header {
+          padding: 10px 30px; 
     }
 
     .overlay-title { font-size: 1.5rem; }
