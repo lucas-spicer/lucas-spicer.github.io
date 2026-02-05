@@ -79,16 +79,18 @@ const projectsData = {
     }
 };
 
+// Inside main.js
 function showProject(id) {
     const data = projectsData[id];
     const overlay = document.getElementById('project-overlay');
     const content = document.getElementById('overlay-content');
 
+    // 1. Handle the Link
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // Map through videos if they exist, same way we do for images
+    // 2. Map through videos to create a SEPARATE stage for each one
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
             <iframe 
@@ -100,6 +102,7 @@ function showProject(id) {
         </div>
     `).join('') : "";
 
+    // 3. Inject everything into the overlay
     content.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
