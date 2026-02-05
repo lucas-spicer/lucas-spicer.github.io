@@ -96,7 +96,6 @@ function showProject(id) {
                 ${linkHTML}
             </div>
             <div class="gallery">
-                ${videoHTML}
                 ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
             </div>
         </div>
