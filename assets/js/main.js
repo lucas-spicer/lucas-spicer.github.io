@@ -47,7 +47,7 @@ const projectsData = {
     desc: "A collection of high-fidelity motion graphics and video renders developed with Adobe After Effects.",
     link: "#",
     images: [], // Leave empty if you only want the video
-    vimeoId: "1162143854" // The ID from your embed code
+    videos: ["1162143854", "1162157704", "1162157736",]
 },
     design: {
         title: "Design",
@@ -82,25 +82,25 @@ const projectsData = {
 function showProject(id) {
     const data = projectsData[id];
     const overlay = document.getElementById('project-overlay');
+    const content = document.getElementById('overlay-content');
 
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-// Inside your showProject function in main.js
-const videoHTML = data.vimeoId ? `
-    <div class="video-stage" style="margin-bottom: 40px; aspect-ratio: 16/9; background: var(--stage-bg);">
-        <iframe 
-            src="https://player.vimeo.com/video/${data.vimeoId}?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&badge=0" 
-            frameborder="0" 
-            allow="autoplay; fullscreen; picture-in-picture" 
-            style="width:100%; height:100%;"
-            title="${data.title}">
-        </iframe>
-    </div>
-` : "";
+    // Map through videos if they exist, same way we do for images
+    const videosHTML = data.videos ? data.videos.map(vId => `
+        <div class="video-stage">
+            <iframe 
+                src="https://player.vimeo.com/video/${vId}?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                style="width:100%; height:100%;">
+            </iframe>
+        </div>
+    `).join('') : "";
 
-    overlay.innerHTML = `
+    content.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
                 <h2 class="overlay-title">${data.title}</h2>
@@ -115,7 +115,7 @@ const videoHTML = data.vimeoId ? `
                 ${linkHTML}
             </div>
             <div class="gallery">
-                ${videoHTML}
+                ${videosHTML} 
                 ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
             </div>
         </div>
@@ -124,9 +124,7 @@ const videoHTML = data.vimeoId ? `
     overlay.classList.add('active');
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    
-    const scrollBody = overlay.querySelector('.overlay-body');
-    if(scrollBody) scrollBody.scrollTop = 0;
+    overlay.scrollTop = 0;
 }
 
 function closeProject() {
