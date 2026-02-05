@@ -253,9 +253,9 @@ main {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: var(--stage-bg); /* */
+    background: #000000;
     max-height: 90vh;
-    padding: 30px;
+    padding: 20px;
 }
 
 .video-stage iframe {
