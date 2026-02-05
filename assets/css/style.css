@@ -77,7 +77,7 @@ main {
 /* Work */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
 .project-card { padding: 50px; cursor: pointer; }
-.image-stage { background: var(--stage-bg); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.image-stage { background: var(--stage-bg); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; padding: 15px; }
 .image-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
 .project-card:hover img { transform: scale(1.05); }
 .project-info h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; margin-top: 20px; }
