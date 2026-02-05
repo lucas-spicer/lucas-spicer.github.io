@@ -81,7 +81,8 @@ function showProject(id) {
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    content.innerHTML = `
+    // Simplified innerHTML to fit the new Flexbox structure
+    overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
                 <h2 class="overlay-title">${data.title}</h2>
@@ -102,14 +103,15 @@ function showProject(id) {
     `;
     
     overlay.classList.add('active');
-   // LOCK BOTH HTML AND BODY
+    
+    // LOCK BACKGROUND
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     
-    // Reset overlay scroll position to top
-    overlay.scrollTop = 0;
+    // Reset the internal scrollable area to the top
+    const scrollBody = overlay.querySelector('.overlay-body');
+    if(scrollBody) scrollBody.scrollTop = 0;
 }
-
 function closeProject() {
     document.getElementById('project-overlay').classList.remove('active');
     document.body.style.overflow = 'auto';
