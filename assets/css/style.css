@@ -132,7 +132,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px; /* Matched to your site padding */
+    padding: 20px 40px; /* Matched to your site padding */
     border-bottom: 1px solid var(--border);
     background: white;
     z-index: 10;
@@ -152,11 +152,7 @@ main {
     font-size: 1.2rem;
     line-height: 1.6;
     max-width: 750px;
-    padding: 60px 50px 40px; /* Adjusted padding */
-}
-
-.gallery {
-    padding: 0 50px;
+    padding: 20px 40px; /* Matched to your site padding */
 }
 
 .learn-more-link {
