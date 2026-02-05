@@ -87,7 +87,7 @@ function showProject(id) {
                 <h2 class="overlay-title">${data.title}</h2>
                 <p class="overlay-category">${data.category}</p>
             </div>
-            <button class="close-project-btn" onclick="closeProject()">Close</button>
+            <button class="close-project-btn" onclick="closeProject()">Back</button>
         </div>
 
         <div class="overlay-body">
