@@ -13,20 +13,6 @@ const projectsData = {
             "./assets/images/watermelon/watermelon-6.png"
         ]
     },
-    calico: {
-        title: "Calico",
-        category: "Web Creation",
-        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design templates.",
-        link: "https://www.calicoservices.com/",
-        images: [
-            "./assets/images/calico/calico-1.png",
-            "./assets/images/calico/calico-2.png",
-            "./assets/images/calico/calico-3.png",
-            "./assets/images/calico/calico-4.png",
-            "./assets/images/calico/calico-5.png",
-            "./assets/images/calico/calico-6.png"
-        ]
-    },
     canvas: {
         title: "Canvas",
         category: "Software Build",
@@ -39,6 +25,20 @@ const projectsData = {
             "./assets/images/canvas/canvas-4.png",
             "./assets/images/canvas/canvas-5.png",
             "./assets/images/canvas/canvas-6.png"
+        ]
+    },
+    calico: {
+        title: "Calico",
+        category: "Web Creation",
+        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design templates.",
+        link: "https://www.calicoservices.com/",
+        images: [
+            "./assets/images/calico/calico-1.png",
+            "./assets/images/calico/calico-2.png",
+            "./assets/images/calico/calico-3.png",
+            "./assets/images/calico/calico-4.png",
+            "./assets/images/calico/calico-5.png",
+            "./assets/images/calico/calico-6.png"
         ]
     },
     motion: {
