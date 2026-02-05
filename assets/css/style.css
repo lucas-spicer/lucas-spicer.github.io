@@ -253,7 +253,7 @@ main {
     width: 100%;
     position: relative;
     overflow: hidden;
-    background: #000000;
+    background: #000000 !important;
     max-height: 90vh;
     padding: 20px;
 }
