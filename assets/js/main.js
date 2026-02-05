@@ -77,20 +77,28 @@ function showProject(id) {
     const overlay = document.getElementById('project-overlay');
     const content = document.getElementById('overlay-content');
 
-    // Create the HTML for the link only if it's not a placeholder
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
     content.innerHTML = `
-        <div style="margin-bottom: 40px;">
-            <h2 style="font-family: 'Crimson Text', serif; font-size: 4rem; font-style: italic; font-weight: 400;">${data.title}</h2>
-            <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.4; margin: 10px 0 20px;">${data.category}</p>
-            <p style="font-size: 1.1rem; line-height: 1.6; max-width: 600px;">${data.desc}</p>
-            ${linkHTML}
+        <div class="overlay-sticky-header">
+            <div class="sticky-left">
+                <h2 class="overlay-title">${data.title}</h2>
+                <p class="overlay-category">${data.category}</p>
+            </div>
+            <button class="close-project-btn" onclick="closeProject()">Close</button>
         </div>
-        <div class="gallery">
-            ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
+
+        <div class="overlay-body">
+            <div class="project-description">
+                <p>${data.desc}</p>
+                ${linkHTML}
+            </div>
+            <div class="gallery">
+                ${videoHTML}
+                ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
+            </div>
         </div>
     `;
     
