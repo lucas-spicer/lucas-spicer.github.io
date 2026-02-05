@@ -39,9 +39,16 @@ const projectsData = {
             "./assets/images/canvas/canvas-4.png",
             "./assets/images/canvas/canvas-5.png",
             "./assets/images/canvas/canvas-6.png"
-        ],
-        videoId: "YhJjwyEdJX8"
+        ]
     },
+    motion: {
+    title: "Motion",
+    category: "Video Render",
+    desc: "A collection of high-fidelity motion graphics and video renders developed with Adobe After Effects.",
+    link: "#",
+    images: [], // Leave empty if you only want the video
+    vimeoId: "1162143854" // The ID from your embed code
+},
     design: {
         title: "Design",
         category: "Visual Explorations",
@@ -75,13 +82,24 @@ const projectsData = {
 function showProject(id) {
     const data = projectsData[id];
     const overlay = document.getElementById('project-overlay');
-    const content = document.getElementById('overlay-content');
 
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // Simplified innerHTML to fit the new Flexbox structure
+    // New logic to handle Vimeo videos
+    const videoHTML = data.vimeoId ? `
+        <div class="video-stage" style="margin-bottom: 40px; aspect-ratio: 16/9; background: var(--stage-bg);">
+            <iframe 
+                src="https://player.vimeo.com/video/${data.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                style="width:100%; height:100%;"
+                title="${data.title}">
+            </iframe>
+        </div>
+    ` : "";
+
     overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
@@ -97,21 +115,20 @@ function showProject(id) {
                 ${linkHTML}
             </div>
             <div class="gallery">
+                ${videoHTML}
                 ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
             </div>
         </div>
     `;
     
     overlay.classList.add('active');
-    
-    // LOCK BACKGROUND
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     
-    // Reset the internal scrollable area to the top
     const scrollBody = overlay.querySelector('.overlay-body');
     if(scrollBody) scrollBody.scrollTop = 0;
 }
+
 function closeProject() {
     document.getElementById('project-overlay').classList.remove('active');
     document.body.style.overflow = 'auto';
