@@ -79,18 +79,17 @@ const projectsData = {
     }
 };
 
-// Inside main.js
 function showProject(id) {
     const data = projectsData[id];
     const overlay = document.getElementById('project-overlay');
-    const content = document.getElementById('overlay-content');
 
-    // 1. Handle the Link
+    if (!data) return;
+
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // 2. Map through videos to create a SEPARATE stage for each one
+    // This creates a NEW 'video-stage' div for every single ID in your videos array
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
             <iframe 
@@ -102,8 +101,12 @@ function showProject(id) {
         </div>
     `).join('') : "";
 
-    // 3. Inject everything into the overlay
-    content.innerHTML = `
+    // This creates a NEW image tag for every image in your array
+    const imagesHTML = data.images ? data.images.map(img => `
+        <img src="${img}" class="gallery-img">
+    `).join('') : "";
+
+    overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
                 <h2 class="overlay-title">${data.title}</h2>
@@ -119,7 +122,7 @@ function showProject(id) {
             </div>
             <div class="gallery">
                 ${videosHTML} 
-                ${data.images.map(img => `<img src="${img}" class="gallery-img">`).join('')}
+                ${imagesHTML}
             </div>
         </div>
     `;
@@ -127,7 +130,9 @@ function showProject(id) {
     overlay.classList.add('active');
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    overlay.scrollTop = 0;
+    
+    const scrollBody = overlay.querySelector('.overlay-body');
+    if (scrollBody) scrollBody.scrollTop = 0;
 }
 
 function closeProject() {
