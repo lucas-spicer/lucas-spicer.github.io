@@ -19,7 +19,7 @@ html, body {
 
 /* 2. Main Site Wrapper (The counterpart to overlay-body) */
 .main-scroll-container {
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@ main {
     top: 0; 
     left: 0; 
     width: 100%; 
-    height: 100vh; 
+    height: 100%; 
     background: white; 
     z-index: 2000; 
     display: none; 
