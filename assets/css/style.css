@@ -254,11 +254,13 @@ main {
     position: relative;
     overflow: hidden;
     background: var(--stage-bg); /* */
-    max-height: 80vh;
+    max-height: 85vh;
+    padding: 10%;
 }
 
 .video-stage iframe {
     width: 100%;
     height: 100%;
+    border-radius: 1rem;
     display: block;
 }
