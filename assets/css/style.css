@@ -4,9 +4,9 @@
     --stage-bg: #F6F6F6;
     --border: #EEEEEE;
     --serif: 'Crimson Text', serif;
-    --text-sm: "font-size: 12px";
-    --text-md: "font-size: 14px";
-    --text-lg: "font-size: 1.5rem";
+    --text-sm: font-size: 12px;
+    --text-md: font-size: 14px;
+    --text-lg: font-size: 1.5rem;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
