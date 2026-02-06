@@ -70,13 +70,13 @@ main {
 .nav-links a { font-size: 0.7rem; text-decoration: none; color: black; opacity: 0.6; }
 
 /* Hero - Added Margin Top */
-.hero-section { min-height: 95vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 50px; border-bottom: 1px solid var(--border); }
+.hero-section { min-height: 95vh; display: flex; flex-direction: column; justify-content: center; padding: 0px 40px; border-bottom: 1px solid var(--border); }
 .massive-title { font-size: clamp(4rem, 18vw, 8rem); line-height: 0.9; letter-spacing: -0.04em; text-transform: uppercase; font-weight: 400; }
 .hero-sub { font-size: 0.7rem; margin-top: 30px; letter-spacing: 0.2em; opacity: 0.4; }
 
 /* Work */
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
-.project-card { padding: 50px; cursor: pointer; }
+.project-card { padding: 40px; cursor: pointer; }
 .image-stage { background: var(--stage-bg); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; padding: 15px; }
 .image-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
 .project-card:hover img { transform: scale(1.05); }
@@ -143,7 +143,7 @@ main {
     flex-grow: 1;
     overflow-y: auto; /* Internal scrolling only */
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 /* Remove horizontal padding here so images can be full width if desired, 
@@ -170,7 +170,7 @@ main {
 
   .close-project-btn {
     display: inline-block;
-    border: solid 1px var(--border);
+    border: solid 1px #181818;
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     color: #181818;
@@ -202,7 +202,7 @@ main {
     
     
     /* Adjust Hero Spacing */
-    .hero-section { min-height: 90vh; padding: 80px 30px; }
+    .hero-section { min-height: 90vh; padding: 0px 20px; }
     .massive-title { font-size: 4.5rem; }
     
     /* Stack About/Contact Grids */
