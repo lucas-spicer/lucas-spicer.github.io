@@ -267,9 +267,6 @@ body.no-scroll {
     width: 100%;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
-    padding-bottom: 25px;
-    padding-top: 25px;
 }
 
 .video-stage iframe {
