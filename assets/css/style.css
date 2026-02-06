@@ -31,7 +31,7 @@ html, body {
     position: sticky; /* Or stay as fixed, but sticky works better with flex */
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 65px;
     background: white;
     border-bottom: 1px solid var(--border);
     z-index: 1000;
