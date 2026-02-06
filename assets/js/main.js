@@ -124,7 +124,7 @@ function showProject(id) {
     `;
     
     // 3. Trigger Display and Lock Scroll
-    overlay.style.display = 'block';
+    overlay.style.display = 'block'; // Opens the overlay
     document.body.classList.add('no-scroll');
     
     // 4. Reset scroll to top
@@ -133,7 +133,9 @@ function showProject(id) {
 
 function closeProject() {
     const overlay = document.getElementById('project-overlay');
-    overlay.classList.remove('active');
+    
+    // FIX: Match the opening method by setting display to none
+    overlay.style.display = 'none'; 
     
     // Unlock background scroll
     document.body.classList.remove('no-scroll');
