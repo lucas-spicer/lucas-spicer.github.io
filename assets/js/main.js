@@ -47,7 +47,7 @@ const projectsData = {
     desc: "A collection of high-fidelity motion graphics and video renders developed with Adobe After Effects.",
     link: "#",
     images: [], // Leave empty if you only want the video
-    videos: ["1162143854", "1162157704", "1162157736"]
+    videos: ["1162143854"]
 },
     design: {
         title: "Design",
