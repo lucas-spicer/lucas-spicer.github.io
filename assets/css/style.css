@@ -12,7 +12,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth;scroll-behavior: smooth;}
 body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased;}
-a {color: #A3A3A3; text-decoration: none;}
 
 .header {
     position: fixed;
