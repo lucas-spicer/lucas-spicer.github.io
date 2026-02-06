@@ -2,7 +2,7 @@ const projectsData = {
     watermelon: {
         title: "Watermelon",
         category: "Brand Identity & UI",
-        desc: "Visual identity refresh for Watermelon. The project involved completely overhauling the brand, with a new website, logo and visual style across all outputs and templates.",
+        desc: "A visual identity refresh for Watermelon involved a complete overhaul of the brand. This included a new website, logo and visual style across all outputs and templates.",
         link: "https://www.watermelonresearch.com/",
         images: [
             "./assets/images/watermelon/watermelon-1.png",
@@ -16,7 +16,7 @@ const projectsData = {
     canvas: {
         title: "Canvas",
         category: "Software Build",
-        desc: "Full UI / UX and software design for our software platform Canvas. Responsible for all design decisions and direction of the software and user experience. Canvas is being built for mass market adoption with a growing 3000 users across 30 markets so far.",
+        desc: "Responsible for the full UI/UX and software design of our Canvas platform. This includes all design decisions and the direction of the software and user experience. Canvas is being developed for mass market adoption with a growing user base of 3,000 across 30 markets.",
         link: "https://www.watermelonresearch.com/canvas/",
         images: [
             "./assets/images/canvas/canvas-1.png",
@@ -30,7 +30,7 @@ const projectsData = {
     calico: {
         title: "Calico",
         category: "Web Creation",
-        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design for outputs and templates.",
+        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation website development and design for outputs and templates.",
         link: "https://www.calicoservices.com/",
         images: [
             "./assets/images/calico/calico-1.png",
@@ -44,7 +44,7 @@ const projectsData = {
     motion: {
         title: "Motion",
         category: "Video Render",
-        desc: "High-fidelity motion graphics and video renders developed with Adobe After Effects.",
+        desc: "High-fidelity motion graphics and video renders developed using Adobe After Effects.",
         link: "#",
         images: [], 
         videos: ["1162143854"]
