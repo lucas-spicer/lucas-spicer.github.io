@@ -99,7 +99,7 @@ main {
     letter-spacing: 0.1em;
 }
 
-/* 1. The main overlay container is now a fixed, non-scrolling box */
+/* 1. The main overlay container now handles the scroll directly */
 .project-overlay { 
     position: fixed; 
     top: 0; 
@@ -109,33 +109,38 @@ main {
     background: white; 
     z-index: 2000; 
     display: none; 
-    overflow: hidden; /* This prevents the 'outer' scrollbar */
+    
+    /* Change these to allow natural scrolling */
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
 }
 
 .project-overlay.active { 
-    display: flex; 
-    flex-direction: column; /* Stacks header above body */
+    display: block; /* Changed from flex to block for standard flow */
 }
 
-/* 2. The sticky header stays at the top */
+/* 2. Fix the sticky header */
 .overlay-sticky-header {
-    flex-shrink: 0; /* Prevents the header from collapsing */
+    position: sticky; /* Sticky works better for natural flow than Fixed here */
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px; /* Matched to your site padding */
+    padding: 15px 30px;
     border-bottom: 1px solid var(--border);
     background: white;
-    z-index: 10;
-    position: fixed;
+    z-index: 100;
 }
 
-/* 3. THIS is the only scrollable part of the site when open */
+/* 3. The body no longer needs its own overflow */
 .overlay-body {
-    flex-grow: 1;
-    overflow-y: auto; /* Internal scrolling only */
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
     padding-bottom: 60px;
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 /* Remove horizontal padding here so images can be full width if desired, 
