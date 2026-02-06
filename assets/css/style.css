@@ -17,7 +17,7 @@ html, body {
 }
 
 .header {
-    position: sticky; /* Or stay as fixed, but sticky works better with flex */
+    position: fixed;
     top: 0;
     width: 100%;
     height: 65px;
