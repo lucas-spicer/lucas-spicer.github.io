@@ -168,6 +168,21 @@ body.no-scroll {
     background: white;
 }
 
+.social-link {
+    display: inline-block;
+    border: solid 1px var(--border);
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: #181818;
+    font-size: 0.75rem;
+    margin-top: 15px;
+    transition: 0.3s ease;
+    letter-spacing: 0.05em;
+    background: white;
+    width: 90px;
+    text-align: center;
+}
+
   .close-project-btn {
     display: inline-block;
     border: solid 1px #181818;
@@ -180,7 +195,7 @@ body.no-scroll {
     background: white;
 }
 
-.learn-more-link:hover, .close-project-btn:hover {
+.learn-more-link:hover, .close-project-btn:hover, .social-link:hover {
     background: #181818;
     color: #ffffff;
     cursor: pointer;
