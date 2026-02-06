@@ -133,22 +133,6 @@ function showProject(id) {
 
 function closeProject() {
     const overlay = document.getElementById('project-overlay');
-    overlay.style.display = 'none';
-    
-    // Unlock Scroll
-    document.body.classList.remove('no-scroll');
-}
-
-function closeProject() {
-    const overlay = document.getElementById('project-overlay');
-    overlay.style.display = 'none';
-    
-    // Unlock the background
-    document.body.classList.remove('no-scroll');
-}
-
-function closeProject() {
-    const overlay = document.getElementById('project-overlay');
     overlay.classList.remove('active');
     
     // Unlock background scroll
