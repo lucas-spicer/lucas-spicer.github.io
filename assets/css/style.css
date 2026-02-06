@@ -140,7 +140,7 @@ main {
 }
 
 body.no-scroll {
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 /* Remove horizontal padding here so images can be full width if desired, 
