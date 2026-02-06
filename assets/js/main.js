@@ -44,7 +44,7 @@ const projectsData = {
     motion: {
     title: "Motion",
     category: "Video Render",
-    desc: "A collection of high-fidelity motion graphics and video renders developed with Adobe After Effects.",
+    desc: "Aigh-fidelity motion graphics and video renders developed with Adobe After Effects.",
     link: "#",
     images: [], // Leave empty if you only want the video
     videos: ["1162143854"]
