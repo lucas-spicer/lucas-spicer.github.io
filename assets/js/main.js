@@ -64,7 +64,7 @@ const projectsData = {
     },
     board: {
         title: "Board",
-        category: "Curation & Mood",
+        category: "Curation",
         desc: "Visual research and moodboard curation.",
         link: "#",
         images: [
