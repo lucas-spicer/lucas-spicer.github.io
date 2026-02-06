@@ -68,6 +68,9 @@ main {
 
 .nav-links { display: flex; gap: 25px; list-style: none; }
 .nav-links a { font-size: 0.7rem; text-decoration: none; color: black; opacity: 0.6; }
+.nav-links a:hover {
+    opacity: 1;
+}
 
 /* Hero - Added Margin Top */
 .hero-section { min-height: 95vh; display: flex; flex-direction: column; justify-content: center; padding: 0px 40px; border-bottom: 1px solid var(--border); }
