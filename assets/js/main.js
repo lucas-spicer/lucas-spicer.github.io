@@ -85,19 +85,14 @@ function showProject(id) {
 
     const overlay = document.getElementById('project-overlay');
     
-    // 1. Setup Content
+    // Setup Content (Mapping images and videos)
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
-            <iframe 
-                src="https://player.vimeo.com/video/${vId}?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                style="width:100%; height:100%;">
-            </iframe>
+            <iframe src="https://player.vimeo.com/video/${vId}" frameborder="0" allow="autoplay; fullscreen" style="width:100%; height:100%;"></iframe>
         </div>
     `).join('') : "";
 
@@ -105,7 +100,6 @@ function showProject(id) {
         <img src="${img}" class="gallery-img">
     `).join('') : "";
 
-    // 2. Inject HTML
     overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
@@ -114,7 +108,6 @@ function showProject(id) {
             </div>
             <button class="close-project-btn" onclick="closeProject()">Back</button>
         </div>
-
         <div class="overlay-body">
             <div class="project-description">
                 <p>${data.desc}</p>
@@ -127,12 +120,22 @@ function showProject(id) {
         </div>
     `;
     
-    // 3. Show Overlay & Lock Background Scroll
-    overlay.classList.add('active');
+    // 1. Show the overlay
+    overlay.style.display = 'block';
+    
+    // 2. Lock the background
     document.body.classList.add('no-scroll'); 
     
-    // 4. Reset scroll position of the overlay to top
+    // 3. Ensure overlay starts at top
     overlay.scrollTop = 0;
+}
+
+function closeProject() {
+    const overlay = document.getElementById('project-overlay');
+    overlay.style.display = 'none';
+    
+    // Unlock the background
+    document.body.classList.remove('no-scroll');
 }
 
 function closeProject() {
