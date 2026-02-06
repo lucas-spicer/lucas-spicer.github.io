@@ -191,10 +191,10 @@ main {
     /* Stack Project Grid */
     .project-grid { grid-template-columns: 1fr; }
     .project-card, .page-section {
-    padding: 30px; 
+    padding: 20px; 
     }
     .header-inner {
-    padding: 0 30px; 
+    padding: 0 20px; 
     }
 
     .overlay-title { font-size: 1.5rem; }
