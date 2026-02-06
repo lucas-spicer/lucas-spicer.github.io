@@ -42,13 +42,13 @@ const projectsData = {
         ]
     },
     motion: {
-    title: "Motion",
-    category: "Video Render",
-    desc: "Aigh-fidelity motion graphics and video renders developed with Adobe After Effects.",
-    link: "#",
-    images: [], // Leave empty if you only want the video
-    videos: ["1162143854"]
-},
+        title: "Motion",
+        category: "Video Render",
+        desc: "High-fidelity motion graphics and video renders developed with Adobe After Effects.",
+        link: "#",
+        images: [], 
+        videos: ["1162143854"]
+    },
     design: {
         title: "Design",
         category: "Visual Explorations",
@@ -81,17 +81,15 @@ const projectsData = {
 
 function showProject(id) {
     const data = projectsData[id];
-    const overlay = document.getElementById('project-overlay');
-    overlay.classList.add('active');
-    document.body.classList.add('no-scroll'); // Locks background
-
     if (!data) return;
 
+    const overlay = document.getElementById('project-overlay');
+    
+    // 1. Setup Content
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
-    // This creates a NEW 'video-stage' div for every single ID in your videos array
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
             <iframe 
@@ -103,11 +101,11 @@ function showProject(id) {
         </div>
     `).join('') : "";
 
-    // This creates a NEW image tag for every image in your array
     const imagesHTML = data.images ? data.images.map(img => `
         <img src="${img}" class="gallery-img">
     `).join('') : "";
 
+    // 2. Inject HTML
     overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
@@ -129,17 +127,18 @@ function showProject(id) {
         </div>
     `;
     
+    // 3. Show Overlay & Lock Background Scroll
     overlay.classList.add('active');
-    document.body.classList.remove('no-scroll'); // Unlocks background
+    document.body.classList.add('no-scroll'); 
     
-    const scrollBody = overlay.querySelector('.overlay-body');
-    if (scrollBody) scrollBody.scrollTop = 0;
+    // 4. Reset scroll position of the overlay to top
+    overlay.scrollTop = 0;
 }
 
 function closeProject() {
-    document.getElementById('project-overlay').classList.remove('active');
-    document.body.style.overflow = 'auto';
-    // UNLOCK BOTH
-    document.documentElement.style.overflow = '';
-    document.body.style.overflow = '';
+    const overlay = document.getElementById('project-overlay');
+    overlay.classList.remove('active');
+    
+    // Unlock background scroll
+    document.body.classList.remove('no-scroll');
 }
