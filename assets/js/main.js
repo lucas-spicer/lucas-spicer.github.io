@@ -82,6 +82,8 @@ const projectsData = {
 function showProject(id) {
     const data = projectsData[id];
     const overlay = document.getElementById('project-overlay');
+    overlay.classList.add('active');
+    document.body.classList.add('no-scroll'); // Locks background
 
     if (!data) return;
 
@@ -128,8 +130,7 @@ function showProject(id) {
     `;
     
     overlay.classList.add('active');
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+    document.body.classList.remove('no-scroll'); // Unlocks background
     
     const scrollBody = overlay.querySelector('.overlay-body');
     if (scrollBody) scrollBody.scrollTop = 0;
