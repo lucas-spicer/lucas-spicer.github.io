@@ -141,6 +141,8 @@ main {
 
 body.no-scroll {
     overflow: hidden !important;
+    height: 100vh;
+    scrollbar-gutter: stable;
 }
 
 /* Remove horizontal padding here so images can be full width if desired, 
