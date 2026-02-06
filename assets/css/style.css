@@ -14,19 +14,8 @@ a {color: #A3A3A3; text-decoration: none;}
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* We will use a main-scroll container instead */
 }
 
-/* 2. Main Site Wrapper (The counterpart to overlay-body) */
-.main-scroll-container {
-    height: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* 3. The Main Header - Now matches overlay-sticky-header */
 .header {
     position: sticky; /* Or stay as fixed, but sticky works better with flex */
     top: 0;
@@ -48,7 +37,6 @@ html, body {
     padding: 0 30px; /* Restored from original */
 }
 
-/* 4. Ensure sections fill correctly */
 main {
     flex-grow: 1;
 }
