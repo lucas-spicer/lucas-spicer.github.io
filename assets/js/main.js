@@ -2,7 +2,7 @@ const projectsData = {
     watermelon: {
         title: "Watermelon",
         category: "Brand Identity & UI",
-        desc: "Visual identity refresh for Watermelon. The project involved completely overhauling the brand, with a new website, logo and visual style across all templates and systems.",
+        desc: "Visual identity refresh for Watermelon. The project involved completely overhauling the brand, with a new website, logo and visual style across all outputs and templates.",
         link: "https://www.watermelonresearch.com/",
         images: [
             "./assets/images/watermelon/watermelon-1.png",
@@ -16,7 +16,7 @@ const projectsData = {
     canvas: {
         title: "Canvas",
         category: "Software Build",
-        desc: "Full UI / UX and software design for Canvas, our software platform. Responsible for all deisgn decisions and direction of the software, with 3000 users across 30+ markets.",
+        desc: "Full UI / UX and software design for our software platform Canvas. Responsible for all design decisions and direction of the software and user experience. Canvas is being built for mass market adoption with a growing 3000 users across 30 markets so far.",
         link: "https://www.watermelonresearch.com/canvas/",
         images: [
             "./assets/images/canvas/canvas-1.png",
@@ -30,7 +30,7 @@ const projectsData = {
     calico: {
         title: "Calico",
         category: "Web Creation",
-        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design templates.",
+        desc: "Full-scale development and architectural design for the Calico brand. This included brand creation, website build and design for outputs and templates.",
         link: "https://www.calicoservices.com/",
         images: [
             "./assets/images/calico/calico-1.png",
@@ -65,7 +65,7 @@ const projectsData = {
     board: {
         title: "Board",
         category: "Curation",
-        desc: "Visual research and moodboard curation.",
+        desc: "Visual research and curation.",
         link: "#",
         images: [
             "./assets/images/inspiration/inspiration-1.png",
