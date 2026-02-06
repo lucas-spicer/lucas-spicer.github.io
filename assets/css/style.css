@@ -255,6 +255,7 @@ main {
     overflow: hidden;
     background: var(--stage-bg);
     aspect-ratio: 16 / 9;
+    padding: 30px;
 }
 
 .video-stage iframe {
