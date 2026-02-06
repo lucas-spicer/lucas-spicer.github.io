@@ -126,9 +126,7 @@ main {
     z-index: 100;
 }
 
-/* 3. The body no longer needs its own overflow */
 .overlay-body {
-    width: 100%;
     padding-bottom: 60px;
 }
 
