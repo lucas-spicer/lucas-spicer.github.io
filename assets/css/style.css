@@ -208,6 +208,8 @@ body.no-scroll {
     
     /* Stack About/Contact Grids */
     .details-grid { flex-direction: column; gap: 40px; }
+
+    .hero-sub { font-size: 0.75rem; }
 }
 
 .massive-title span {
