@@ -85,14 +85,16 @@ function showProject(id) {
 
     const overlay = document.getElementById('project-overlay');
     
-    // Setup Content (Mapping images and videos)
+    // 1. Generate Content
     const linkHTML = (data.link && data.link !== "#") 
         ? `<a href="${data.link}" target="_blank" class="learn-more-link">Learn More</a>` 
         : "";
 
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
-            <iframe src="https://player.vimeo.com/video/${vId}" frameborder="0" allow="autoplay; fullscreen" style="width:100%; height:100%;"></iframe>
+            <iframe src="https://player.vimeo.com/video/${vId}?badge=0&autopause=0" 
+                    frameborder="0" allow="autoplay; fullscreen" 
+                    style="width:100%; height:100%;"></iframe>
         </div>
     `).join('') : "";
 
@@ -100,6 +102,7 @@ function showProject(id) {
         <img src="${img}" class="gallery-img">
     `).join('') : "";
 
+    // 2. Set HTML
     overlay.innerHTML = `
         <div class="overlay-sticky-header">
             <div class="sticky-left">
@@ -120,14 +123,20 @@ function showProject(id) {
         </div>
     `;
     
-    // 1. Show the overlay
+    // 3. Trigger Display and Lock Scroll
     overlay.style.display = 'block';
+    document.body.classList.add('no-scroll');
     
-    // 2. Lock the background
-    document.body.classList.add('no-scroll'); 
-    
-    // 3. Ensure overlay starts at top
+    // 4. Reset scroll to top
     overlay.scrollTop = 0;
+}
+
+function closeProject() {
+    const overlay = document.getElementById('project-overlay');
+    overlay.style.display = 'none';
+    
+    // Unlock Scroll
+    document.body.classList.remove('no-scroll');
 }
 
 function closeProject() {
