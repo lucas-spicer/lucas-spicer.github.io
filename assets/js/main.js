@@ -92,7 +92,7 @@ function showProject(id) {
 
     const videosHTML = data.videos ? data.videos.map(vId => `
         <div class="video-stage">
-            <iframe src="https://player.vimeo.com/video/${vId}?badge=0&autopause=0" 
+            <iframe src="https://player.vimeo.com/video/${vId}?badge=0&autopause=0"&title=0&byline=0&portrait=0" 
                     frameborder="0" allow="autoplay; fullscreen" 
                     style="width:100%; height:100%;"></iframe>
         </div>
