@@ -7,7 +7,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth;scroll-behavior: smooth; scrollbar-gutter: stable;}
+html { scroll-behavior: smooth;scroll-behavior: smooth; scrollbar-gutter: stable; }
 body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
 a {color: #A3A3A3; text-decoration: none;}
 
@@ -108,9 +108,8 @@ main {
     height: 100%; 
     background: white; 
     z-index: 2000; 
-    display: none; 
-    
-    /* Change these to allow natural scrolling */
+    display: none;
+    scrollbar-gutter: stable;
     overflow-y: scroll; 
     -webkit-overflow-scrolling: touch;
 }
