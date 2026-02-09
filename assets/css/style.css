@@ -293,5 +293,5 @@ body.no-scroll {
 
 .error span:nth-child(1) {
 font-size: font-size: var(--text-xl);
-margin-bottom: 20px;
+margin-bottom: 5px;
 }
