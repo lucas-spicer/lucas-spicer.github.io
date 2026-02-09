@@ -281,9 +281,9 @@ body.no-scroll {
 }
 
 .error {
-    opacity: 0.4;
+    opacity: 0.3;
     color: var(--text);
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,6 +292,6 @@ body.no-scroll {
 }
 
 .error span:nth-child(1) {
-font-size: font-size: var(--text-xl);
+font-size: var(--text-lg);
 margin-bottom: 5px;
 }
