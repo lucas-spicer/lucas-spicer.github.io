@@ -290,6 +290,7 @@ body.no-scroll {
     padding: 1rem;
 }
 
-.error:nth-child(1) {
+.error span:nth-child(1) {
 font-size: font-size: var(--text-lg);
+margin-bottom: 20px;
 }
