@@ -289,3 +289,7 @@ body.no-scroll {
     flex-direction: column;
     padding: 1rem;
 }
+
+.404:nth-child(1) {
+font-size: font-size: var(--text-lg);
+}
