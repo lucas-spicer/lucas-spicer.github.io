@@ -280,7 +280,7 @@ body.no-scroll {
 }
 
 .error {
-    opacity: 0.6;
+    opacity: 0.4;
     color: var(--text);
     font-size: var(--text-md);
     display: flex;
