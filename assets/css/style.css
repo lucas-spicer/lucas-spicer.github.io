@@ -7,6 +7,7 @@
     --text-sm: 12px;
     --text-md: 14px;
     --text-lg: 1.5rem;
+    --text-xl: 2rem;
     --header-height: 65px;
 }
 
@@ -291,6 +292,6 @@ body.no-scroll {
 }
 
 .error span:nth-child(1) {
-font-size: font-size: var(--text-lg);
+font-size: font-size: var(--text-xl);
 margin-bottom: 20px;
 }
