@@ -279,7 +279,7 @@ body.no-scroll {
     display: block;
 }
 
-.404 {
+.error {
     opacity: 0.6;
     color: var(--text);
     font-size: var(--text-md);
@@ -290,6 +290,6 @@ body.no-scroll {
     padding: 1rem;
 }
 
-.404:nth-child(1) {
+.error:nth-child(1) {
 font-size: font-size: var(--text-lg);
 }
