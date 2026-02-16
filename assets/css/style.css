@@ -292,6 +292,7 @@ body.no-scroll {
 }
 
 .error span:nth-child(1) {
-font-size: var(--text-lg);
-margin-bottom: 5px;
+    font-size: 50px;
+    letter-spacing: 10px;
+    opacity: 0.3;
 }
