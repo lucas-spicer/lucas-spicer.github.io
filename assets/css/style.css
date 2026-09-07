@@ -174,7 +174,7 @@ body.no-scroll {
 .social-link {
     display: inline-block;
     border: solid 1px var(--border);
-    padding: 0.5rem 0.75rem;
+    padding: 0.75rem;
     text-decoration: none;
     color: #181818;
     font-size: 0.75rem;
@@ -184,6 +184,7 @@ body.no-scroll {
     background: white;
     width: 105px;
     text-align: center;
+    line-height: normal;
 }
 
   .close-project-btn {
